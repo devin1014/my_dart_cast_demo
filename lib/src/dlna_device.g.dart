@@ -6,6 +6,22 @@ part of 'dlna_device.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+DLNADevice _$DLNADeviceFromJson(Map<String, dynamic> json) => DLNADevice(
+      usn: json['usn'] as String,
+      uuid: json['uuid'] as String,
+      location: json['location'] as String,
+    )..description = json['description'] == null
+        ? null
+        : DLNADescription.fromJson(json['description'] as Map<String, dynamic>);
+
+Map<String, dynamic> _$DLNADeviceToJson(DLNADevice instance) =>
+    <String, dynamic>{
+      'usn': instance.usn,
+      'uuid': instance.uuid,
+      'location': instance.location,
+      'description': instance.description?.toJson(),
+    };
+
 DLNADescription _$DLNADescriptionFromJson(Map<String, dynamic> json) =>
     DLNADescription()
       ..deviceType = json['deviceType'] as String

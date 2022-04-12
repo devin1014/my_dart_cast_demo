@@ -1,12 +1,3 @@
-/Users/liuwei/Library/flutter/bin/flutter --no-color test --machine --start-paused test/ssdp_controller_test.dart
-Testing started at 15:17 ...
-
-SSDPController starting.
-networkInterfaces: 3
-network: NetworkInterface('lo0', [InternetAddress('127.0.0.1', IPv4)])
-network: NetworkInterface('feth4265', [InternetAddress('192.168.192.39', IPv4)])
-network: NetworkInterface('en0', [InternetAddress('192.168.3.137', IPv4)])
-SSDPController started.
 ----------------
 receive:
 NOTIFY * HTTP/1.1
@@ -160,6 +151,15 @@ NT: urn:mi-com:service:RController:1
 NTS: ssdp:alive
 SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
 USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+----------------
+receive:
+M-SEARCH * HTTP/1.1
+ST: upnp:rootdevice
+MX: 10
+MAN: "ssdp:discover"
+Content-Length: 0
+HOST: 239.255.255.250:1900
 
 ----------------
 receive:
@@ -669,80 +669,12 @@ USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
 
 ----------------
 receive:
-NOTIFY * HTTP/1.1
+M-SEARCH * HTTP/1.1
+ST: upnp:rootdevice
+MX: 10
+MAN: "ssdp:discover"
+Content-Length: 0
 HOST: 239.255.255.250:1900
-CACHE-CONTROL: max-age=66
-LOCATION: http://192.168.3.119:49152/description.xml
-NT: upnp:rootdevice
-NTS: ssdp:alive
-SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
-USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
-
-----------------
-receive:
-NOTIFY * HTTP/1.1
-HOST: 239.255.255.250:1900
-CACHE-CONTROL: max-age=66
-LOCATION: http://192.168.3.119:49152/description.xml
-NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
-NTS: ssdp:alive
-SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
-USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
-
-----------------
-receive:
-NOTIFY * HTTP/1.1
-HOST: 239.255.255.250:1900
-CACHE-CONTROL: max-age=66
-LOCATION: http://192.168.3.119:49152/description.xml
-NT: urn:schemas-upnp-org:device:MediaRenderer:1
-NTS: ssdp:alive
-SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
-USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
-
-----------------
-receive:
-NOTIFY * HTTP/1.1
-HOST: 239.255.255.250:1900
-CACHE-CONTROL: max-age=66
-LOCATION: http://192.168.3.119:49152/description.xml
-NT: urn:schemas-upnp-org:service:AVTransport:1
-NTS: ssdp:alive
-SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
-USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
-
-----------------
-receive:
-NOTIFY * HTTP/1.1
-HOST: 239.255.255.250:1900
-CACHE-CONTROL: max-age=66
-LOCATION: http://192.168.3.119:49152/description.xml
-NT: urn:schemas-upnp-org:service:ConnectionManager:1
-NTS: ssdp:alive
-SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
-USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
-
-----------------
-receive:
-NOTIFY * HTTP/1.1
-HOST: 239.255.255.250:1900
-CACHE-CONTROL: max-age=66
-LOCATION: http://192.168.3.119:49152/description.xml
-NT: urn:schemas-upnp-org:service:RenderingControl:1
-NTS: ssdp:alive
-SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
-USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
-
-----------------
-receive:
-NOTIFY * HTTP/1.1
-HOST: 239.255.255.250:1900
-CACHE-CONTROL: max-age=66
-LOCATION: http://192.168.3.119:49152/description.xml
-NT: urn:mi-com:service:RController:1
-NTS: ssdp:alive
-SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
-USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
 
 ----------------
 receive:
@@ -821,9 +753,79 @@ NTS: ssdp:alive
 SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
 USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
 
-Sending 'Search Message' from 0.0.0.0:1900
-Sending 'Search Message' from 127.0.0.1:1900
-Sending 'Search Message' from 192.168.192.39:1900
-Sending 'Search Message' from 192.168.3.137:1900
-SSDPController stopped.
-No tests were found.
+----------------
+receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.3.119:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.3.119:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.3.119:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.3.119:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.3.119:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.3.119:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.3.119:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1

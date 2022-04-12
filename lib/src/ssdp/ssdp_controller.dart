@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names, avoid_print, prefer_adjacent_string_concatenation
+
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
@@ -109,7 +111,7 @@ class SSDPController {
     if (!_started) {
       throw StateError('mDNS client must be started before calling lookup.');
     }
-    final dataToSend = Utf8Codec().encode(DLNA_M_SEARCH);
+    final dataToSend = const Utf8Codec().encode(DLNA_M_SEARCH);
     _timer = Timer.periodic(_sendDuration, (Timer t) {
       for (var socket in _sockets) {
         print('Sending \'Search Message\' from ${socket.address.address}:${socket.port}');

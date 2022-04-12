@@ -4,21 +4,33 @@ import 'package:my_dart_cast_demo/src/ssdp/description_parser.dart';
 part 'dlna_device.g.dart';
 
 /// DLNA Device
+@JsonSerializable(explicitToJson: true)
 class DLNADevice {
   final String usn;
   final String uuid;
-  final String location;
+  String location;
+  @JsonKey(ignore: true)
   int cacheControl = 300;
   DLNADescription? description;
 
+  @JsonKey(ignore: true)
   bool isFromCache = false;
+  @JsonKey(ignore: true)
   int aliveTime = 0;
+  @JsonKey(ignore: true)
   int expirationTime = 0;
+  @JsonKey(ignore: true)
   int lastDescriptionTime = 0;
+  @JsonKey(ignore: true)
   int discoveryFromStartSpendingTime = 0;
+  @JsonKey(ignore: true)
   int descriptionTaskSpendingTime = 0;
 
   DLNADevice({required this.usn, required this.uuid, required this.location});
+
+  factory DLNADevice.fromJson(Map<String, dynamic> json) => _$DLNADeviceFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DLNADeviceToJson(this);
 
   set setCacheControl(int time) {
     cacheControl = time;
@@ -41,19 +53,10 @@ class DLNADevice {
     return super == other;
   }
 
-  Map toJson() {
-    Map map = {};
-    map["usn"] = usn;
-    map["uuid"] = uuid;
-    map["location"] = location;
-    map["deviceName"] = deviceName;
-    return map;
-  }
-
-  String _time2Str(int intTime) {
-    var time = DateTime.fromMillisecondsSinceEpoch(intTime);
-    return "${time.year.toString()}-${time.month.toString().padLeft(2, '0')}-${time.day.toString().padLeft(2, '0')} ${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}:${time.second.toString().padLeft(2, '0')}";
-  }
+// String _time2Str(int intTime) {
+//   var time = DateTime.fromMillisecondsSinceEpoch(intTime);
+//   return "${time.year.toString()}-${time.month.toString().padLeft(2, '0')}-${time.day.toString().padLeft(2, '0')} ${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}:${time.second.toString().padLeft(2, '0')}";
+// }
 }
 
 /// DLNA Description
@@ -89,7 +92,7 @@ class DLNADescription {
   }
 
   @JsonKey(ignore: true)
-  String? _connectionManagerControlURL = "";
+  String? _connectionManagerControlURL;
 
   String get connectionManagerControlURL {
     _connectionManagerControlURL ??= _findServiceControlUrl(serviceList, DescriptionParser.CONNECTION_MANAGER);

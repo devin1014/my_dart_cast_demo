@@ -1,15 +1,16 @@
-class DiscoveryContentParser {
-  static const SSDP_MSG_ALIVE = 'ssdp:alive';
-  static const SSDP_MSG_BYE_BYE = 'ssdp:byebye';
+// ignore_for_file: constant_identifier_names
 
-  final HEADER_USN = "USN";
-  final HEADER_LOCATION = "LOCATION";
-  final HEADER_CACHE_CONTROL = "CACHE-CONTROL";
-  final HEADER_NTS = "NTS";
-  final HEADER_HTTP_VER_1 = "HTTP/1.";
-  final HEADER_NOTIFY = "NOTIFY";
-  final HEADER_M_SEARCH = "M-SEARCH";
-  final HEADER_OK = "OK";
+class DiscoveryContentParser {
+  static const _SSDP_MSG_ALIVE = 'ssdp:alive';
+  static const _SSDP_MSG_BYE_BYE = 'ssdp:byebye';
+  static const _HEADER_USN = "USN";
+  static const _HEADER_LOCATION = "LOCATION";
+  static const _HEADER_CACHE_CONTROL = "CACHE-CONTROL";
+  static const _HEADER_NTS = "NTS";
+  static const _HEADER_HTTP_VER_1 = "HTTP/1.";
+  static const _HEADER_NOTIFY = "NOTIFY";
+  static const _HEADER_M_SEARCH = "M-SEARCH";
+  static const _HEADER_OK = "OK";
 
   void Function(String usn, String location, String cache) processAlive;
   void Function(String usn) processByeBye;
@@ -26,41 +27,41 @@ class DiscoveryContentParser {
     }
     var firstLine = messageLines.first;
     var firstLineParameter = firstLine.split(' ').first;
-    if (firstLineParameter.startsWith(HEADER_HTTP_VER_1)) {
+    if (firstLineParameter.startsWith(_HEADER_HTTP_VER_1)) {
       var httpProtocol = firstLine[2];
-      if (httpProtocol == HEADER_OK) {
+      if (httpProtocol == _HEADER_OK) {
         readSearchResponseMessage(messageLines);
       }
     } else {
-      if (firstLineParameter == HEADER_NOTIFY) {
+      if (firstLineParameter == _HEADER_NOTIFY) {
         readNotifyMessage(messageLines);
-      } else if (firstLineParameter != HEADER_M_SEARCH) {}
+      } else if (firstLineParameter != _HEADER_M_SEARCH) {}
     }
   }
 
   void readSearchResponseMessage(List<String> lines) {
     final headers = parseHeader(lines);
-    final usn = headers[HEADER_USN];
+    final usn = headers[_HEADER_USN];
     if (usn?.isNotEmpty == true) {
-      final location = headers[HEADER_LOCATION];
-      final cache_control = headers[HEADER_CACHE_CONTROL];
-      if (location?.isNotEmpty == true && cache_control?.isNotEmpty == true) {
-        processAlive(usn!, location!, cache_control!);
+      final location = headers[_HEADER_LOCATION];
+      final cacheControl = headers[_HEADER_CACHE_CONTROL];
+      if (location?.isNotEmpty == true && cacheControl?.isNotEmpty == true) {
+        processAlive(usn!, location!, cacheControl!);
       }
     }
   }
 
   void readNotifyMessage(List<String> lines) {
     final headers = parseHeader(lines);
-    final usn = headers[HEADER_USN];
+    final usn = headers[_HEADER_USN];
     if (usn?.isNotEmpty == true) {
-      if (headers[HEADER_NTS] == SSDP_MSG_ALIVE) {
-        final location = headers[HEADER_LOCATION];
-        final cache_control = headers[HEADER_CACHE_CONTROL];
-        if (location?.isNotEmpty == true && cache_control?.isNotEmpty == true) {
-          processAlive(usn!, location!, cache_control!);
+      if (headers[_HEADER_NTS] == _SSDP_MSG_ALIVE) {
+        final location = headers[_HEADER_LOCATION];
+        final cacheControl = headers[_HEADER_CACHE_CONTROL];
+        if (location?.isNotEmpty == true && cacheControl?.isNotEmpty == true) {
+          processAlive(usn!, location!, cacheControl!);
         }
-      } else if (headers[HEADER_NTS] == SSDP_MSG_BYE_BYE) {
+      } else if (headers[_HEADER_NTS] == _SSDP_MSG_BYE_BYE) {
         processByeBye(usn!);
       }
     }
@@ -68,14 +69,14 @@ class DiscoveryContentParser {
 
   Map<String, String> parseHeader(List<String> lines) {
     Map<String, String> result = {};
-    lines.forEach((element) {
+    for (var element in lines) {
       if (element.isNotEmpty) {
         var headers = element.split(': ');
         if (headers.length >= 2) {
           result[headers.first.toUpperCase()] = headers[1];
         }
       }
-    });
+    }
     return result;
   }
 }
