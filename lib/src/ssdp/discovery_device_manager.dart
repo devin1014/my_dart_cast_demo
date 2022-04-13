@@ -170,7 +170,7 @@ class DiscoveryDeviceManager {
   Future<void> _getDescription(DLNADevice device, int tryCount, int type) async {
     try {
       final startTime = DateTime.now().millisecondsSinceEpoch;
-      final response = await MyHttpClient.get().getUrl(device.location);
+      final response = await MyHttpClient().getUrl(device.location);
       final description = await _descriptionParser.getDescription(response);
       device.description = description;
       var endTime = DateTime.now().millisecondsSinceEpoch;
