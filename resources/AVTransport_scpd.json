@@ -1,0 +1,470 @@
+{
+    "scpd": {
+        "specVersion": {
+            "major": "1",
+            "minor": "0"
+        },
+        "actionList": {
+            "action": [
+                {
+                    "name": "GetCurrentTransportActions",
+                    "argumentList": {
+                        "argument": [
+                            {
+                                "name": "InstanceID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_InstanceID"
+                            },
+                            {
+                                "name": "Actions",
+                                "direction": "out",
+                                "relatedStateVariable": "CurrentTransportActions"
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "GetDeviceCapabilities",
+                    "argumentList": {
+                        "argument": [
+                            {
+                                "name": "InstanceID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_InstanceID"
+                            },
+                            {
+                                "name": "PlayMedia",
+                                "direction": "out",
+                                "relatedStateVariable": "PossiblePlaybackStorageMedia"
+                            },
+                            {
+                                "name": "RecMedia",
+                                "direction": "out",
+                                "relatedStateVariable": "PossibleRecordStorageMedia"
+                            },
+                            {
+                                "name": "RecQualityModes",
+                                "direction": "out",
+                                "relatedStateVariable": "PossibleRecordQualityModes"
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "GetMediaInfo",
+                    "argumentList": {
+                        "argument": [
+                            {
+                                "name": "InstanceID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_InstanceID"
+                            },
+                            {
+                                "name": "NrTracks",
+                                "direction": "out",
+                                "relatedStateVariable": "NumberOfTracks"
+                            },
+                            {
+                                "name": "MediaDuration",
+                                "direction": "out",
+                                "relatedStateVariable": "CurrentMediaDuration"
+                            },
+                            {
+                                "name": "CurrentURI",
+                                "direction": "out",
+                                "relatedStateVariable": "AVTransportURI"
+                            },
+                            {
+                                "name": "CurrentURIMetaData",
+                                "direction": "out",
+                                "relatedStateVariable": "AVTransportURIMetaData"
+                            },
+                            {
+                                "name": "NextURI",
+                                "direction": "out",
+                                "relatedStateVariable": "NextAVTransportURI"
+                            },
+                            {
+                                "name": "NextURIMetaData",
+                                "direction": "out",
+                                "relatedStateVariable": "NextAVTransportURIMetaData"
+                            },
+                            {
+                                "name": "PlayMedium",
+                                "direction": "out",
+                                "relatedStateVariable": "PlaybackStorageMedium"
+                            },
+                            {
+                                "name": "RecordMedium",
+                                "direction": "out",
+                                "relatedStateVariable": "RecordStorageMedium"
+                            },
+                            {
+                                "name": "WriteStatus",
+                                "direction": "out",
+                                "relatedStateVariable": "RecordMediumWriteStatus"
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "GetPositionInfo",
+                    "argumentList": {
+                        "argument": [
+                            {
+                                "name": "InstanceID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_InstanceID"
+                            },
+                            {
+                                "name": "Track",
+                                "direction": "out",
+                                "relatedStateVariable": "CurrentTrack"
+                            },
+                            {
+                                "name": "TrackDuration",
+                                "direction": "out",
+                                "relatedStateVariable": "CurrentTrackDuration"
+                            },
+                            {
+                                "name": "TrackMetaData",
+                                "direction": "out",
+                                "relatedStateVariable": "CurrentTrackMetaData"
+                            },
+                            {
+                                "name": "TrackURI",
+                                "direction": "out",
+                                "relatedStateVariable": "CurrentTrackURI"
+                            },
+                            {
+                                "name": "RelTime",
+                                "direction": "out",
+                                "relatedStateVariable": "RelativeTimePosition"
+                            },
+                            {
+                                "name": "AbsTime",
+                                "direction": "out",
+                                "relatedStateVariable": "AbsoluteTimePosition"
+                            },
+                            {
+                                "name": "RelCount",
+                                "direction": "out",
+                                "relatedStateVariable": "RelativeCounterPosition"
+                            },
+                            {
+                                "name": "AbsCount",
+                                "direction": "out",
+                                "relatedStateVariable": "AbsoluteCounterPosition"
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "GetTransportInfo",
+                    "argumentList": {
+                        "argument": [
+                            {
+                                "name": "InstanceID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_InstanceID"
+                            },
+                            {
+                                "name": "CurrentTransportState",
+                                "direction": "out",
+                                "relatedStateVariable": "TransportState"
+                            },
+                            {
+                                "name": "CurrentTransportStatus",
+                                "direction": "out",
+                                "relatedStateVariable": "TransportStatus"
+                            },
+                            {
+                                "name": "CurrentSpeed",
+                                "direction": "out",
+                                "relatedStateVariable": "TransportPlaySpeed"
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "GetTransportSettings",
+                    "argumentList": {
+                        "argument": [
+                            {
+                                "name": "InstanceID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_InstanceID"
+                            },
+                            {
+                                "name": "PlayMode",
+                                "direction": "out",
+                                "relatedStateVariable": "CurrentPlayMode"
+                            },
+                            {
+                                "name": "RecQualityMode",
+                                "direction": "out",
+                                "relatedStateVariable": "CurrentRecordQualityMode"
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "Next",
+                    "argumentList": {
+                        "argument": {
+                            "name": "InstanceID",
+                            "direction": "in",
+                            "relatedStateVariable": "A_ARG_TYPE_InstanceID"
+                        }
+                    }
+                },
+                {
+                    "name": "Pause",
+                    "argumentList": {
+                        "argument": {
+                            "name": "InstanceID",
+                            "direction": "in",
+                            "relatedStateVariable": "A_ARG_TYPE_InstanceID"
+                        }
+                    }
+                }, {
+                    "name": "Play",
+                    "argumentList": {
+                        "argument": [
+                            {
+                                "name": "InstanceID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_InstanceID"
+                            },
+                            {
+                                "name": "Speed",
+                                "direction": "in",
+                                "relatedStateVariable": "TransportPlaySpeed"
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "Previous",
+                    "argumentList": {
+                        "argument": {
+                            "name": "InstanceID",
+                            "direction": "in",
+                            "relatedStateVariable": "A_ARG_TYPE_InstanceID"
+                        }
+                    }
+                }, {
+                    "name": "Seek",
+                    "argumentList": {
+                        "argument": [
+                            {
+                                "name": "InstanceID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_InstanceID"
+                            },
+                            {
+                                "name": "Unit",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_SeekMode"
+                            },
+                            {
+                                "name": "Target",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_SeekTarget"
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "SetAVTransportURI",
+                    "argumentList": {
+                        "argument": [
+                            {
+                                "name": "InstanceID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_InstanceID"
+                            },
+                            {
+                                "name": "CurrentURI",
+                                "direction": "in",
+                                "relatedStateVariable": "AVTransportURI"
+                            },
+                            {
+                                "name": "CurrentURIMetaData",
+                                "direction": "in",
+                                "relatedStateVariable": "AVTransportURIMetaData"
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "SetPlayMode",
+                    "argumentList": {
+                        "argument": [
+                            {
+                                "name": "InstanceID",
+                                "direction": "in",
+                                "relatedStateVariable": "A_ARG_TYPE_InstanceID"
+                            },
+                            {
+                                "name": "NewPlayMode",
+                                "direction": "in",
+                                "relatedStateVariable": "CurrentPlayMode"
+                            }
+                        ]
+                    }
+                }, {
+                    "name": "Stop",
+                    "argumentList": {
+                        "argument": {
+                            "name": "InstanceID",
+                            "direction": "in",
+                            "relatedStateVariable": "A_ARG_TYPE_InstanceID"
+                        }
+                    }
+                }
+            ]
+        },
+        "serviceStateTable": {
+            "stateVariable": [
+                {
+                    "name": "TransportStatus",
+                    "dataType": "string",
+                    "allowedValueList": {
+                        "allowedValue": ["OK", "ERROR_OCCURRED", "vendor-defined"]
+                    }
+                },
+                {
+                    "name": "NextAVTransportURI",
+                    "dataType": "string"
+                }, {
+                    "name": "NextAVTransportURIMetaData",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CurrentTrackMetaData",
+                    "dataType": "string"
+                }, {
+                    "name": "RelativeCounterPosition",
+                    "dataType": "i4"
+                }, {
+                    "name": "A_ARG_TYPE_InstanceID",
+                    "dataType": "ui4"
+                },
+                {
+                    "name": "A_ARG_TYPE_SeekTarget",
+                    "dataType": "string"
+                }, {
+                    "name": "PlaybackStorageMedium",
+                    "dataType": "string",
+                    "allowedValueList": {
+                        "allowedValue": [
+                            "UNKNOWN", "DV", "MINI-DV", "VHS", "W-VHS", "S-VHS", "D-VHS", "VHSC", "VIDEO8", "HI8", "CD-ROM", "CD-DA", "CD-R", "CD-RW", "VIDEO-CD", "SACD",
+                            "MD-AUDIO", "MD-PICTURE", "DVD-ROM", "DVD-VIDEO", "DVD-R", "DVD+RW", "DVD-RW", "DVD-RAM", "DVD-AUDIO", "DAT", "LD", "HDD", "MICRO-MV", "NETWORK",
+                            "NONE", "NOT_IMPLEMENTED", "vendor-defined"
+                        ]
+                    }
+                }, {
+                    "name": "RelativeTimePosition",
+                    "dataType": "string"
+                }, {
+                    "name": "PossibleRecordStorageMedia",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CurrentPlayMode",
+                    "dataType": "string",
+                    "allowedValueList": {
+                        "allowedValue": ["NORMAL", "REPEAT_ALL", "INTRO"]
+                    },
+                    "defaultValue": "NORMAL"
+                },
+                {
+                    "name": "TransportPlaySpeed",
+                    "dataType": "string",
+                    "allowedValueList": {
+                        "allowedValue": ["1", "vendor-defined"]
+                    }
+                },
+                {
+                    "name": "PossiblePlaybackStorageMedia",
+                    "dataType": "string"
+                }, {
+                    "name": "AbsoluteTimePosition",
+                    "dataType": "string"
+                },
+                {
+                    "name": "CurrentTrack",
+                    "dataType": "ui4",
+                    "allowedValueRange": {
+                        "minimum": "0",
+                        "maximum": "4294967295",
+                        "step": "1"
+                    }
+                },
+                {
+                    "name": "CurrentTrackURI",
+                    "dataType": "string"
+                }, {
+                    "name": "CurrentTransportActions",
+                    "dataType": "string"
+                },
+                {
+                    "name": "NumberOfTracks",
+                    "dataType": "ui4",
+                    "allowedValueRange": {
+                        "minimum": "0",
+                        "maximum": "4294967295"
+                    }
+                }, {
+                    "name": "AVTransportURI",
+                    "dataType": "string"
+                },
+                {
+                    "name": "AbsoluteCounterPosition",
+                    "dataType": "i4"
+                }, {
+                    "name": "CurrentRecordQualityMode",
+                    "dataType": "string",
+                    "allowedValueList": {
+                        "allowedValue": ["0:EP", "1:LP", "2:SP", "0:BASIC", "1:MEDIUM", "2:HIGH", "NOT_IMPLEMENTED", "vendor-defined"]
+                    }
+                }, {
+                    "name": "CurrentMediaDuration",
+                    "dataType": "string"
+                }, {
+                    "name": "A_ARG_TYPE_SeekMode",
+                    "dataType": "string",
+                    "allowedValueList": {
+                        "allowedValue": ["ABS_TIME", "REL_TIME", "ABS_COUNT", "REL_COUNT", "TRACK_NR", "CHANNEL_FREQ", "TAPE-INDEX", "FRAME"]
+                    }
+                }, {
+                    "name": "AVTransportURIMetaData",
+                    "dataType": "string"
+                }, {
+                    "name": "RecordStorageMedium",
+                    "dataType": "string",
+                    "allowedValueList": {
+                        "allowedValue": [
+                            "UNKNOWN", "DV", "MINI-DV", "VHS", "W-VHS", "S-VHS", "D-VHS", "VHSC", "VIDEO8", "HI8", "CD-ROM", "CD-DA", "CD-R", "CD-RW", "VIDEO-CD", "SACD",
+                            "MD-AUDIO", "MD-PICTURE", "DVD-ROM", "DVD-VIDEO", "DVD-R", "DVD+RW", "DVD-RW", "DVD-RAM", "DVD-AUDIO", "DAT", "LD", "HDD", "MICRO-MV", "NETWORK",
+                            "NONE", "NOT_IMPLEMENTED", "vendor-defined"
+                        ]
+                    }
+                }, {
+                    "name": "RecordMediumWriteStatus",
+                    "dataType": "string",
+                    "allowedValueList": {
+                        "allowedValue": ["WRITABLE", "PROTECTED", "NOT_WRITABLE", "UNKNOWN", "NOT_IMPLEMENTED"]
+                    }
+                }, {
+                    "name": "LastChange",
+                    "dataType": "string"
+                }, {
+                    "name": "CurrentTrackDuration",
+                    "dataType": "string"
+                }, {
+                    "name": "TransportState",
+                    "dataType": "string",
+                    "allowedValueList": {
+                        "allowedValue": ["STOPPED", "PAUSED_PLAYBACK", "PAUSED_RECORDING", "PLAYING", "RECORDING", "TRANSITIONING", "NO_MEDIA_PRESENT"]
+                    }
+                }, {
+                    "name": "PossibleRecordQualityModes",
+                    "dataType": "string"
+                }
+            ]
+        }
+    }
+}

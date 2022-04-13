@@ -3,9 +3,9 @@
 import 'dart:async';
 
 import 'package:my_dart_cast_demo/src/http/http_client.dart';
+import 'package:my_dart_cast_demo/src/util.dart';
 
 import '../dlna_device.dart';
-import 'description_parser.dart';
 
 typedef OnDeviceAdd = void Function(DLNADevice device);
 typedef OnDeviceUpdate = void Function(DLNADevice device);
@@ -28,8 +28,7 @@ class DiscoveryDeviceManager {
   final Map<String, int> _unnecessaryDevices = {};
   final Map<String, DLNADevice> _currentDevices = {};
 
-  final DescriptionParser _descriptionParser = DescriptionParser();
-
+  // final DescriptionParser _descriptionParser = DescriptionParser();
   // final LocalDeviceParser _localDeviceParser = LocalDeviceParser();
 
   Timer? _timer;
@@ -171,12 +170,14 @@ class DiscoveryDeviceManager {
     try {
       final startTime = DateTime.now().millisecondsSinceEpoch;
       final response = await MyHttpClient().getUrl(device.location);
-      final description = await _descriptionParser.getDescription(response);
-      device.description = description;
+      final jsonObj = parseXml2Json(response)['root'];
+      final detail = DLNADeviceDetail.fromJson(jsonObj['device']);
+      detail.baseURL = jsonObj["URLBase"];
+      device.detail = detail;
       var endTime = DateTime.now().millisecondsSinceEpoch;
       device.lastDescriptionTime = endTime;
       device.descriptionTaskSpendingTime = endTime - startTime;
-      if (description.avTransportControlURL.isEmpty) {
+      if (detail.avTransportControlURL.isEmpty) {
         tryCount++;
         _onUnnecessary(device, tryCount);
         return;

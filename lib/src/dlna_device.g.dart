@@ -10,20 +10,20 @@ DLNADevice _$DLNADeviceFromJson(Map<String, dynamic> json) => DLNADevice(
       usn: json['usn'] as String,
       uuid: json['uuid'] as String,
       location: json['location'] as String,
-    )..description = json['description'] == null
+    )..detail = json['detail'] == null
         ? null
-        : DLNADescription.fromJson(json['description'] as Map<String, dynamic>);
+        : DLNADeviceDetail.fromJson(json['detail'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$DLNADeviceToJson(DLNADevice instance) =>
     <String, dynamic>{
       'usn': instance.usn,
       'uuid': instance.uuid,
       'location': instance.location,
-      'description': instance.description?.toJson(),
+      'detail': instance.detail?.toJson(),
     };
 
-DLNADescription _$DLNADescriptionFromJson(Map<String, dynamic> json) =>
-    DLNADescription()
+DLNADeviceDetail _$DLNADeviceDetailFromJson(Map<String, dynamic> json) =>
+    DLNADeviceDetail()
       ..deviceType = json['deviceType'] as String
       ..friendlyName = json['friendlyName'] as String
       ..udn = json['UDN'] as String
@@ -32,10 +32,11 @@ DLNADescription _$DLNADescriptionFromJson(Map<String, dynamic> json) =>
       ..modelDescription = json['modelDescription'] as String
       ..modelName = json['modelName'] as String
       ..modelURL = json['modelURL'] as String
+      ..baseURL = json['URLBase'] as String? ?? ""
       ..serviceList =
           parseDLNAService(json['serviceList'] as Map<String, dynamic>);
 
-Map<String, dynamic> _$DLNADescriptionToJson(DLNADescription instance) =>
+Map<String, dynamic> _$DLNADeviceDetailToJson(DLNADeviceDetail instance) =>
     <String, dynamic>{
       'deviceType': instance.deviceType,
       'friendlyName': instance.friendlyName,
@@ -45,6 +46,7 @@ Map<String, dynamic> _$DLNADescriptionToJson(DLNADescription instance) =>
       'modelDescription': instance.modelDescription,
       'modelName': instance.modelName,
       'modelURL': instance.modelURL,
+      'URLBase': instance.baseURL,
       'serviceList': instance.serviceList.map((e) => e.toJson()).toList(),
     };
 
@@ -54,7 +56,9 @@ DLNAService _$DLNAServiceFromJson(Map<String, dynamic> json) => DLNAService(
       scpdUrl: json['SCPDURL'] as String? ?? '',
       controlUrl: json['controlURL'] as String? ?? '',
       eventSubUrl: json['eventSubURL'] as String? ?? '',
-    );
+    )..actionList = (parseAction(json, 'actionList') as List<dynamic>?)
+        ?.map((e) => DLNAServiceAction.fromJson(e as Map<String, dynamic>))
+        .toList();
 
 Map<String, dynamic> _$DLNAServiceToJson(DLNAService instance) =>
     <String, dynamic>{
@@ -63,4 +67,36 @@ Map<String, dynamic> _$DLNAServiceToJson(DLNAService instance) =>
       'SCPDURL': instance.scpdUrl,
       'controlURL': instance.controlUrl,
       'eventSubURL': instance.eventSubUrl,
+      'actionList': instance.actionList?.map((e) => e.toJson()).toList(),
+    };
+
+DLNAServiceAction _$DLNAServiceActionFromJson(Map<String, dynamic> json) =>
+    DLNAServiceAction(
+      json['name'] as String,
+      (parseActionArgument(json, 'argument') as List<dynamic>)
+          .map((e) =>
+              DLNAServiceActionArgument.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$DLNAServiceActionToJson(DLNAServiceAction instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'argument': instance.argument.map((e) => e.toJson()).toList(),
+    };
+
+DLNAServiceActionArgument _$DLNAServiceActionArgumentFromJson(
+        Map<String, dynamic> json) =>
+    DLNAServiceActionArgument(
+      json['name'] as String,
+      json['direction'] as String,
+      json['relatedStateVariable'] as String,
+    );
+
+Map<String, dynamic> _$DLNAServiceActionArgumentToJson(
+        DLNAServiceActionArgument instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'direction': instance.direction,
+      'relatedStateVariable': instance.relatedStateVariable,
     };

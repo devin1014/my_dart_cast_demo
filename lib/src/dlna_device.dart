@@ -11,7 +11,7 @@ class DLNADevice {
   String location;
   @JsonKey(ignore: true)
   int cacheControl = 300;
-  DLNADescription? description;
+  DLNADeviceDetail? detail;
 
   @JsonKey(ignore: true)
   bool isFromCache = false;
@@ -38,9 +38,9 @@ class DLNADevice {
     expirationTime = aliveTime + time * 1000;
   }
 
-  String get deviceName => description?.friendlyName ?? "";
+  String get deviceName => detail?.friendlyName ?? "";
 
-  bool get isXiaoMiDevice => description?.manufacturer.toLowerCase().contains("xiaomi") ?? false;
+  bool get isXiaoMiDevice => detail?.manufacturer.toLowerCase().contains("xiaomi") ?? false;
 
   @override
   int get hashCode => uuid.hashCode;
@@ -52,16 +52,11 @@ class DLNADevice {
     }
     return super == other;
   }
-
-// String _time2Str(int intTime) {
-//   var time = DateTime.fromMillisecondsSinceEpoch(intTime);
-//   return "${time.year.toString()}-${time.month.toString().padLeft(2, '0')}-${time.day.toString().padLeft(2, '0')} ${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}:${time.second.toString().padLeft(2, '0')}";
-// }
 }
 
 /// DLNA Description
 @JsonSerializable(explicitToJson: true)
-class DLNADescription {
+class DLNADeviceDetail {
   String deviceType = "";
   String friendlyName = "";
   @JsonKey(name: "UDN")
@@ -71,6 +66,8 @@ class DLNADescription {
   String modelDescription = "";
   String modelName = "";
   String modelURL = "";
+  @JsonKey(name: "URLBase", defaultValue: "")
+  String baseURL = "";
 
   @JsonKey(fromJson: parseDLNAService)
   List<DLNAService> serviceList = [];
@@ -99,11 +96,11 @@ class DLNADescription {
     return _connectionManagerControlURL ?? "";
   }
 
-  DLNADescription();
+  DLNADeviceDetail();
 
-  factory DLNADescription.fromJson(Map<String, dynamic> json) => _$DLNADescriptionFromJson(json);
+  factory DLNADeviceDetail.fromJson(Map<String, dynamic> json) => _$DLNADeviceDetailFromJson(json);
 
-  Map<String, dynamic> toJson() => _$DLNADescriptionToJson(this);
+  Map<String, dynamic> toJson() => _$DLNADeviceDetailToJson(this);
 }
 
 List<DLNAService> parseDLNAService(Map<String, dynamic> json) {
@@ -133,6 +130,8 @@ class DLNAService {
   final String controlUrl;
   @JsonKey(name: "eventSubURL", defaultValue: "")
   final String eventSubUrl;
+  @JsonKey(readValue: parseAction)
+  List<DLNAServiceAction>? actionList;
 
   DLNAService({
     required this.type,
@@ -145,4 +144,48 @@ class DLNAService {
   factory DLNAService.fromJson(Map<String, dynamic> json) => _$DLNAServiceFromJson(json);
 
   Map<String, dynamic> toJson() => _$DLNAServiceToJson(this);
+}
+
+Object? parseAction(Map<dynamic, dynamic> json, String key) {
+  if (json.containsKey("scpd")) {
+    return json["scpd"]["actionList"]["action"];
+  } else {
+    return null;
+  }
+}
+
+/// DLNA Service Action
+@JsonSerializable(explicitToJson: true)
+class DLNAServiceAction {
+  final String name;
+  @JsonKey(readValue: parseActionArgument)
+  final List<DLNAServiceActionArgument> argument;
+
+  DLNAServiceAction(this.name, this.argument);
+
+  factory DLNAServiceAction.fromJson(Map<String, dynamic> json) => _$DLNAServiceActionFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DLNAServiceActionToJson(this);
+}
+
+Object? parseActionArgument(Map<dynamic, dynamic> json, String key) {
+  if (json.containsKey("argumentList")) {
+    return json["argumentList"]["argument"];
+  } else {
+    return null;
+  }
+}
+
+/// DLNA Service Action
+@JsonSerializable(explicitToJson: true)
+class DLNAServiceActionArgument {
+  final String name;
+  final String direction;
+  final String relatedStateVariable;
+
+  DLNAServiceActionArgument(this.name, this.direction, this.relatedStateVariable);
+
+  factory DLNAServiceActionArgument.fromJson(Map<String, dynamic> json) => _$DLNAServiceActionArgumentFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DLNAServiceActionArgumentToJson(this);
 }
