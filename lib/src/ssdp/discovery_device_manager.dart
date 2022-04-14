@@ -3,7 +3,7 @@
 import 'dart:async';
 
 import 'package:my_dart_cast_demo/src/http/http_client.dart';
-import 'package:my_dart_cast_demo/src/util.dart';
+import 'package:my_dart_cast_demo/src/parser.dart';
 
 import '../dlna_device.dart';
 
@@ -111,7 +111,7 @@ class DiscoveryDeviceManager {
       final device = DLNADevice(usn: usn, uuid: uuid, location: location);
       device.setCacheControl = cacheTime;
       _descTasks.add(device.uuid);
-      await _getDescription(device, count, FROM_ADD);
+      await _getDetail(device, count, FROM_ADD);
     } else {
       var hasTask = _descTasks.contains(uuid);
       if (hasTask) return;
@@ -120,7 +120,7 @@ class DiscoveryDeviceManager {
       if (diff > DEVICE_DESCRIPTION_INTERVAL_TIME || isLocationChang) {
         tmpDevice.location = location;
         _descTasks.add(uuid);
-        await _getDescription(tmpDevice, 0, FROM_UPDATE);
+        await _getDetail(tmpDevice, 0, FROM_UPDATE);
       }
     }
   }
@@ -141,7 +141,7 @@ class DiscoveryDeviceManager {
       return;
     }
     _descTasks.add(device.uuid);
-    await _getDescription(device, 0, FROM_CACHE_ADD);
+    await _getDetail(device, 0, FROM_CACHE_ADD);
   }
 
   void _checkAliveDevice(DLNADevice device, int count) {
@@ -166,7 +166,7 @@ class DiscoveryDeviceManager {
     // });
   }
 
-  Future<void> _getDescription(DLNADevice device, int tryCount, int type) async {
+  Future<void> _getDetail(DLNADevice device, int tryCount, int type) async {
     try {
       final startTime = DateTime.now().millisecondsSinceEpoch;
       final response = await MyHttpClient().getUrl(device.location);

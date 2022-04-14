@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:my_dart_cast_demo/src/ssdp/description_parser.dart';
+import 'package:my_dart_cast_demo/src/parser.dart';
 
 part 'dlna_device.g.dart';
 
@@ -76,7 +76,7 @@ class DLNADeviceDetail {
   String? _avTransportControlURL;
 
   String get avTransportControlURL {
-    _avTransportControlURL ??= _findServiceControlUrl(serviceList, DescriptionParser.AV_TRANSPORT);
+    _avTransportControlURL ??= _findServiceControlUrl(serviceList, DlnaParser.AV_TRANSPORT);
     return _avTransportControlURL ?? "";
   }
 
@@ -84,7 +84,7 @@ class DLNADeviceDetail {
   String? _renderingControlControlURL;
 
   String get renderingControlControlURL {
-    _renderingControlControlURL ??= _findServiceControlUrl(serviceList, DescriptionParser.RENDERING_CONTROL);
+    _renderingControlControlURL ??= _findServiceControlUrl(serviceList, DlnaParser.RENDERING_CONTROL);
     return _renderingControlControlURL ?? "";
   }
 
@@ -92,7 +92,7 @@ class DLNADeviceDetail {
   String? _connectionManagerControlURL;
 
   String get connectionManagerControlURL {
-    _connectionManagerControlURL ??= _findServiceControlUrl(serviceList, DescriptionParser.CONNECTION_MANAGER);
+    _connectionManagerControlURL ??= _findServiceControlUrl(serviceList, DlnaParser.CONNECTION_MANAGER);
     return _connectionManagerControlURL ?? "";
   }
 
@@ -158,7 +158,7 @@ Object? parseAction(Map<dynamic, dynamic> json, String key) {
 @JsonSerializable(explicitToJson: true)
 class DLNAServiceAction {
   final String name;
-  @JsonKey(readValue: parseActionArgument)
+  @JsonKey(readValue: readActionArgument, fromJson: parseActionArgument)
   final List<DLNAServiceActionArgument> argument;
 
   DLNAServiceAction(this.name, this.argument);
@@ -168,11 +168,21 @@ class DLNAServiceAction {
   Map<String, dynamic> toJson() => _$DLNAServiceActionToJson(this);
 }
 
-Object? parseActionArgument(Map<dynamic, dynamic> json, String key) {
+Object? readActionArgument(Map<dynamic, dynamic> json, String key) {
   if (json.containsKey("argumentList")) {
     return json["argumentList"]["argument"];
   } else {
     return null;
+  }
+}
+
+List<DLNAServiceActionArgument> parseActionArgument(dynamic argument) {
+  if (argument is Map<String, dynamic>) {
+    return [DLNAServiceActionArgument.fromJson(argument)];
+  } else if (argument is List) {
+    return argument.map((e) => DLNAServiceActionArgument.fromJson(e as Map<String, dynamic>)).toList(growable: false);
+  } else {
+    return [];
   }
 }
 

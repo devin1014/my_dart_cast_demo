@@ -2,11 +2,10 @@
 
 import 'dart:convert';
 
+import 'package:my_dart_cast_demo/src/dlna_device.dart';
 import 'package:xml2json/xml2json.dart';
 
-import '../dlna_device.dart';
-
-class DescriptionParser {
+class DlnaParser {
   static const String DEVICE_TYPE = "deviceType";
   static const String UDN = "UDN";
   static const String FRIEND_NAME = "friendlyName";
@@ -38,14 +37,39 @@ class DescriptionParser {
   static const String RENDERING_CONTROL = "urn:schemas-upnp-org:service:RenderingControl:1";
   static const String CONNECTION_MANAGER = "urn:schemas-upnp-org:service:ConnectionManager:1";
 
-  Future<DLNADeviceDetail> getDescription(String data) async {
-    final xml2Json = Xml2Json();
-    xml2Json.parse(data);
-    String jsonStr = xml2Json.toParker();
-    final jsonObj = jsonDecode(jsonStr);
+// Future<DLNADeviceDetail> getDescription(String data) async {
+//   final xml2Json = Xml2Json();
+//   xml2Json.parse(data);
+//   String jsonStr = xml2Json.toParker();
+//   final jsonObj = jsonDecode(jsonStr);
+//
+//   final root = jsonObj['root'];
+//   final device = root['device'];
+//   return DLNADeviceDetail.fromJson(device);
+// }
 
-    final root = jsonObj['root'];
-    final device = root['device'];
-    return DLNADeviceDetail.fromJson(device);
+  static List<DLNAServiceAction> parseServiceAction(dynamic data, {bool xml = false}) {
+    dynamic jsonObj;
+    if (data is Map) {
+      jsonObj = data;
+    } else if (data is String) {
+      if (xml) {
+        jsonObj = parseXml2Json(data);
+      } else {
+        jsonObj = jsonDecode(data);
+      }
+    } else {
+      return [];
+    }
+    final List<dynamic> list = jsonObj["scpd"]["actionList"]["action"];
+    return list.map((e) => DLNAServiceAction.fromJson(e as Map<String, dynamic>)).toList(growable: false);
   }
+}
+
+final Xml2Json _xml2json = Xml2Json();
+
+dynamic parseXml2Json(String xml) {
+  final xml2Json = _xml2json;
+  xml2Json.parse(xml);
+  return jsonDecode(xml2Json.toParker());
 }

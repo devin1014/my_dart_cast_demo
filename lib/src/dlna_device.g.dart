@@ -32,7 +32,7 @@ DLNADeviceDetail _$DLNADeviceDetailFromJson(Map<String, dynamic> json) =>
       ..modelDescription = json['modelDescription'] as String
       ..modelName = json['modelName'] as String
       ..modelURL = json['modelURL'] as String
-      ..baseURL = json['URLBase'] as String? ?? ""
+      ..baseURL = json['URLBase'] as String? ?? ''
       ..serviceList =
           parseDLNAService(json['serviceList'] as Map<String, dynamic>);
 
@@ -73,10 +73,7 @@ Map<String, dynamic> _$DLNAServiceToJson(DLNAService instance) =>
 DLNAServiceAction _$DLNAServiceActionFromJson(Map<String, dynamic> json) =>
     DLNAServiceAction(
       json['name'] as String,
-      (parseActionArgument(json, 'argument') as List<dynamic>)
-          .map((e) =>
-              DLNAServiceActionArgument.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      parseActionArgument(readActionArgument(json, 'argument')),
     );
 
 Map<String, dynamic> _$DLNAServiceActionToJson(DLNAServiceAction instance) =>
