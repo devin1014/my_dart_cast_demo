@@ -170,13 +170,18 @@ class DiscoveryDeviceManager {
     try {
       final startTime = DateTime.now().millisecondsSinceEpoch;
       final response = await MyHttpClient().getUrl(device.location);
-      final jsonObj = parseXml2Json(response)['root'];
-      final detail = DLNADeviceDetail.fromJson(jsonObj['device']);
-      detail.baseURL = jsonObj["URLBase"];
+      final jsonObj = parseXml2Json(response);
+      final detail = DLNADeviceDetail.fromJson(jsonObj['root']['device']);
+      detail.baseURL = jsonObj['root']["URLBase"];
       device.detail = detail;
       var endTime = DateTime.now().millisecondsSinceEpoch;
       device.lastDescriptionTime = endTime;
       device.descriptionTaskSpendingTime = endTime - startTime;
+
+      final baseUrl = detail.baseURL;
+      final futures = detail.serviceList.map((e) => _getServiceAction(baseUrl, e));
+      await Future.wait(futures);
+
       if (detail.avTransportControlURL.isEmpty) {
         tryCount++;
         _onUnnecessary(device, tryCount);
@@ -202,6 +207,12 @@ class DiscoveryDeviceManager {
     } catch (e) {
       print(e.toString());
     }
+  }
+
+  Future<void> _getServiceAction(String baseUrl, DLNAService service) async {
+    final url = baseUrl + service.scpdUrl;
+    final response = await MyHttpClient().getUrl(url);
+    service.actionList = DlnaParser.parseServiceAction(response, xml: true);
   }
 
   void _onUnnecessary(DLNADevice device, int count) {

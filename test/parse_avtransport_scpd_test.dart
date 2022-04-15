@@ -11,7 +11,7 @@ void main() async {
   final result = DlnaParser.parseServiceAction(data, xml: true);
 
   test("parse action", () {
-    final action = result.first;
+    final action = result!.first;
 
     expect("GetCurrentTransportActions", action.name);
 

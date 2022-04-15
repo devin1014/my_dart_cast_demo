@@ -3,14 +3,12 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:my_dart_cast_demo/src/dlna_device.dart';
+import 'package:my_dart_cast_demo/src/http/http_client.dart';
 import 'package:my_dart_cast_demo/src/parser.dart';
 
 void main() async {
   final data = await File("resources/description.xml").readAsString();
-  final jsonObj = parseXml2Json(data)['root'];
-  final detail = DLNADeviceDetail.fromJson(jsonObj['device']);
-  detail.baseURL = jsonObj["URLBase"];
+  final detail = DlnaParser.parseDeviceDetail(data, xml: true);
 
   test("parse dlna device description", () async {
     expect(detail.friendlyName, "客厅的小米盒子");
@@ -26,7 +24,22 @@ void main() async {
   });
 
   test("scpd", () async {
-    final avTransportService = detail.serviceList.first;
-    avTransportService.scpdUrl;
+    final baseUrl = detail.baseURL;
+    final scpdUrl = detail.serviceList.first.scpdUrl;
+    final url = baseUrl + scpdUrl;
+    final response = await MyHttpClient().getUrl(url);
+    final result = DlnaParser.parseServiceAction(response, xml: true);
+
+    final action = result!.first;
+
+    expect("GetCurrentTransportActions", action.name);
+
+    expect("InstanceID", action.argument.first.name);
+    expect("in", action.argument.first.direction);
+    expect("A_ARG_TYPE_InstanceID", action.argument.first.relatedStateVariable);
+
+    expect("Actions", action.argument.last.name);
+    expect("out", action.argument.last.direction);
+    expect("CurrentTransportActions", action.argument.last.relatedStateVariable);
   });
 }

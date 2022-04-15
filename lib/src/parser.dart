@@ -48,21 +48,31 @@ class DlnaParser {
 //   return DLNADeviceDetail.fromJson(device);
 // }
 
-  static List<DLNAServiceAction> parseServiceAction(dynamic data, {bool xml = false}) {
-    dynamic jsonObj;
-    if (data is Map) {
-      jsonObj = data;
-    } else if (data is String) {
-      if (xml) {
-        jsonObj = parseXml2Json(data);
-      } else {
-        jsonObj = jsonDecode(data);
-      }
-    } else {
-      return [];
-    }
+  static DLNADeviceDetail parseDeviceDetail(dynamic data, {bool xml = false}) {
+    final jsonObj = _formatData2Json(data, xml: xml);
+    final detail = DLNADeviceDetail.fromJson(jsonObj['root']['device']);
+    detail.baseURL = jsonObj['root']["URLBase"];
+    return detail;
+  }
+
+  static List<DLNAServiceAction>? parseServiceAction(dynamic data, {bool xml = false}) {
+    dynamic jsonObj = _formatData2Json(data, xml: xml);
+    if (jsonObj['scpd']["actionList"] == null) return null;
     final List<dynamic> list = jsonObj["scpd"]["actionList"]["action"];
     return list.map((e) => DLNAServiceAction.fromJson(e as Map<String, dynamic>)).toList(growable: false);
+  }
+
+  static Map _formatData2Json(dynamic data, {bool xml = false}) {
+    if (data is Map) {
+      return data;
+    } else if (data is String) {
+      if (xml) {
+        return parseXml2Json(data);
+      } else {
+        return jsonDecode(data);
+      }
+    }
+    throw Exception("can not parse $data to Map.");
   }
 }
 

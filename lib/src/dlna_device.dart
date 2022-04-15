@@ -130,7 +130,7 @@ class DLNAService {
   final String controlUrl;
   @JsonKey(name: "eventSubURL", defaultValue: "")
   final String eventSubUrl;
-  @JsonKey(readValue: parseAction)
+  @JsonKey(readValue: readServiceAction)
   List<DLNAServiceAction>? actionList;
 
   DLNAService({
@@ -146,7 +146,7 @@ class DLNAService {
   Map<String, dynamic> toJson() => _$DLNAServiceToJson(this);
 }
 
-Object? parseAction(Map<dynamic, dynamic> json, String key) {
+Object? readServiceAction(Map<dynamic, dynamic> json, String key) {
   if (json.containsKey("scpd")) {
     return json["scpd"]["actionList"]["action"];
   } else {

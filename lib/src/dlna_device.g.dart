@@ -56,7 +56,7 @@ DLNAService _$DLNAServiceFromJson(Map<String, dynamic> json) => DLNAService(
       scpdUrl: json['SCPDURL'] as String? ?? '',
       controlUrl: json['controlURL'] as String? ?? '',
       eventSubUrl: json['eventSubURL'] as String? ?? '',
-    )..actionList = (parseAction(json, 'actionList') as List<dynamic>?)
+    )..actionList = (readServiceAction(json, 'actionList') as List<dynamic>?)
         ?.map((e) => DLNAServiceAction.fromJson(e as Map<String, dynamic>))
         .toList();
 

@@ -31,10 +31,15 @@ void main() async {
 
   await manager.alive(usn, location, cache);
 
+  for (var element in list[0].detail!.serviceList) {
+    print("${element.type} -> ${element.actionList?.length}");
+  }
+
   test("device alive", () {
     expect(1, list.length);
     expect(usn, list[0].usn);
     expect(location, list[0].location);
+    expect(true, list[0].detail?.serviceList.first.actionList?.isNotEmpty);
   });
 
   test("device byebye", () {
