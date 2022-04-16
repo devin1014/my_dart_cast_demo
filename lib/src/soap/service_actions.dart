@@ -7,11 +7,15 @@ abstract class AbstractServiceAction {
     final url = baseUrl + "/" + service.controlUrl;
     final response = await MyHttpClient().postUrl(
       url: url,
-      header: {"SoapAction": _parseAction(service)},
-      content: _parseXmlData(service),
+      header: getHeader() ?? {"SoapAction": _parseAction(service)},
+      content: getContent() ?? _parseXmlData(service),
     );
     return parseResult(response);
   }
+
+  Map<String, String>? getHeader() => null;
+
+  String? getContent() => null;
 
   dynamic parseResult(String response) => response;
 

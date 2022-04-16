@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:my_dart_cast_demo/src/parser.dart';
 import 'package:my_dart_cast_demo/src/util.dart';
 
 part 'dlna_device.g.dart';
@@ -58,15 +57,30 @@ class DLNADevice {
 /// DLNA Description
 @JsonSerializable(explicitToJson: true)
 class DLNADeviceDetail {
-  String deviceType = "";
-  String friendlyName = "";
+  @JsonKey(defaultValue: "")
+  final String deviceType;
+
+  @JsonKey(defaultValue: "")
+  final String friendlyName;
+
   @JsonKey(name: "UDN")
-  String udn = "";
-  String manufacturer = "";
-  String manufacturerURL = "";
-  String modelDescription = "";
-  String modelName = "";
-  String modelURL = "";
+  final String udn;
+
+  @JsonKey(defaultValue: "")
+  final String manufacturer;
+
+  @JsonKey(defaultValue: "")
+  final String manufacturerURL;
+
+  @JsonKey(defaultValue: "")
+  final String modelDescription;
+
+  @JsonKey(defaultValue: "")
+  final String modelName;
+
+  @JsonKey(defaultValue: "")
+  final String modelURL;
+
   @JsonKey(name: "URLBase", defaultValue: "")
   String baseURL = "";
 
@@ -97,7 +111,16 @@ class DLNADeviceDetail {
     return _connectionManagerControlURL ?? "";
   }
 
-  DLNADeviceDetail();
+  DLNADeviceDetail(
+    this.deviceType,
+    this.friendlyName,
+    this.udn,
+    this.manufacturer,
+    this.manufacturerURL,
+    this.modelURL,
+    this.modelName,
+    this.modelDescription,
+  );
 
   factory DLNADeviceDetail.fromJson(Map<String, dynamic> json) => _$DLNADeviceDetailFromJson(json);
 

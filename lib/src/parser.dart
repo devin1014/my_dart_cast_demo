@@ -47,7 +47,7 @@ class DlnaParser {
   static DLNADeviceDetail parseDeviceDetail(dynamic data, {bool xml = false}) {
     final jsonObj = _formatData2Json(data, xml: xml);
     final detail = DLNADeviceDetail.fromJson(jsonObj['root']['device']);
-    detail.baseURL = jsonObj['root']["URLBase"];
+    detail.baseURL = jsonObj['root']["URLBase"] ?? detail.baseURL;
     return detail;
   }
 

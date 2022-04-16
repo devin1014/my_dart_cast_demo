@@ -1,0 +1,402 @@
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: upnp:rootdevice
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::upnp:rootdevice
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:device:MediaRenderer:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:RenderingControl:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:AVTransport:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:AVTransport:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:ConnectionManager:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: upnp:rootdevice
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::upnp:rootdevice
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:device:MediaRenderer:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:RenderingControl:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:AVTransport:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:AVTransport:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:ConnectionManager:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: upnp:rootdevice
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::upnp:rootdevice
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:device:MediaRenderer:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:RenderingControl:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:AVTransport:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:AVTransport:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:ConnectionManager:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: upnp:rootdevice
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::upnp:rootdevice
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:device:MediaRenderer:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:RenderingControl:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:AVTransport:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:AVTransport:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:ConnectionManager:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: upnp:rootdevice
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::upnp:rootdevice
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:device:MediaRenderer:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:RenderingControl:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:AVTransport:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:AVTransport:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:ConnectionManager:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: upnp:rootdevice
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::upnp:rootdevice
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:device:MediaRenderer:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:RenderingControl:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:AVTransport:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:AVTransport:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+----------------
+receive:
+NOTIFY * HTTP/1.1
+CACHE-CONTROL: max-age=1800
+LOCATION: http://192.168.3.136:35206/upnp/dev/e90bf43e-4b0c-9362-0000-000049ba23c5/desc
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+HOST: 239.255.255.250:1900
+NTS: ssdp:alive
+USN: uuid:e90bf43e-4b0c-9362-0000-000049ba23c5::urn:schemas-upnp-org:service:ConnectionManager:1
+SERVER: Linux/3.18.71-14970140 UPnP/1.0 Cling/2.0
+
+Sending 'Search Message' from 0.0.0.0:1900
+Sending 'Search Message' from 127.0.0.1:1900
+Sending 'Search Message' from 192.168.192.39:1900
+Sending 'Search Message' from 192.168.3.137:1900
+SSDPController stopped.
+No tests were found.

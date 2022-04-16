@@ -38,6 +38,8 @@ void main() async {
     test("GetPositionInfo", () => getInfo(GetPositionInfo(), avTransportService));
 
     test("GetMediaInfo", () => getInfo(GetMediaInfo(), avTransportService));
+
+    //test("SetAVTransportURI", () => getInfo(SetAVTransportURI(), avTransportService));
   });
   // test("GetDeviceCapabilities", () => getInfo(GetDeviceCapabilities()));
 
