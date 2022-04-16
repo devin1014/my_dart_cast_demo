@@ -23,11 +23,11 @@ class MyHttpClient {
     return await response.transform(utf8.decoder).join();
   }
 
-  Future<String> postUrl(
-    String url,
+  Future<String> postUrl({
+    required String url,
     Map<String, String>? header,
     String? content,
-  ) async {
+  }) async {
     final request = await _httpClient.postUrl(Uri.parse(url))
       ..headers.contentType = ContentType('text', 'xml', charset: 'utf-8')
       ..headers.contentLength = content == null ? 0 : utf8.encode(content).length

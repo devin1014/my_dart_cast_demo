@@ -5,7 +5,11 @@ import '../http/http_client.dart';
 abstract class AbstractServiceAction {
   Future<dynamic> parseAction(String baseUrl, DLNAService service) async {
     final url = baseUrl + "/" + service.controlUrl;
-    final response = await MyHttpClient().postUrl(url, {"SoapAction": _parseAction(service)}, _parseXmlData(service));
+    final response = await MyHttpClient().postUrl(
+      url: url,
+      header: {"SoapAction": _parseAction(service)},
+      content: _parseXmlData(service),
+    );
     return parseResult(response);
   }
 
