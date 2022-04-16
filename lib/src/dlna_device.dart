@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:my_dart_cast_demo/src/parser.dart';
+import 'package:my_dart_cast_demo/src/util.dart';
 
 part 'dlna_device.g.dart';
 
@@ -76,7 +77,7 @@ class DLNADeviceDetail {
   String? _avTransportControlURL;
 
   String get avTransportControlURL {
-    _avTransportControlURL ??= _findServiceControlUrl(serviceList, DlnaParser.AV_TRANSPORT);
+    _avTransportControlURL ??= _findServiceControlUrl(serviceList, SERVICE_AV_TRANSPORT);
     return _avTransportControlURL ?? "";
   }
 
@@ -84,7 +85,7 @@ class DLNADeviceDetail {
   String? _renderingControlControlURL;
 
   String get renderingControlControlURL {
-    _renderingControlControlURL ??= _findServiceControlUrl(serviceList, DlnaParser.RENDERING_CONTROL);
+    _renderingControlControlURL ??= _findServiceControlUrl(serviceList, SERVICE_RENDERING_CONTROL);
     return _renderingControlControlURL ?? "";
   }
 
@@ -92,7 +93,7 @@ class DLNADeviceDetail {
   String? _connectionManagerControlURL;
 
   String get connectionManagerControlURL {
-    _connectionManagerControlURL ??= _findServiceControlUrl(serviceList, DlnaParser.CONNECTION_MANAGER);
+    _connectionManagerControlURL ??= _findServiceControlUrl(serviceList, SERVICE_CONNECTION_MANAGER);
     return _connectionManagerControlURL ?? "";
   }
 

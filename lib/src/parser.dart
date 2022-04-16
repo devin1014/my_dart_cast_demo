@@ -33,10 +33,6 @@ class DlnaParser {
   static const String AV_X_RCONTROLLER_SERVICETYPE = "av:x_rcontroller_servicetype";
   static const String AV_X_RCONTROLLER_ACTIONLIST_URL = "av:x_rcontroller_actionlist_url";
 
-  static const String AV_TRANSPORT = "urn:schemas-upnp-org:service:AVTransport:1";
-  static const String RENDERING_CONTROL = "urn:schemas-upnp-org:service:RenderingControl:1";
-  static const String CONNECTION_MANAGER = "urn:schemas-upnp-org:service:ConnectionManager:1";
-
 // Future<DLNADeviceDetail> getDescription(String data) async {
 //   final xml2Json = Xml2Json();
 //   xml2Json.parse(data);
