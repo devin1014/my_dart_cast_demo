@@ -26,22 +26,13 @@ class SSDPService {
   final InternetAddress _upnpIpV4Address = InternetAddress(_UPNP_IP_V4);
   final RawDatagramSocketFactory _rawDatagramSocketFactory;
   RawDatagramSocket? _datagramSocket;
-  final OnDataListener? _onData;
-  final Function? _onDone;
-  final Function? _onError;
 
   SSDPService({
     RawDatagramSocketFactory factory = RawDatagramSocket.bind,
-    OnDataListener? onData,
-    Function? onDone,
-    Function? onError,
-  })  : _rawDatagramSocketFactory = factory,
-        _onData = onData,
-        _onDone = onDone,
-        _onError = onError;
+  }) : _rawDatagramSocketFactory = factory;
 
-  Future<void> start() async {
-    if (_datagramSocket != null) return;
+  Future<RawDatagramSocket> start() async {
+    if (_datagramSocket != null) return _datagramSocket!;
     _datagramSocket = await _rawDatagramSocketFactory(
       InternetAddress.anyIPv4.address,
       _UPNP_PORT,
@@ -52,19 +43,21 @@ class SSDPService {
     _datagramSocket!
       ..multicastLoopback = false
       ..multicastHops = 12
-      ..joinMulticast(_upnpIpV4Address)
-      ..listen(
-        (event) {
-          if (event == RawSocketEvent.read) {
-            final message = utf8.decode(_datagramSocket!.receive()!.data);
-            _onData?.call(message);
-          }
-        },
-        onDone: () {
-          _onDone?.call();
-        },
-        onError: _onError,
-      );
+      ..joinMulticast(_upnpIpV4Address);
+    return _datagramSocket!;
+  }
+
+  void listen(void Function(String data) onData, {void Function()? onDone, Function? onError}) {
+    _datagramSocket?.listen(
+      (event) {
+        if (event == RawSocketEvent.read) {
+          final message = utf8.decode(_datagramSocket!.receive()!.data);
+          onData.call(message);
+        }
+      },
+      onDone: onDone,
+      onError: onError,
+    );
   }
 
   void sendMessage(String message) {
