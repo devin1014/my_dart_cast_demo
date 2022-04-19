@@ -19,7 +19,7 @@ class SSDPMessageParser {
 
   SSDPMessageParser();
 
-  DLNADevice? startParse(String message) {
+  DLNADevice? parse(String message) {
     var lines = message.split('\r\n');
     if (lines.length < 3) return null;
     final firstLine = lines.first.split(' ');
@@ -34,7 +34,7 @@ class SSDPMessageParser {
   }
 
   DLNADevice? _parseSearchMessage(List<String> lines) {
-    final headers = parseHeader(lines);
+    final headers = _parseHeader(lines);
     final usn = headers[_HEADER_USN];
     if (usn?.isNotEmpty == true && usn!.contains("::")) {
       final location = headers[_HEADER_LOCATION] ?? "";
@@ -46,7 +46,7 @@ class SSDPMessageParser {
   }
 
   DLNADevice? _parseNotifyMessage(List<String> lines) {
-    final headers = parseHeader(lines);
+    final headers = _parseHeader(lines);
     final usn = headers[_HEADER_USN];
     if (usn?.isNotEmpty == true && usn!.contains("::")) {
       final location = headers[_HEADER_LOCATION] ?? "";
@@ -63,7 +63,7 @@ class SSDPMessageParser {
     return null;
   }
 
-  Map<String, String> parseHeader(List<String> lines) {
+  Map<String, String> _parseHeader(List<String> lines) {
     Map<String, String> result = {};
     for (var element in lines) {
       if (element.isNotEmpty) {

@@ -33,16 +33,7 @@ class DlnaParser {
   static const String AV_X_RCONTROLLER_SERVICETYPE = "av:x_rcontroller_servicetype";
   static const String AV_X_RCONTROLLER_ACTIONLIST_URL = "av:x_rcontroller_actionlist_url";
 
-// Future<DLNADeviceDetail> getDescription(String data) async {
-//   final xml2Json = Xml2Json();
-//   xml2Json.parse(data);
-//   String jsonStr = xml2Json.toParker();
-//   final jsonObj = jsonDecode(jsonStr);
-//
-//   final root = jsonObj['root'];
-//   final device = root['device'];
-//   return DLNADeviceDetail.fromJson(device);
-// }
+  DlnaParser._();
 
   static DLNADeviceDetail parseDeviceDetail(dynamic data, {bool xml = false}) {
     final jsonObj = _formatData2Json(data, xml: xml);
@@ -54,7 +45,13 @@ class DlnaParser {
   static List<DLNAServiceAction>? parseServiceAction(dynamic data, {bool xml = false}) {
     dynamic jsonObj = _formatData2Json(data, xml: xml);
     if (jsonObj['scpd']["actionList"] == null) return null;
-    final List<dynamic> list = jsonObj["scpd"]["actionList"]["action"];
+    final List<dynamic> list;
+    final result = jsonObj["scpd"]["actionList"]["action"];
+    if (result is List) {
+      list = result;
+    } else {
+      list = [result];
+    }
     return list.map((e) => DLNAServiceAction.fromJson(e as Map<String, dynamic>)).toList(growable: false);
   }
 
@@ -70,6 +67,8 @@ class DlnaParser {
     }
     throw Exception("can not parse $data to Map.");
   }
+
+  static String parseBaseUrl(String url) => "http://${Uri.parse(url).authority}";
 }
 
 final Xml2Json _xml2json = Xml2Json();

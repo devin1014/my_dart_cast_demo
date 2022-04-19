@@ -31,6 +31,8 @@ class SSDPService {
     RawDatagramSocketFactory factory = RawDatagramSocket.bind,
   }) : _rawDatagramSocketFactory = factory;
 
+  bool get isRunning => _datagramSocket != null;
+
   Future<RawDatagramSocket> start() async {
     if (_datagramSocket != null) return _datagramSocket!;
     _datagramSocket = await _rawDatagramSocketFactory(
@@ -70,5 +72,6 @@ class SSDPService {
     } catch (e) {
       print(e.toString());
     }
+    _datagramSocket = null;
   }
 }

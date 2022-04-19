@@ -53,19 +53,19 @@ void main() {
   final parser = SSDPMessageParser();
 
   test("parse alive", () {
-    final device = parser.startParse(_notifyAlive);
+    final device = parser.parse(_notifyAlive);
     expect(true, device!.alive);
     expect("uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1", device.usn);
     expect("http://192.168.3.119:49152/description.xml", device.location);
   });
 
   test("parse byebye", () {
-    final device = parser.startParse(_notifyByebye);
+    final device = parser.parse(_notifyByebye);
     expect(false, device!.alive);
   });
 
   test("parse device", () {
-    final device = parser.startParse(_searchRootDevice);
+    final device = parser.parse(_searchRootDevice);
     expect(true, device!.alive);
     expect("uuid:2b38c15c-cb68-df90-3701-4f6df3dc9bb0::upnp:rootdevice", device.usn);
     expect("http://192.168.3.1:37215/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/upnpdev.xml", device.location);

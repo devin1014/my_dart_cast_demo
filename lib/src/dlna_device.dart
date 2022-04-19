@@ -129,7 +129,15 @@ class DLNADeviceDetail {
 }
 
 List<DLNAService> parseDLNAService(Map<String, dynamic> json) {
-  List<dynamic> services = json["service"];
+  List<dynamic> services;
+  final result = json["service"];
+  if (result is List) {
+    services = result;
+  } else if (result is Map) {
+    services = [result];
+  } else {
+    throw Exception("can not parse 'service' element: $result");
+  }
   return services.map((e) => DLNAService.fromJson(e as Map<String, dynamic>)).toList();
 }
 
