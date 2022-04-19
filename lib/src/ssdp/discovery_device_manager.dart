@@ -109,9 +109,9 @@ class DiscoveryDeviceManager {
       if (count > 3) return;
       final hasTask = _descTasks.contains(uuid);
       if (hasTask) return;
-      final device = DLNADevice(usn: usn, uuid: uuid, location: location);
-      device.setCacheControl = cacheTime;
-      _descTasks.add(device.uuid);
+      final device = DLNADevice(usn: usn, location: location);
+      device.cacheTime = cacheTime;
+      _descTasks.add(device.usn);
       await _getDetail(device, count, FROM_ADD);
     } else {
       var hasTask = _descTasks.contains(uuid);
@@ -137,11 +137,11 @@ class DiscoveryDeviceManager {
     if (_disable) {
       return;
     }
-    var hasTask = _descTasks.contains(device.uuid);
+    var hasTask = _descTasks.contains(device.usn);
     if (hasTask) {
       return;
     }
-    _descTasks.add(device.uuid);
+    _descTasks.add(device.usn);
     await _getDetail(device, 0, FROM_CACHE_ADD);
   }
 
@@ -149,7 +149,7 @@ class DiscoveryDeviceManager {
     // _descriptionParser.getDescription(device).then((value) {
     //   if (value == null) {
     //     if (count >= 3) {
-    //       _onRemove(device.uuid);
+    //       _onRemove(device.usn);
     //     } else {
     //       Future.delayed(DEVICE_ALIVE_CHECK_RETRY_INTERVAL_TIME, () {
     //         _checkAliveDevice(device, count + 1);
@@ -158,7 +158,7 @@ class DiscoveryDeviceManager {
     //   }
     // }).catchError((e) {
     //   if (count >= 3) {
-    //     _onRemove(device.uuid);
+    //     _onRemove(device.usn);
     //   } else {
     //     Future.delayed(DEVICE_ALIVE_CHECK_RETRY_INTERVAL_TIME, () {
     //       _checkAliveDevice(device, count + 1);
@@ -177,7 +177,6 @@ class DiscoveryDeviceManager {
       device.detail = detail;
       var endTime = DateTime.now().millisecondsSinceEpoch;
       device.lastDescriptionTime = endTime;
-      device.descriptionTaskSpendingTime = endTime - startTime;
 
       final baseUrl = detail.baseURL;
       final futures = detail.serviceList.map((e) => _getServiceAction(baseUrl, e));
@@ -218,37 +217,37 @@ class DiscoveryDeviceManager {
 
   void _onUnnecessary(DLNADevice device, int count) {
     _unnecessaryDevices[device.location] = count;
-    _descTasks.remove(device.uuid);
+    _descTasks.remove(device.usn);
   }
 
   void _onAdd(DLNADevice device) {
     device.discoveryFromStartSpendingTime = DateTime.now().millisecondsSinceEpoch - _startSearchTime;
-    device.isFromCache = false;
-    _currentDevices[device.uuid] = device;
+    // device.isFromCache = false;
+    _currentDevices[device.usn] = device;
     // if (_enableCache) {
     // _localDeviceParser.saveDevices(_currentDevices);
     // }
-    _descTasks.remove(device.uuid);
+    _descTasks.remove(device.usn);
     _onDeviceAdd(device);
   }
 
   void _onCacheAdd(DLNADevice device) {
     device.discoveryFromStartSpendingTime = DateTime.now().millisecondsSinceEpoch - _startSearchTime;
-    device.isFromCache = true;
-    _currentDevices[device.uuid] = device;
+    // device.isFromCache = true;
+    _currentDevices[device.usn] = device;
     // if (_enableCache) {
     // _localDeviceParser.saveDevices(_currentDevices);
     // }
-    _descTasks.remove(device.uuid);
+    _descTasks.remove(device.usn);
     _onDeviceAdd(device);
   }
 
   void _onUpdate(DLNADevice device) {
-    _currentDevices[device.uuid] = device;
+    _currentDevices[device.usn] = device;
     // if (_enableCache) {
     // _localDeviceParser.saveDevices(_currentDevices);
     // }
-    _descTasks.remove(device.uuid);
+    _descTasks.remove(device.usn);
     _onDeviceUpdate(device);
   }
 

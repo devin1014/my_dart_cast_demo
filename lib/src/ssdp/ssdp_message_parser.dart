@@ -1,6 +1,8 @@
 // ignore_for_file: constant_identifier_names
 
-class DiscoveryContentParser {
+import 'package:my_dart_cast_demo/src/dlna_device.dart';
+
+class SSDPMessageParser {
   static const _SSDP_MSG_ALIVE = 'ssdp:alive';
   static const _SSDP_MSG_BYE_BYE = 'ssdp:byebye';
   static const _HEADER_USN = "USN";
@@ -12,52 +14,53 @@ class DiscoveryContentParser {
   static const _HEADER_M_SEARCH = "M-SEARCH";
   static const _HEADER_OK = "OK";
 
-  void Function(String usn, String location, String cache) processAlive;
-  void Function(String usn) processByeBye;
+  // void Function(String usn, String location, String cache) processAlive;
+  // void Function(String usn) processByeBye;
 
-  DiscoveryContentParser({
-    required this.processAlive,
-    required this.processByeBye,
-  });
+  SSDPMessageParser();
 
-  void startParse(String message) {
+  DLNADevice? startParse(String message) {
     var lines = message.split('\r\n');
-    if (lines.length < 3) return;
+    if (lines.length < 3) return null;
     final firstLine = lines.first.split(' ');
     var action = firstLine.first;
     if (action.startsWith(_HEADER_HTTP_VER_1) && firstLine[2] == _HEADER_OK) {
-      _parseSearchMessage(lines);
+      return _parseSearchMessage(lines);
     } else if (action == _HEADER_NOTIFY) {
-      _parseNotifyMessage(lines);
-    } else {}
-  }
-
-  void _parseSearchMessage(List<String> lines) {
-    final headers = parseHeader(lines);
-    final usn = headers[_HEADER_USN];
-    if (usn?.isNotEmpty == true && usn!.contains("::")) {
-      final location = headers[_HEADER_LOCATION];
-      final cacheControl = headers[_HEADER_CACHE_CONTROL];
-      if (location?.isNotEmpty == true && cacheControl?.isNotEmpty == true) {
-        processAlive(usn, location!, cacheControl!);
-      }
+      return _parseNotifyMessage(lines);
+    } else {
+      return null;
     }
   }
 
-  void _parseNotifyMessage(List<String> lines) {
+  DLNADevice? _parseSearchMessage(List<String> lines) {
     final headers = parseHeader(lines);
     final usn = headers[_HEADER_USN];
     if (usn?.isNotEmpty == true && usn!.contains("::")) {
+      final location = headers[_HEADER_LOCATION] ?? "";
+      final cacheControl = headers[_HEADER_CACHE_CONTROL] ?? "";
+      int cacheTime = int.parse(cacheControl.substring(8));
+      return DLNADevice(usn: usn, location: location, cacheControl: cacheTime);
+    }
+    return null;
+  }
+
+  DLNADevice? _parseNotifyMessage(List<String> lines) {
+    final headers = parseHeader(lines);
+    final usn = headers[_HEADER_USN];
+    if (usn?.isNotEmpty == true && usn!.contains("::")) {
+      final location = headers[_HEADER_LOCATION] ?? "";
+      final cacheControl = headers[_HEADER_CACHE_CONTROL] ?? "";
+      int cacheTime = int.parse(cacheControl.substring(8));
+      final device = DLNADevice(usn: usn, location: location, cacheControl: cacheTime);
       if (headers[_HEADER_NTS] == _SSDP_MSG_ALIVE) {
-        final location = headers[_HEADER_LOCATION];
-        final cacheControl = headers[_HEADER_CACHE_CONTROL];
-        if (location?.isNotEmpty == true && cacheControl?.isNotEmpty == true) {
-          processAlive(usn, location!, cacheControl!);
-        }
+        device.alive = true;
       } else if (headers[_HEADER_NTS] == _SSDP_MSG_BYE_BYE) {
-        processByeBye(usn);
+        device.alive = false;
       }
+      return device;
     }
+    return null;
   }
 
   Map<String, String> parseHeader(List<String> lines) {

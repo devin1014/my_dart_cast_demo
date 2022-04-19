@@ -3,58 +3,59 @@ import 'package:my_dart_cast_demo/src/util.dart';
 
 part 'dlna_device.g.dart';
 
+/// ------------------------------------------------
 /// DLNA Device
+/// ------------------------------------------------
 @JsonSerializable(explicitToJson: true)
 class DLNADevice {
   final String usn;
-  final String uuid;
   String location;
-  @JsonKey(ignore: true)
-  int cacheControl = 300;
+  int expirationTime = -1;
+
   DLNADeviceDetail? detail;
 
-  @JsonKey(ignore: true)
-  bool isFromCache = false;
-  @JsonKey(ignore: true)
-  int aliveTime = 0;
-  @JsonKey(ignore: true)
-  int expirationTime = 0;
   @JsonKey(ignore: true)
   int lastDescriptionTime = 0;
   @JsonKey(ignore: true)
   int discoveryFromStartSpendingTime = 0;
   @JsonKey(ignore: true)
-  int descriptionTaskSpendingTime = 0;
+  bool alive = true;
 
-  DLNADevice({required this.usn, required this.uuid, required this.location});
+  DLNADevice({required this.usn, required this.location, int cacheControl = 300}) {
+    cacheTime = cacheControl;
+  }
 
   factory DLNADevice.fromJson(Map<String, dynamic> json) => _$DLNADeviceFromJson(json);
 
   Map<String, dynamic> toJson() => _$DLNADeviceToJson(this);
 
-  set setCacheControl(int time) {
-    cacheControl = time;
-    aliveTime = DateTime.now().millisecondsSinceEpoch;
-    expirationTime = aliveTime + time * 1000;
+  set cacheTime(int second) {
+    if (second < 0) {
+      expirationTime = -1;
+    } else {
+      expirationTime = DateTime.now().millisecondsSinceEpoch + second * 1000;
+    }
   }
+
+  bool get isExpired => expirationTime >= 0 && expirationTime < DateTime.now().millisecondsSinceEpoch;
 
   String get deviceName => detail?.friendlyName ?? "";
 
-  bool get isXiaoMiDevice => detail?.manufacturer.toLowerCase().contains("xiaomi") ?? false;
-
   @override
-  int get hashCode => uuid.hashCode;
+  int get hashCode => usn.hashCode;
 
   @override
   bool operator ==(other) {
     if (other is DLNADevice) {
-      return uuid == other.uuid;
+      return usn == other.usn;
     }
     return super == other;
   }
 }
 
-/// DLNA Description
+/// ------------------------------------------------
+/// DLNA Detail
+/// ------------------------------------------------
 @JsonSerializable(explicitToJson: true)
 class DLNADeviceDetail {
   @JsonKey(defaultValue: "")
@@ -141,7 +142,9 @@ String _findServiceControlUrl(List<DLNAService> list, String type) {
   }
 }
 
+/// ------------------------------------------------
 /// DLNA Service
+/// ------------------------------------------------
 @JsonSerializable(explicitToJson: true)
 class DLNAService {
   @JsonKey(name: "serviceType", defaultValue: "")
@@ -178,7 +181,9 @@ Object? readServiceAction(Map<dynamic, dynamic> json, String key) {
   }
 }
 
+/// ------------------------------------------------
 /// DLNA Service Action
+/// ------------------------------------------------
 @JsonSerializable(explicitToJson: true)
 class DLNAServiceAction {
   final String name;
@@ -210,7 +215,9 @@ List<DLNAServiceActionArgument> parseActionArgument(dynamic argument) {
   }
 }
 
+/// ------------------------------------------------
 /// DLNA Service Action
+/// ------------------------------------------------
 @JsonSerializable(explicitToJson: true)
 class DLNAServiceActionArgument {
   final String name;

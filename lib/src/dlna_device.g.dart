@@ -8,13 +8,11 @@ part of 'dlna_device.dart';
 
 DLNADevice _$DLNADeviceFromJson(Map<String, dynamic> json) => DLNADevice(
       usn: json['usn'] as String,
-      uuid: json['uuid'] as String,
       location: json['location'] as String,
     )..detail = json['detail'] == null ? null : DLNADeviceDetail.fromJson(json['detail'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$DLNADeviceToJson(DLNADevice instance) => <String, dynamic>{
       'usn': instance.usn,
-      'uuid': instance.uuid,
       'location': instance.location,
       'detail': instance.detail?.toJson(),
     };
