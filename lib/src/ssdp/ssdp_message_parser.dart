@@ -21,48 +21,41 @@ class DiscoveryContentParser {
   });
 
   void startParse(String message) {
-    var messageLines = message.split('\r\n');
-    if (messageLines.length < 3) {
-      return;
-    }
-    var firstLine = messageLines.first;
-    var firstLineParameter = firstLine.split(' ').first;
-    if (firstLineParameter.startsWith(_HEADER_HTTP_VER_1)) {
-      var httpProtocol = firstLine[2];
-      if (httpProtocol == _HEADER_OK) {
-        readSearchResponseMessage(messageLines);
-      }
-    } else {
-      if (firstLineParameter == _HEADER_NOTIFY) {
-        readNotifyMessage(messageLines);
-      } else if (firstLineParameter != _HEADER_M_SEARCH) {}
-    }
+    var lines = message.split('\r\n');
+    if (lines.length < 3) return;
+    final firstLine = lines.first.split(' ');
+    var action = firstLine.first;
+    if (action.startsWith(_HEADER_HTTP_VER_1) && firstLine[2] == _HEADER_OK) {
+      _parseSearchMessage(lines);
+    } else if (action == _HEADER_NOTIFY) {
+      _parseNotifyMessage(lines);
+    } else {}
   }
 
-  void readSearchResponseMessage(List<String> lines) {
+  void _parseSearchMessage(List<String> lines) {
     final headers = parseHeader(lines);
     final usn = headers[_HEADER_USN];
-    if (usn?.isNotEmpty == true) {
+    if (usn?.isNotEmpty == true && usn!.contains("::")) {
       final location = headers[_HEADER_LOCATION];
       final cacheControl = headers[_HEADER_CACHE_CONTROL];
       if (location?.isNotEmpty == true && cacheControl?.isNotEmpty == true) {
-        processAlive(usn!, location!, cacheControl!);
+        processAlive(usn, location!, cacheControl!);
       }
     }
   }
 
-  void readNotifyMessage(List<String> lines) {
+  void _parseNotifyMessage(List<String> lines) {
     final headers = parseHeader(lines);
     final usn = headers[_HEADER_USN];
-    if (usn?.isNotEmpty == true) {
+    if (usn?.isNotEmpty == true && usn!.contains("::")) {
       if (headers[_HEADER_NTS] == _SSDP_MSG_ALIVE) {
         final location = headers[_HEADER_LOCATION];
         final cacheControl = headers[_HEADER_CACHE_CONTROL];
         if (location?.isNotEmpty == true && cacheControl?.isNotEmpty == true) {
-          processAlive(usn!, location!, cacheControl!);
+          processAlive(usn, location!, cacheControl!);
         }
       } else if (headers[_HEADER_NTS] == _SSDP_MSG_BYE_BYE) {
-        processByeBye(usn!);
+        processByeBye(usn);
       }
     }
   }

@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+    <specVersion>
+        <major>1</major>
+        <minor>0</minor>
+    </specVersion>
+    <device>
+        <deviceType>urn:schemas-upnp-org:device:InternetGatewayDevice:1</deviceType>
+        <friendlyName>华为路由AX3 Pro</friendlyName>
+        <manufacturer>Huawei Technologies Co., Ltd.</manufacturer>
+        <manufacturerURL>http://www.huawei.com</manufacturerURL>
+        <modelDescription>Huawei Home Gateway</modelDescription>
+        <modelName>WS7200-10</modelName>
+        <modelNumber>001</modelNumber>
+        <modelURL>http://www.huawei.com</modelURL>
+        <serialNumber>f964662e61c95430</serialNumber>
+        <UDN>uuid:2b38c15c-cb68-df90-3701-4f6df3dc9bb0</UDN>
+        <UPC>000000000001</UPC>
+        <serviceList>
+            <service>
+                <serviceType>urn:www-huawei-com:service:NetworkSyncService:1</serviceType>
+                <serviceId>urn:www-huawei-com:serviceId:NetworkSyncService1</serviceId>
+                <SCPDURL>/desc/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/upnpNetworkSync.xml</SCPDURL>
+                <controlURL>/ctrlu/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/NetworkSyncService_1</controlURL>
+                <eventSubURL>/evt/NetworkSyncService_1</eventSubURL>
+            </service>
+        </serviceList>
+        <deviceList>
+            <device>
+                <deviceType>urn:schemas-upnp-org:device:WANDevice:1</deviceType>
+                <friendlyName>WANDevice</friendlyName>
+                <manufacturer>Huawei Technologies Co., Ltd.</manufacturer>
+                <manufacturerURL>http://www.huawei.com</manufacturerURL>
+                <modelDescription>Huawei Home Gateway</modelDescription>
+                <modelName>WS7200-10</modelName>
+                <modelNumber>001</modelNumber>
+                <modelURL>http://www.huawei.com</modelURL>
+                <serialNumber>f964662e61c95430</serialNumber>
+                <UDN>uuid:90c3fb11-e5f4-0e37-384b-f0ae67cde745</UDN>
+                <UPC>000000000001</UPC>
+                <serviceList>
+                    <service>
+                        <serviceType>urn:schemas-upnp-org:service:WANCommonInterfaceConfig:1</serviceType>
+                        <serviceId>urn:upnp-org:serviceId:WANCommonIFC1</serviceId>
+                        <SCPDURL>/desc/90c3fb11-e5f4-0e37-384b-f0ae67cde745/upnpWANCommonIfc.xml</SCPDURL>
+                        <controlURL>/ctrlu/90c3fb11-e5f4-0e37-384b-f0ae67cde745/WANCommonIFC_1</controlURL>
+                        <eventSubURL>/evt/WANCommonIFC_1</eventSubURL>
+                    </service>
+                </serviceList>
+                <deviceList>
+                    <device>
+                        <deviceType>urn:schemas-upnp-org:device:WANConnectionDevice:1</deviceType>
+                        <friendlyName>WANConnectionDevice</friendlyName>
+                        <manufacturer>Huawei Technologies Co., Ltd.</manufacturer>
+                        <manufacturerURL>http://www.huawei.com</manufacturerURL>
+                        <modelDescription>Huawei Home Gateway</modelDescription>
+                        <modelName>WS7200-10</modelName>
+                        <modelNumber>001</modelNumber>
+                        <modelURL>http://www.huawei.com</modelURL>
+                        <serialNumber>f964662e61c95430</serialNumber>
+                        <UDN>uuid:eeb985c5-0e9d-6ae6-2f17-1694dd6d5fd8</UDN>
+                        <UPC>000000000001</UPC>
+                        <serviceList>
+                            <service>
+                                <serviceType>urn:schemas-upnp-org:service:WANIPConnection:1</serviceType>
+                                <serviceId>urn:upnp-org:serviceId:WANIPConn1</serviceId>
+                                <SCPDURL>/desc/eeb985c5-0e9d-6ae6-2f17-1694dd6d5fd8/upnpWANIPConnection.xml</SCPDURL>
+                                <controlURL>/ctrlu/eeb985c5-0e9d-6ae6-2f17-1694dd6d5fd8/WANIPConn_1</controlURL>
+                                <eventSubURL>/evt/WANIPConn_1</eventSubURL>
+                            </service>
+                        </serviceList>
+                    </device>
+                </deviceList>
+            </device>
+            <device>
+                <deviceType>urn:schemas-upnp-org:device:LANDevice:1</deviceType>
+                <friendlyName>LANDevice</friendlyName>
+                <manufacturer>Huawei Technologies Co., Ltd.</manufacturer>
+                <manufacturerURL>http://www.huawei.com</manufacturerURL>
+                <modelDescription>Huawei Home Gateway</modelDescription>
+                <modelName>WS7200-10</modelName>
+                <modelNumber>001</modelNumber>
+                <modelURL>http://www.huawei.com</modelURL>
+                <serialNumber>f964662e61c95430</serialNumber>
+                <UDN>uuid:d05060ae-6da8-36f4-d4cc-d73b5c85ff97</UDN>
+                <UPC>000000000001</UPC>
+            </device>
+        </deviceList>
+        <presentationURL>http://192.168.3.1</presentationURL>
+    </device>
+</root>

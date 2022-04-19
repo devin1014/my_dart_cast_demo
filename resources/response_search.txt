@@ -1,0 +1,230 @@
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=66
+DATE: Sun, 17 Apr 2022 07:27:51 GMT
+EXT:
+LOCATION: http://192.168.3.119:49152/description.xml
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+ST: upnp:rootdevice
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=66
+DATE: Sun, 17 Apr 2022 07:27:51 GMT
+EXT:
+LOCATION: http://192.168.3.119:49152/description.xml
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+ST: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=66
+DATE: Sun, 17 Apr 2022 07:27:51 GMT
+EXT:
+LOCATION: http://192.168.3.119:49152/description.xml
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+ST: urn:schemas-upnp-org:device:MediaRenderer:1
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=66
+DATE: Sun, 17 Apr 2022 07:27:51 GMT
+EXT:
+LOCATION: http://192.168.3.119:49152/description.xml
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+ST: urn:schemas-upnp-org:service:AVTransport:1
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=66
+DATE: Sun, 17 Apr 2022 07:27:51 GMT
+EXT:
+LOCATION: http://192.168.3.119:49152/description.xml
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+ST: urn:schemas-upnp-org:service:ConnectionManager:1
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=66
+DATE: Sun, 17 Apr 2022 07:27:51 GMT
+EXT:
+LOCATION: http://192.168.3.119:49152/description.xml
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+ST: urn:schemas-upnp-org:service:RenderingControl:1
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=66
+DATE: Sun, 17 Apr 2022 07:27:51 GMT
+EXT:
+LOCATION: http://192.168.3.119:49152/description.xml
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+ST: urn:mi-com:service:RController:1
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+HTTP/1.1 200 OK
+Ext:
+St: upnp:rootdevice
+Cache-control: max-age=1800
+Location: http://192.168.3.119:7300/mdr/desc.xml
+Server: Linux/3.10.61 UPnP/1.0 YunOSTV/1.0
+Usn: uuid:446cd4ec-710c-79b7-76b4-fc4aa438e7bf::upnp:rootdevice
+
+HTTP/1.1 200 OK
+Ext:
+St: uuid:446cd4ec-710c-79b7-76b4-fc4aa438e7bf
+Cache-control: max-age=1800
+Location: http://192.168.3.119:7300/mdr/desc.xml
+Server: Linux/3.10.61 UPnP/1.0 YunOSTV/1.0
+Usn: uuid:446cd4ec-710c-79b7-76b4-fc4aa438e7bf
+
+HTTP/1.1 200 OK
+Ext:
+St: urn:schemas-upnp-org:device:MediaRenderer:1
+Cache-control: max-age=1800
+Location: http://192.168.3.119:7300/mdr/desc.xml
+Server: Linux/3.10.61 UPnP/1.0 YunOSTV/1.0
+Usn: uuid:446cd4ec-710c-79b7-76b4-fc4aa438e7bf::urn:schemas-upnp-org:device:MediaRenderer:1
+
+HTTP/1.1 200 OK
+Ext:
+St: urn:schemas-upnp-org:service:RenderingControl:1
+Cache-control: max-age=1800
+Location: http://192.168.3.119:7300/mdr/desc.xml
+Server: Linux/3.10.61 UPnP/1.0 YunOSTV/1.0
+Usn: uuid:446cd4ec-710c-79b7-76b4-fc4aa438e7bf::urn:schemas-upnp-org:service:RenderingControl:1
+
+HTTP/1.1 200 OK
+Ext:
+St: urn:schemas-upnp-org:service:AVTransport:1
+Cache-control: max-age=1800
+Location: http://192.168.3.119:7300/mdr/desc.xml
+Server: Linux/3.10.61 UPnP/1.0 YunOSTV/1.0
+Usn: uuid:446cd4ec-710c-79b7-76b4-fc4aa438e7bf::urn:schemas-upnp-org:service:AVTransport:1
+
+HTTP/1.1 200 OK
+Ext:
+St: urn:schemas-upnp-org:service:ConnectionManager:1
+Cache-control: max-age=1800
+Location: http://192.168.3.119:7300/mdr/desc.xml
+Server: Linux/3.10.61 UPnP/1.0 YunOSTV/1.0
+Usn: uuid:446cd4ec-710c-79b7-76b4-fc4aa438e7bf::urn:schemas-upnp-org:service:ConnectionManager:1
+
+HTTP/1.1 200 OK
+LOCATION: http://192.168.3.1:37215/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/upnpdev.xml
+SERVER: Linux UPnP/1.0 Huawei-ATP-IGD
+HILINK_EXT: 0
+CACHE-CONTROL: max-age=86500
+EXT:
+ST: upnp:rootdevice
+USN: uuid:2b38c15c-cb68-df90-3701-4f6df3dc9bb0::upnp:rootdevice
+DATE: Sun, 17 Apr 2022 07:27:49 GMT
+
+HTTP/1.1 200 OK
+LOCATION: http://192.168.3.1:37215/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/upnpdev.xml
+SERVER: Linux UPnP/1.0 Huawei-ATP-IGD
+HILINK_EXT: 0
+CACHE-CONTROL: max-age=86500
+EXT:
+ST: uuid:2b38c15c-cb68-df90-3701-4f6df3dc9bb0
+USN: uuid:2b38c15c-cb68-df90-3701-4f6df3dc9bb0
+DATE: Sun, 17 Apr 2022 07:27:49 GMT
+
+HTTP/1.1 200 OK
+LOCATION: http://192.168.3.1:37215/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/upnpdev.xml
+SERVER: Linux UPnP/1.0 Huawei-ATP-IGD
+HILINK_EXT: 0
+CACHE-CONTROL: max-age=86500
+EXT:
+ST: urn:schemas-upnp-org:device:InternetGatewayDevice:1
+USN: uuid:2b38c15c-cb68-df90-3701-4f6df3dc9bb0::urn:schemas-upnp-org:device:InternetGatewayDevice:1
+DATE: Sun, 17 Apr 2022 07:27:49 GMT
+
+HTTP/1.1 200 OK
+LOCATION: http://192.168.3.1:37215/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/upnpdev.xml
+SERVER: Linux UPnP/1.0 Huawei-ATP-IGD
+HILINK_EXT: 0
+CACHE-CONTROL: max-age=86500
+EXT:
+ST: urn:www-huawei-com:service:NetworkSyncService:1
+USN: uuid:2b38c15c-cb68-df90-3701-4f6df3dc9bb0::urn:www-huawei-com:service:NetworkSyncService:1
+DATE: Sun, 17 Apr 2022 07:27:49 GMT
+
+HTTP/1.1 200 OK
+LOCATION: http://192.168.3.1:37215/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/upnpdev.xml
+SERVER: Linux UPnP/1.0 Huawei-ATP-IGD
+HILINK_EXT: 0
+CACHE-CONTROL: max-age=86500
+EXT:
+ST: uuid:90c3fb11-e5f4-0e37-384b-f0ae67cde745
+USN: uuid:90c3fb11-e5f4-0e37-384b-f0ae67cde745
+DATE: Sun, 17 Apr 2022 07:27:50 GMT
+
+HTTP/1.1 200 OK
+LOCATION: http://192.168.3.1:37215/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/upnpdev.xml
+SERVER: Linux UPnP/1.0 Huawei-ATP-IGD
+HILINK_EXT: 0
+CACHE-CONTROL: max-age=86500
+EXT:
+ST: urn:schemas-upnp-org:device:WANDevice:1
+USN: uuid:90c3fb11-e5f4-0e37-384b-f0ae67cde745::urn:schemas-upnp-org:device:WANDevice:1
+DATE: Sun, 17 Apr 2022 07:27:50 GMT
+
+HTTP/1.1 200 OK
+LOCATION: http://192.168.3.1:37215/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/upnpdev.xml
+SERVER: Linux UPnP/1.0 Huawei-ATP-IGD
+HILINK_EXT: 0
+CACHE-CONTROL: max-age=86500
+EXT:
+ST: urn:schemas-upnp-org:service:WANCommonInterfaceConfig:1
+USN: uuid:90c3fb11-e5f4-0e37-384b-f0ae67cde745::urn:schemas-upnp-org:service:WANCommonInterfaceConfig:1
+DATE: Sun, 17 Apr 2022 07:27:50 GMT
+
+HTTP/1.1 200 OK
+LOCATION: http://192.168.3.1:37215/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/upnpdev.xml
+SERVER: Linux UPnP/1.0 Huawei-ATP-IGD
+HILINK_EXT: 0
+CACHE-CONTROL: max-age=86500
+EXT:
+ST: uuid:eeb985c5-0e9d-6ae6-2f17-1694dd6d5fd8
+USN: uuid:eeb985c5-0e9d-6ae6-2f17-1694dd6d5fd8
+DATE: Sun, 17 Apr 2022 07:27:50 GMT
+
+HTTP/1.1 200 OK
+LOCATION: http://192.168.3.1:37215/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/upnpdev.xml
+SERVER: Linux UPnP/1.0 Huawei-ATP-IGD
+HILINK_EXT: 0
+CACHE-CONTROL: max-age=86500
+EXT:
+ST: urn:schemas-upnp-org:device:WANConnectionDevice:1
+USN: uuid:eeb985c5-0e9d-6ae6-2f17-1694dd6d5fd8::urn:schemas-upnp-org:device:WANConnectionDevice:1
+DATE: Sun, 17 Apr 2022 07:27:50 GMT
+
+HTTP/1.1 200 OK
+LOCATION: http://192.168.3.1:37215/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/upnpdev.xml
+SERVER: Linux UPnP/1.0 Huawei-ATP-IGD
+HILINK_EXT: 0
+CACHE-CONTROL: max-age=86500
+EXT:
+ST: urn:schemas-upnp-org:service:WANIPConnection:1
+USN: uuid:eeb985c5-0e9d-6ae6-2f17-1694dd6d5fd8::urn:schemas-upnp-org:service:WANIPConnection:1
+DATE: Sun, 17 Apr 2022 07:27:50 GMT
+
+HTTP/1.1 200 OK
+LOCATION: http://192.168.3.1:37215/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/upnpdev.xml
+SERVER: Linux UPnP/1.0 Huawei-ATP-IGD
+HILINK_EXT: 0
+CACHE-CONTROL: max-age=86500
+EXT:
+ST: uuid:d05060ae-6da8-36f4-d4cc-d73b5c85ff97
+USN: uuid:d05060ae-6da8-36f4-d4cc-d73b5c85ff97
+DATE: Sun, 17 Apr 2022 07:27:50 GMT
+
+HTTP/1.1 200 OK
+LOCATION: http://192.168.3.1:37215/2b38c15c-cb68-df90-3701-4f6df3dc9bb0/upnpdev.xml
+SERVER: Linux UPnP/1.0 Huawei-ATP-IGD
+HILINK_EXT: 0
+CACHE-CONTROL: max-age=86500
+EXT:
+ST: urn:schemas-upnp-org:device:LANDevice:1
+USN: uuid:d05060ae-6da8-36f4-d4cc-d73b5c85ff97::urn:schemas-upnp-org:device:LANDevice:1
+DATE: Sun, 17 Apr 2022 07:27:50 GMT

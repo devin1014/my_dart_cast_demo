@@ -4,6 +4,7 @@ import 'dart:async';
 
 import 'package:my_dart_cast_demo/src/http/http_client.dart';
 import 'package:my_dart_cast_demo/src/parser.dart';
+import 'package:my_dart_cast_demo/src/ssdp/ssdp_service.dart';
 
 import '../dlna_device.dart';
 
@@ -259,5 +260,18 @@ class DiscoveryDeviceManager {
       // }
       _onDeviceRemove(device);
     }
+  }
+}
+
+class DiscoveryDeviceManager2 {
+  DiscoveryDeviceManager2();
+
+  final SSDPService _ssdpService = SSDPService(onData: (data) {
+    //TODO
+  });
+
+  void search() async {
+    await _ssdpService.start();
+    _ssdpService.sendMessage(SSDPService.DLNA_MESSAGE_SEARCH);
   }
 }
