@@ -17,11 +17,24 @@ typedef OnDataListener = Function(String data);
 class SSDPService {
   static const String _UPNP_IP_V4 = '239.255.255.250';
   static const int _UPNP_PORT = 1900;
-  static const String DLNA_MESSAGE_SEARCH = 'M-SEARCH * HTTP/1.1\r\n' +
-      'ST: ssdp:all\r\n' +
+
+  static const String _DLNA_MESSAGE_SEARCH = 'M-SEARCH * HTTP/1.1\r\n' +
       'HOST: 239.255.255.250:1900\r\n' +
-      'MX: 3\r\n' +
-      'MAN: "ssdp:discover"\r\n\r\n';
+      'MAN: "ssdp:discover"\r\n' +
+      'ST: {type}\r\n' +
+      'MX: 3\r\n\r\n';
+
+  // static const String _DLNA_MESSAGE_SEARCH = 'M-SEARCH * HTTP/1.1\r\n' +
+  //     'ST: ssdp:all\r\n' +
+  //     'HOST: 239.255.255.250:1900\r\n' +
+  //     'MX: 3\r\n' +
+  //     'MAN: "ssdp:discover"\r\n\r\n';
+  static const String TYPE_DEVICE_ALL = "ssdp:all";
+  static const String TYPE_DEVICE_ROOT = "upnp:rootdevice";
+  static const String TYPE_DEVICE_MEDIA_RENDERER = "urn:schemas-upnp-org:device:MediaRenderer:1";
+  static const String TYPE_SERVICE_AV_TRANSPORT = "urn:schemas-upnp-org:service:AVTransport:1";
+  static const String TYPE_SERVICE_CONNECTION_MANAGER = "urn:schemas-upnp-org:service:ConnectionManager:1";
+  static const String TYPE_SERVICE_RENDERING_CONTROL = "urn:schemas-upnp-org:service:RenderingControl:1";
 
   final InternetAddress _upnpIpV4Address = InternetAddress(_UPNP_IP_V4);
   final RawDatagramSocketFactory _rawDatagramSocketFactory;
@@ -62,7 +75,10 @@ class SSDPService {
     );
   }
 
-  void sendMessage(String message) {
+  void search({String type = TYPE_DEVICE_ALL}) {
+    var message = _DLNA_MESSAGE_SEARCH;
+    message = message.replaceAll("{type}", type);
+    print(message);
     _datagramSocket?.send(const Utf8Codec().encode(message), _upnpIpV4Address, _UPNP_PORT);
   }
 

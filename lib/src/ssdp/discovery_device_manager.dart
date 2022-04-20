@@ -290,7 +290,7 @@ class DiscoveryDeviceManager {
       await _ssdpService.start();
       _ssdpService.listen(_onData);
     }
-    _ssdpService.sendMessage(SSDPService.DLNA_MESSAGE_SEARCH);
+    _ssdpService.search();
   }
 
   void _onData(data) async {
