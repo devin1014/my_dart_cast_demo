@@ -1,14 +1,17 @@
-import 'package:my_dart_cast_demo/src/dlna_device.dart';
-
-import '../http/http_client.dart';
+import 'package:my_dart_cast_demo/src/dlna_service.dart';
+import 'package:my_dart_cast_demo/src/http/http_client.dart';
 
 abstract class AbstractServiceAction {
-  Future<dynamic> parseAction(String baseUrl, DLNAService service) async {
-    final url = baseUrl + "/" + service.controlUrl;
+  AbstractServiceAction(this.service);
+
+  final DLNAService service;
+
+  Future<dynamic> execute() async {
+    final url = service.baseUrl + "/" + service.controlUrl;
     final response = await MyHttpClient().postUrl(
       url: url,
       header: getHeader() ?? {"SoapAction": _parseAction(service)},
-      content: getContent() ?? _parseXmlData(service),
+      content: getContent() ?? parseXmlData(service),
     );
     return parseResult(response);
   }
@@ -23,7 +26,7 @@ abstract class AbstractServiceAction {
 
   String getSoapAction() => runtimeType.toString();
 
-  String _parseXmlData(DLNAService service) => """<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+  String parseXmlData(DLNAService service) => """<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <s:Envelope s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
 	<s:Body>
 		<u:${getSoapAction()} xmlns:u="${service.type}">

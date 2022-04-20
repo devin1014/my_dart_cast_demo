@@ -3,6 +3,7 @@
 import 'dart:convert';
 
 import 'package:my_dart_cast_demo/src/dlna_device.dart';
+import 'package:my_dart_cast_demo/src/dlna_service.dart';
 import 'package:xml2json/xml2json.dart';
 
 class DlnaParser {
@@ -38,7 +39,7 @@ class DlnaParser {
   static DLNADeviceDetail parseDeviceDetail(dynamic data, {bool xml = false}) {
     final jsonObj = _formatData2Json(data, xml: xml);
     final detail = DLNADeviceDetail.fromJson(jsonObj['root']['device']);
-    detail.baseURL = jsonObj['root']["URLBase"] ?? detail.baseURL;
+    detail.baseUrl = jsonObj['root']["URLBase"] ?? "";
     return detail;
   }
 

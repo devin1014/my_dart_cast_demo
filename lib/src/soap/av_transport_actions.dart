@@ -1,34 +1,61 @@
+import 'package:my_dart_cast_demo/src/dlna_service.dart';
 import 'package:my_dart_cast_demo/src/soap/service_actions.dart';
 
 /// -------------------------------------------------------------
 /// AvTransport Service
 /// -------------------------------------------------------------
-class GetCurrentTransportActions extends AbstractServiceAction {}
+class GetCurrentTransportActions extends AbstractServiceAction {
+  GetCurrentTransportActions(DLNAService service) : super(service);
+}
 
-class GetTransportInfo extends AbstractServiceAction {}
+class GetTransportInfo extends AbstractServiceAction {
+  GetTransportInfo(DLNAService service) : super(service);
+}
 
-class GetPositionInfo extends AbstractServiceAction {}
+class GetPositionInfo extends AbstractServiceAction {
+  GetPositionInfo(DLNAService service) : super(service);
+}
 
-class GetMediaInfo extends AbstractServiceAction {}
+class GetMediaInfo extends AbstractServiceAction {
+  GetMediaInfo(DLNAService service) : super(service);
+}
 
-class GetDeviceCapabilities extends AbstractServiceAction {}
+class GetDeviceCapabilities extends AbstractServiceAction {
+  GetDeviceCapabilities(DLNAService service) : super(service);
+}
 
-class Next extends AbstractServiceAction {}
+class Next extends AbstractServiceAction {
+  Next(DLNAService service) : super(service);
+}
 
-class Pause extends AbstractServiceAction {}
+class Pause extends AbstractServiceAction {
+  Pause(DLNAService service) : super(service);
+}
 
-class Play extends AbstractServiceAction {}
+class Play extends AbstractServiceAction {
+  Play(DLNAService service) : super(service);
+}
 
-class Previous extends AbstractServiceAction {}
+class Previous extends AbstractServiceAction {
+  Previous(DLNAService service) : super(service);
+}
 
-class Seek extends AbstractServiceAction {}
+class Seek extends AbstractServiceAction {
+  Seek(DLNAService service) : super(service);
+}
 
-class SetPlayMode extends AbstractServiceAction {}
+class SetPlayMode extends AbstractServiceAction {
+  SetPlayMode(DLNAService service) : super(service);
+}
 
-class Stop extends AbstractServiceAction {}
+class Stop extends AbstractServiceAction {
+  Stop(DLNAService service) : super(service);
+}
 
 class SetAVTransportURI extends AbstractServiceAction {
   static const String VIDEO_MP4 = 'http-get:*:video/mp4:*';
+
+  SetAVTransportURI(DLNAService service) : super(service);
 
   @override
   String? getContent() {

@@ -9,7 +9,7 @@ void main() async {
   final detail = DlnaParser.parseDeviceDetail(data, xml: true);
 
   test("SetAVTransportURI", () async {
-    final data = await SetAVTransportURI().parseAction(detail.baseURL, detail.serviceList.first);
+    final data = await SetAVTransportURI(detail.serviceList.first).execute();
     print(data);
   });
 }

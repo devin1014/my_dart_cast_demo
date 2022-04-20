@@ -30,7 +30,7 @@ void main() async {
     });
 
     test("scpd", () async {
-      final baseUrl = miBoxDetail.baseURL;
+      final baseUrl = miBoxDetail.serviceList.first.baseUrl;
       final scpdUrl = miBoxDetail.serviceList.first.scpdUrl;
       final url = baseUrl + scpdUrl;
       final response = await MyHttpClient().getUrl(url);
@@ -72,7 +72,7 @@ void main() async {
     });
 
     test("scpd", () async {
-      final baseUrl = samsungS7Detail.baseURL;
+      final baseUrl = samsungS7Detail.serviceList.first.baseUrl;
       final scpdUrl = samsungS7Detail.serviceList.first.scpdUrl;
       final url = baseUrl + scpdUrl;
       final response = await MyHttpClient().getUrl(url);
@@ -95,7 +95,7 @@ void main() async {
     await File("resources/description_huawei_AX3_pro.xml").readAsString(),
     xml: true,
   );
-  huaweiAx3ProDetail.baseURL = "http://192.168.3.1:37215";
+  // huaweiAx3ProDetail.baseURL = "http://192.168.3.1:37215";
 
   group("huaweiAx3ProDetail", () {
     test("parse dlna device description", () async {
@@ -112,7 +112,7 @@ void main() async {
     });
 
     test("scpd", () async {
-      final baseUrl = huaweiAx3ProDetail.baseURL;
+      final baseUrl = huaweiAx3ProDetail.serviceList.first.baseUrl;
       final scpdUrl = huaweiAx3ProDetail.serviceList.first.scpdUrl;
       final url = baseUrl + scpdUrl;
       final response = await MyHttpClient().getUrl(url);

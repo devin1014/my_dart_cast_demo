@@ -3,7 +3,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:my_dart_cast_demo/src/dlna_device.dart';
+import 'package:my_dart_cast_demo/src/dlna_service.dart';
 import 'package:my_dart_cast_demo/src/parser.dart';
 import 'package:my_dart_cast_demo/src/soap/av_transport_actions.dart';
 import 'package:my_dart_cast_demo/src/soap/connection_manager_actions.dart';
@@ -14,8 +14,8 @@ void main() async {
   final data = await File("resources/description.xml").readAsString();
   final detail = DlnaParser.parseDeviceDetail(data, xml: true);
 
-  void getInfo(AbstractServiceAction action, DLNAService service) async {
-    final result = await action.parseAction(detail.baseURL, service);
+  void getInfo(AbstractServiceAction action) async {
+    final result = await action.execute();
     print("\n${action.runtimeType.toString()}:\n$result");
   }
 
@@ -26,20 +26,20 @@ void main() async {
     final DLNAService avTransportService = detail.serviceList.first;
 
     test("service url", () async {
-      final url = detail.baseURL + "/" + avTransportService.controlUrl;
+      final url = avTransportService.baseUrl + "/" + avTransportService.controlUrl;
       print("url:\n" + url);
       expect("http://192.168.3.119:49152/_urn:schemas-upnp-org:service:AVTransport_control", url);
     });
 
-    test("GetCurrentTransportActions", () => getInfo(GetCurrentTransportActions(), avTransportService));
+    test("GetCurrentTransportActions", () => getInfo(GetCurrentTransportActions(avTransportService)));
 
-    test("GetTransportInfo", () => getInfo(GetTransportInfo(), avTransportService));
+    test("GetTransportInfo", () => getInfo(GetTransportInfo(avTransportService)));
 
-    test("GetPositionInfo", () => getInfo(GetPositionInfo(), avTransportService));
+    test("GetPositionInfo", () => getInfo(GetPositionInfo(avTransportService)));
 
-    test("GetMediaInfo", () => getInfo(GetMediaInfo(), avTransportService));
+    test("GetMediaInfo", () => getInfo(GetMediaInfo(avTransportService)));
 
-    //test("SetAVTransportURI", () => getInfo(SetAVTransportURI(), avTransportService));
+    //test("SetAVTransportURI", () => getInfo(SetAVTransportURI()));
   });
   // test("GetDeviceCapabilities", () => getInfo(GetDeviceCapabilities()));
 
@@ -49,7 +49,7 @@ void main() async {
   group("connectionManager", () {
     final DLNAService connectionService = detail.serviceList[1];
 
-    test("GetProtocolInfo", () => getInfo(GetProtocolInfo(), connectionService));
+    test("GetProtocolInfo", () => getInfo(GetProtocolInfo(connectionService)));
   });
 
   /// ---------------------------------------------------------
@@ -58,12 +58,12 @@ void main() async {
   group("renderingControl", () {
     final DLNAService renderingControlService = detail.serviceList[2];
 
-    test("GetMute", () => getInfo(GetMute(), renderingControlService));
+    test("GetMute", () => getInfo(GetMute(renderingControlService)));
 
-    test("GetVolume", () => getInfo(GetVolume(), renderingControlService));
+    test("GetVolume", () => getInfo(GetVolume(renderingControlService)));
 
-    test("SetMute", () => getInfo(SetMute(), renderingControlService));
+    test("SetMute", () => getInfo(SetMute(renderingControlService)));
 
-    test("SetVolume", () => getInfo(SetVolume(), renderingControlService));
+    test("SetVolume", () => getInfo(SetVolume(renderingControlService)));
   });
 }
