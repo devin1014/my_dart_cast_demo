@@ -10,6 +10,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:my_dart_cast_demo/src/dlna_device.dart';
+import 'package:my_dart_cast_demo/src/soap/action_result.dart';
 import 'package:my_dart_cast_demo/src/soap/av_transport_actions.dart';
 import 'package:my_dart_cast_demo/src/ssdp/discovery_device_manager.dart';
 import 'package:my_dart_cast_demo/src/util.dart';
@@ -21,6 +22,6 @@ void main() async {
   final device = DLNADevice(usn: usn, location: location);
   device.detail = await DiscoveryDeviceManager().getDeviceDescription(device);
   final service = device.detail!.getService(SERVICE_AV_TRANSPORT);
-  final result = await GetTransportInfo(service!).execute();
-  print(result);
+  final GetTransportInfoResponse result = await GetTransportInfo(service!).execute();
+  print(result.toJson().toString());
 }

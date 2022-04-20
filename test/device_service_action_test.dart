@@ -11,7 +11,7 @@ import 'package:my_dart_cast_demo/src/soap/rendering_control_actions.dart';
 import 'package:my_dart_cast_demo/src/soap/service_actions.dart';
 
 void main() async {
-  final data = await File("resources/description.xml").readAsString();
+  final data = await File("resources/description_mibox.xml").readAsString();
   final detail = DlnaParser.parseDeviceDetail(data, xml: true);
 
   void getInfo(AbstractServiceAction action) async {
@@ -31,6 +31,7 @@ void main() async {
       expect("http://192.168.3.119:49152/_urn:schemas-upnp-org:service:AVTransport_control", url);
     });
 
+    //TODO:
     test("GetCurrentTransportActions", () => getInfo(GetCurrentTransportActions(avTransportService)));
 
     test("GetTransportInfo", () => getInfo(GetTransportInfo(avTransportService)));
@@ -39,9 +40,15 @@ void main() async {
 
     test("GetMediaInfo", () => getInfo(GetMediaInfo(avTransportService)));
 
-    //test("SetAVTransportURI", () => getInfo(SetAVTransportURI()));
+    //TODO:
+    test("GetDeviceCapabilities", () => getInfo(GetDeviceCapabilities(avTransportService)));
+
+    test("SetAVTransportURI", () => getInfo(SetAVTransportURI(avTransportService)));
+
+    test("Pause", () => getInfo(Pause(avTransportService)));
+
+    test("Play", () => getInfo(Play(avTransportService)));
   });
-  // test("GetDeviceCapabilities", () => getInfo(GetDeviceCapabilities()));
 
   /// ---------------------------------------------------------
   /// ConnectionManager
@@ -57,6 +64,11 @@ void main() async {
   /// ---------------------------------------------------------
   group("renderingControl", () {
     final DLNAService renderingControlService = detail.serviceList[2];
+
+    print("actions:\n");
+    renderingControlService.actionList?.forEach((element) {
+      print(element.name);
+    });
 
     test("GetMute", () => getInfo(GetMute(renderingControlService)));
 

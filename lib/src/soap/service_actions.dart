@@ -1,5 +1,6 @@
 import 'package:my_dart_cast_demo/src/dlna_service.dart';
 import 'package:my_dart_cast_demo/src/http/http_client.dart';
+import 'package:my_dart_cast_demo/src/parser.dart';
 
 abstract class AbstractServiceAction {
   AbstractServiceAction(this.service);
@@ -13,14 +14,15 @@ abstract class AbstractServiceAction {
       header: getHeader() ?? {"SoapAction": _parseAction(service)},
       content: getContent() ?? parseXmlData(service),
     );
-    return parseResult(response);
+    print(response);
+    return parseResult(parseXml2Json(response));
   }
 
   Map<String, String>? getHeader() => null;
 
   String? getContent() => null;
 
-  dynamic parseResult(String response) => response;
+  dynamic parseResult(Map<String, dynamic> response) => response;
 
   String _parseAction(DLNAService service) => '"${service.type}#${getSoapAction()}"';
 

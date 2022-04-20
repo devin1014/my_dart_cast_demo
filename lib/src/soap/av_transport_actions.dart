@@ -1,6 +1,8 @@
 import 'package:my_dart_cast_demo/src/dlna_service.dart';
 import 'package:my_dart_cast_demo/src/soap/service_actions.dart';
 
+import 'action_result.dart';
+
 /// -------------------------------------------------------------
 /// AvTransport Service
 /// -------------------------------------------------------------
@@ -10,14 +12,32 @@ class GetCurrentTransportActions extends AbstractServiceAction {
 
 class GetTransportInfo extends AbstractServiceAction {
   GetTransportInfo(DLNAService service) : super(service);
+
+  @override
+  parseResult(Map<String, dynamic> response) {
+    final json = response["s:Envelope"]["s:Body"]["u:GetTransportInfoResponse"];
+    return GetTransportInfoResponse.fromJson(json);
+  }
 }
 
 class GetPositionInfo extends AbstractServiceAction {
   GetPositionInfo(DLNAService service) : super(service);
+
+  @override
+  parseResult(Map<String, dynamic> response) {
+    final json = response["s:Envelope"]["s:Body"]["u:GetPositionInfoResponse"];
+    return GetPositionInfoResponse.fromJson(json);
+  }
 }
 
 class GetMediaInfo extends AbstractServiceAction {
   GetMediaInfo(DLNAService service) : super(service);
+
+  @override
+  parseResult(Map<String, dynamic> response) {
+    final json = response["s:Envelope"]["s:Body"]["u:GetMediaInfoResponse"];
+    return GetMediaInfoResponse.fromJson(json);
+  }
 }
 
 class GetDeviceCapabilities extends AbstractServiceAction {
@@ -63,7 +83,7 @@ class SetAVTransportURI extends AbstractServiceAction {
     // var title = const HtmlEscape().convert(didlObject.title);
     // var url = const HtmlEscape().convert(didlObject.url);
     final title = "dlna cast title";
-    final url = "http://vfx.mtime.cn/Video/2019/02/04/mp4/190204084208765161.mp4";
+    final url = "http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4";
     return """<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <s:Envelope s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
 <s:Body>
