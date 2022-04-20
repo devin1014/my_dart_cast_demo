@@ -11,7 +11,7 @@ GetTransportInfoResponse _$GetTransportInfoResponseFromJson(
     GetTransportInfoResponse(
       json['CurrentTransportState'] as String? ?? '',
       json['CurrentTransportStatus'] as String? ?? '',
-      (json['CurrentSpeed'] as num?)?.toDouble() ?? 1,
+      (json['CurrentSpeed'] as String?) ?? "1",
     );
 
 Map<String, dynamic> _$GetTransportInfoResponseToJson(

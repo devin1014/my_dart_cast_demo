@@ -32,7 +32,7 @@ class GetTransportInfoResponse extends ActionResponse {
   @JsonKey(name: "CurrentTransportStatus", defaultValue: "")
   final String currentTransportStatus;
   @JsonKey(name: "CurrentSpeed", defaultValue: 1)
-  final double currentSpeed;
+  final String currentSpeed;
 
   GetTransportInfoResponse(this.currentTransportState, this.currentTransportStatus, this.currentSpeed);
 

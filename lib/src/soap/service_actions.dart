@@ -14,7 +14,11 @@ abstract class AbstractServiceAction {
       header: getHeader() ?? {"SoapAction": _parseAction(service)},
       content: getContent() ?? parseXmlData(service),
     );
-    print(response);
+    //TODO
+    print("request: $url");
+    print("header:  ${{"SoapAction": _parseAction(service)}.toString()}");
+    print("content:\n${parseXmlData(service)}");
+    print("response:\n$response");
     return parseResult(parseXml2Json(response));
   }
 
@@ -38,12 +42,18 @@ abstract class AbstractServiceAction {
 </s:Envelope>""";
 
   String _parseArguments() {
-    final name = getSoapActionArgument().first.name;
-    final value = getSoapActionArgument().first.value;
-    return "<$name>$value</$name>";
+    final List<ServiceActionArgument> arguments = getSoapActionArgument();
+    StringBuffer buffer = StringBuffer();
+    for (var arg in arguments) {
+      if (buffer.isNotEmpty) buffer.write("\n");
+      buffer.write("<${arg.name}>${arg.value}</${arg.name}>");
+    }
+    return buffer.toString();
   }
 
-  List<ServiceActionArgument> getSoapActionArgument() => [ServiceActionArgument("InstanceID", 0)];
+  static final List<ServiceActionArgument> _instanceIdArgument = [ServiceActionArgument("InstanceID", 0)];
+
+  List<ServiceActionArgument> getSoapActionArgument() => _instanceIdArgument;
 }
 
 class ServiceActionArgument {
