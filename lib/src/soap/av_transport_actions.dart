@@ -1,4 +1,5 @@
 import 'package:my_dart_cast_demo/src/dlna_service.dart';
+import 'package:my_dart_cast_demo/src/parser.dart';
 import 'package:my_dart_cast_demo/src/soap/didl_object.dart';
 import 'package:my_dart_cast_demo/src/soap/service_actions.dart';
 
@@ -9,6 +10,10 @@ import 'action_result.dart';
 /// -------------------------------------------------------------
 class GetCurrentTransportActions extends AbstractServiceAction {
   GetCurrentTransportActions(DLNAService service) : super(service);
+}
+
+class GetTransportSettings extends AbstractServiceAction {
+  GetTransportSettings(DLNAService service) : super(service);
 }
 
 class GetTransportInfo extends AbstractServiceAction {
@@ -54,12 +59,14 @@ class Pause extends AbstractServiceAction {
 }
 
 class Play extends AbstractServiceAction {
-  Play(DLNAService service) : super(service);
+  Play(DLNAService service, {this.speed = 1}) : super(service);
+
+  final double speed;
 
   @override
   List<ServiceActionArgument> getSoapActionArgument() => [
         ServiceActionArgument("InstanceID", 0),
-        ServiceActionArgument("Speed", 1),
+        ServiceActionArgument("Speed", speed),
       ];
 }
 
@@ -67,12 +74,30 @@ class Previous extends AbstractServiceAction {
   Previous(DLNAService service) : super(service);
 }
 
+/// @param realPosition: second
 class Seek extends AbstractServiceAction {
-  Seek(DLNAService service) : super(service);
+  Seek(DLNAService service, {this.realPosition = -1}) : super(service);
+
+  final int realPosition;
+
+  @override
+  List<ServiceActionArgument> getSoapActionArgument() => [
+        ServiceActionArgument("InstanceID", 0),
+        ServiceActionArgument("Unit", "REL_TIME"),
+        ServiceActionArgument("Target", DlnaParser.formatRealTime(realPosition)),
+      ];
 }
 
 class SetPlayMode extends AbstractServiceAction {
-  SetPlayMode(DLNAService service) : super(service);
+  SetPlayMode(DLNAService service, {this.mode = PlayMode.NORMAL}) : super(service);
+
+  final PlayMode mode;
+
+  @override
+  List<ServiceActionArgument> getSoapActionArgument() => [
+        ServiceActionArgument("InstanceID", 0),
+        ServiceActionArgument("CurrentPlayMode", mode),
+      ];
 }
 
 class Stop extends AbstractServiceAction {
@@ -100,7 +125,7 @@ class SetNextAVTransportURI extends AbstractServiceAction {
 
   @override
   List<ServiceActionArgument> getSoapActionArgument() => [
-        ServiceActionArgument("InstanceID", 1),
+        ServiceActionArgument("InstanceID", 0),
         ServiceActionArgument("NextURI", didlObject.url),
         ServiceActionArgument("NextURIMetaData", didlObject.xmlData),
       ];

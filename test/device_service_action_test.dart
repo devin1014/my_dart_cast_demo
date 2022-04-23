@@ -33,16 +33,18 @@ void main() async {
     });
 
     //TODO:
+    test("GetDeviceCapabilities", () => getInfo(GetDeviceCapabilities(avTransportService)));
+
+    //TODO:
     test("GetCurrentTransportActions", () => getInfo(GetCurrentTransportActions(avTransportService)));
+
+    test("GetTransportSettings", () => getInfo(GetTransportSettings(avTransportService)));
 
     test("GetTransportInfo", () => getInfo(GetTransportInfo(avTransportService)));
 
     test("GetPositionInfo", () => getInfo(GetPositionInfo(avTransportService)));
 
     test("GetMediaInfo", () => getInfo(GetMediaInfo(avTransportService)));
-
-    //TODO:
-    test("GetDeviceCapabilities", () => getInfo(GetDeviceCapabilities(avTransportService)));
 
     const longVideoUrl = "http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4";
 
@@ -59,6 +61,8 @@ void main() async {
     test("Pause", () => getInfo(Pause(avTransportService)));
 
     test("Play", () => getInfo(Play(avTransportService)));
+
+    test("Seek", () => getInfo(Seek(avTransportService, realPosition: 30)));
   });
 
   /// ---------------------------------------------------------
@@ -76,7 +80,6 @@ void main() async {
   group("renderingControl", () {
     final DLNAService renderingControlService = detail.serviceList[2];
 
-    print("actions:\n");
     renderingControlService.actionList?.forEach((element) {
       print(element.name);
     });

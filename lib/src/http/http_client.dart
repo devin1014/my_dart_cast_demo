@@ -9,7 +9,7 @@ class MyHttpClient {
   factory MyHttpClient() => _instance ??= MyHttpClient._();
 
   MyHttpClient._() {
-    print("HttpClient init.");
+    //print("HttpClient init.");
     _httpClient
       ..idleTimeout = const Duration(seconds: 5)
       ..connectionTimeout = const Duration(seconds: 5);

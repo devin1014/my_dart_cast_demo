@@ -70,6 +70,17 @@ class DlnaParser {
   }
 
   static String parseBaseUrl(String url) => "http://${Uri.parse(url).authority}";
+
+  static String formatRealTime(int secondPosition) {
+    if (secondPosition <= 0) return "00:00:00";
+    int hour = secondPosition ~/ 3600;
+    int time = secondPosition - hour * 3600;
+    int minute = time ~/ 60;
+    int second = time - minute * 60;
+    return "${_format2D(hour)}:${_format2D(minute)}:${_format2D(second)}";
+  }
+
+  static String _format2D(int num) => num.toString().padLeft(2, '0');
 }
 
 final Xml2Json _xml2json = Xml2Json();

@@ -1,6 +1,9 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:my_dart_cast_demo/src/dlna_service.dart';
 import 'package:my_dart_cast_demo/src/http/http_client.dart';
 import 'package:my_dart_cast_demo/src/parser.dart';
+import 'package:my_dart_cast_demo/src/soap/action_result.dart';
 
 abstract class AbstractServiceAction {
   AbstractServiceAction(this.service);
@@ -15,11 +18,20 @@ abstract class AbstractServiceAction {
       content: getContent() ?? parseXmlData(service),
     );
     //TODO
-    print("request: $url");
-    print("header:  ${{"SoapAction": _parseAction(service)}.toString()}");
-    print("content:\n${parseXmlData(service)}");
-    print("response:\n$response");
-    return parseResult(parseXml2Json(response));
+    print(">>>>>>>>>>>>>>>>>>>>");
+    print("request:\n\t$url");
+    print("header:\n\t${{"SoapAction": _parseAction(service)}.toString()}");
+    print("content:\n\t${parseXmlData(service)}");
+    print("");
+    print("<<<<<<<<<<<<<<<<<<<<");
+    print("response:\n\t$response");
+    final Map<String, dynamic> json = parseXml2Json(response);
+    try {
+      final fault = json["s:Envelope"]["s:Body"]["s:Fault"];
+      return ActionFailedResponse.fromJson(fault);
+    } catch (e) {
+      return parseResult(json);
+    }
   }
 
   Map<String, String>? getHeader() => null;
@@ -61,4 +73,20 @@ class ServiceActionArgument {
   final String value;
 
   ServiceActionArgument(this.name, dynamic value) : value = value.toString();
+}
+
+enum PlayMode {
+  NORMAL,
+  REPEAT_ALL,
+  INTRO,
+}
+
+enum TransportState {
+  STOPPED,
+  PAUSED_PLAYBACK,
+  PAUSED_RECORDING,
+  PLAYING,
+  RECORDING,
+  TRANSITIONING,
+  NO_MEDIA_PRESENT,
 }

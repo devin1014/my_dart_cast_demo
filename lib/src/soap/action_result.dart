@@ -2,27 +2,27 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'action_result.g.dart';
 
-class ActionResult<T> {
-  final int code;
-  String httpContent;
-  T? result;
-  Exception? exception;
-
-  ActionResult.success({required this.code, required this.httpContent}) : exception = null;
-
-  ActionResult.error({this.code = -1, this.httpContent = "", required this.exception});
-
-  bool get success => code >= 200 && code <= 299 && httpContent.isNotEmpty;
-
-  @override
-  String toString() => "ActionResult {code: $code, httpContent: $httpContent}";
-}
-
 abstract class ActionResponse {
   Map<String, dynamic> toJson();
 
   @override
   String toString() => toJson().toString();
+}
+
+@JsonSerializable(explicitToJson: true)
+class ActionFailedResponse extends ActionResponse {
+  @JsonKey(name: "faultcode", defaultValue: "")
+  final String faultCode;
+  @JsonKey(name: "faultstring", defaultValue: "error")
+  final String faultString;
+
+  ActionFailedResponse(this.faultCode, this.faultString);
+
+  factory ActionFailedResponse.fromJson(Map<String, dynamic> json) =>
+      ActionFailedResponse(json["faultcode"] ?? "", json["faultstring"] ?? "error");
+
+  @override
+  Map<String, dynamic> toJson() => {"faultcode": faultCode, "faultstring": faultString};
 }
 
 @JsonSerializable(explicitToJson: true)
