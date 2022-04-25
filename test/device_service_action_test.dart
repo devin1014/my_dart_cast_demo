@@ -11,6 +11,9 @@ import 'package:my_dart_cast_demo/src/soap/didl_object.dart';
 import 'package:my_dart_cast_demo/src/soap/rendering_control_actions.dart';
 import 'package:my_dart_cast_demo/src/soap/service_actions.dart';
 
+const longVideoUrl = "http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4";
+const shortVideoUrl = "http://vfx.mtime.cn/Video/2019/02/04/mp4/190204084208765161.mp4";
+
 void main() async {
   final data = await File("resources/description_mibox.xml").readAsString();
   final detail = DlnaParser.parseDeviceDetail(data, xml: true);
@@ -46,23 +49,18 @@ void main() async {
 
     test("GetMediaInfo", () => getInfo(GetMediaInfo(avTransportService)));
 
-    const longVideoUrl = "http://vfx.mtime.cn/Video/2019/03/19/mp4/190319212559089721.mp4";
+    test("SetAVTransportURI", () => getInfo(SetAVTransportURI(avTransportService, DIDLVideoObject(longVideoUrl))));
 
-    const shortVideoUrl = "http://vfx.mtime.cn/Video/2019/02/04/mp4/190204084208765161.mp4";
-
-    final didlObject = DIDLVideoObject(longVideoUrl);
-
-    final nextDidlObject = DIDLVideoObject(shortVideoUrl);
-
-    test("SetAVTransportURI", () => getInfo(SetAVTransportURI(avTransportService, didlObject)));
-
-    test("SetNextAVTransportURI", () => getInfo(SetNextAVTransportURI(avTransportService, nextDidlObject)));
+    test("SetNextAVTransportURI",
+        () => getInfo(SetNextAVTransportURI(avTransportService, DIDLVideoObject(shortVideoUrl))));
 
     test("Pause", () => getInfo(Pause(avTransportService)));
 
     test("Play", () => getInfo(Play(avTransportService)));
 
     test("Seek", () => getInfo(Seek(avTransportService, realPosition: 30)));
+
+    test("Stop", () => getInfo(Stop(avTransportService)));
   });
 
   /// ---------------------------------------------------------

@@ -9,18 +9,23 @@ class MyHttpClient {
   factory MyHttpClient() => _instance ??= MyHttpClient._();
 
   MyHttpClient._() {
-    //print("HttpClient init.");
     _httpClient
       ..idleTimeout = const Duration(seconds: 5)
       ..connectionTimeout = const Duration(seconds: 5);
   }
 
+  bool logging = true;
   final HttpClient _httpClient = HttpClient();
+
+  HttpClient get httpClient => _httpClient;
 
   Future<String> getUrl(String url) async {
     final request = await _httpClient.getUrl(Uri.parse(url));
+    printRequest(request);
     final response = await request.close();
-    return await response.transform(utf8.decoder).join();
+    final body = await response.transform(utf8.decoder).join();
+    printResponse(response, body);
+    return body;
   }
 
   Future<String> postUrl({
@@ -39,7 +44,26 @@ class MyHttpClient {
       });
     }
     request.write(content);
+    printRequest(request);
     final response = await request.close();
-    return await response.transform(utf8.decoder).join();
+    final body = await response.transform(utf8.decoder).join();
+    printResponse(response, body);
+    return body;
+  }
+
+  void printRequest(HttpClientRequest request) {
+    if (!logging) return;
+    print("\nrequest:\n${request.method} ${request.uri}");
+    print("headers:\n${request.headers.toString()}");
+    // final data =  utf8.decoder.bind(request).join();
+    print("cookie:\n${request.cookies.toString()}");
+  }
+
+  void printResponse(HttpClientResponse response, String body) async {
+    if (!logging) return;
+    print("\nresponse:\n${response.statusCode} ${response.reasonPhrase}");
+    print("headers:\n${response.headers.toString()}");
+    print("cookie:\n${response.cookies.toString()}");
+    print("body:\n$body");
   }
 }
