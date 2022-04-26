@@ -18,49 +18,38 @@ void main() async {
   final data = await File("resources/description_mibox.xml").readAsString();
   final detail = DlnaParser.parseDeviceDetail(data, xml: true);
 
-  void getInfo(AbstractServiceAction action) async {
-    final result = await action.execute();
-    print("\n${action.runtimeType.toString()}:\n$result");
-  }
-
   /// ---------------------------------------------------------
   /// AvTransport
   /// ---------------------------------------------------------
   group("avTransportService", () {
     final DLNAService avTransportService = detail.serviceList.first;
 
-    test("service url", () async {
-      final url = avTransportService.baseUrl + "/" + avTransportService.controlUrl;
-      print("url:\n" + url);
-      expect("http://192.168.3.119:49152/_urn:schemas-upnp-org:service:AVTransport_control", url);
-    });
-
-    //TODO:
-    test("GetDeviceCapabilities", () => getInfo(GetDeviceCapabilities(avTransportService)));
-
-    //TODO:
-    test("GetCurrentTransportActions", () => getInfo(GetCurrentTransportActions(avTransportService)));
-
-    test("GetTransportSettings", () => getInfo(GetTransportSettings(avTransportService)));
-
-    test("GetTransportInfo", () => getInfo(GetTransportInfo(avTransportService)));
-
-    test("GetPositionInfo", () => getInfo(GetPositionInfo(avTransportService)));
-
-    test("GetMediaInfo", () => getInfo(GetMediaInfo(avTransportService)));
-
-    test("SetAVTransportURI", () => getInfo(SetAVTransportURI(avTransportService, DIDLVideoObject(longVideoUrl))));
+    test("SetAVTransportURI",
+        () => logActionResult(SetAVTransportURI(avTransportService, DIDLVideoObject(longVideoUrl))));
 
     test("SetNextAVTransportURI",
-        () => getInfo(SetNextAVTransportURI(avTransportService, DIDLVideoObject(shortVideoUrl))));
+        () => logActionResult(SetNextAVTransportURI(avTransportService, DIDLVideoObject(shortVideoUrl))));
 
-    test("Pause", () => getInfo(Pause(avTransportService)));
+    test("Pause", () => logActionResult(Pause(avTransportService)));
 
-    test("Play", () => getInfo(Play(avTransportService)));
+    test("Play", () => logActionResult(Play(avTransportService)));
 
-    test("Seek", () => getInfo(Seek(avTransportService, realPosition: 30)));
+    test("Seek", () => logActionResult(Seek(avTransportService, realPosition: 30)));
 
-    test("Stop", () => getInfo(Stop(avTransportService)));
+    test("Stop", () => logActionResult(Stop(avTransportService)));
+
+    test("GetPositionInfo", () => logActionResult(GetPositionInfo(avTransportService)));
+
+    test("GetMediaInfo", () => logActionResult(GetMediaInfo(avTransportService)));
+
+    test("GetTransportInfo", () => logActionResult(GetTransportInfo(avTransportService)));
+
+    test("GetTransportSettings", () => logActionResult(GetTransportSettings(avTransportService)));
+
+    //TODO: GetCurrentTransportActions, GetDeviceCapabilities failed.
+    test("GetCurrentTransportActions", () => logActionResult(GetCurrentTransportActions(avTransportService)));
+
+    test("GetDeviceCapabilities", () => logActionResult(GetDeviceCapabilities(avTransportService)));
   });
 
   /// ---------------------------------------------------------
@@ -69,7 +58,7 @@ void main() async {
   group("connectionManager", () {
     final DLNAService connectionService = detail.serviceList[1];
 
-    test("GetProtocolInfo", () => getInfo(GetProtocolInfo(connectionService)));
+    test("GetProtocolInfo", () => logActionResult(GetProtocolInfo(connectionService)));
   });
 
   /// ---------------------------------------------------------
@@ -82,12 +71,30 @@ void main() async {
       print(element.name);
     });
 
-    test("GetMute", () => getInfo(GetMute(renderingControlService)));
+    test("GetMute", () => logActionResult(GetMute(renderingControlService)));
 
-    test("GetVolume", () => getInfo(GetVolume(renderingControlService)));
+    test("GetVolume", () => logActionResult(GetVolume(renderingControlService)));
 
-    test("SetMute", () => getInfo(SetMute(renderingControlService)));
+    test("SetMute", () => logActionResult(SetMute(renderingControlService)));
 
-    test("SetVolume", () => getInfo(SetVolume(renderingControlService)));
+    test("SetVolume", () => logActionResult(SetVolume(renderingControlService)));
   });
+
+  /// ---------------------------------------------------------
+  /// Url
+  /// ---------------------------------------------------------
+  group("service url", () {
+    final DLNAService avTransportService = detail.serviceList.first;
+
+    test("service url", () async {
+      final url = avTransportService.baseUrl + "/" + avTransportService.controlUrl;
+      print("url:\n" + url);
+      expect("http://192.168.3.119:49152/_urn:schemas-upnp-org:service:AVTransport_control", url);
+    });
+  });
+}
+
+void logActionResult(AbstractServiceAction action) async {
+  final result = await action.execute();
+  print("\n${action.runtimeType.toString()}:\n$result");
 }

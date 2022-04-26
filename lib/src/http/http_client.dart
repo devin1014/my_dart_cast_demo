@@ -10,8 +10,8 @@ class MyHttpClient {
 
   MyHttpClient._() {
     _httpClient
-      ..idleTimeout = const Duration(seconds: 5)
-      ..connectionTimeout = const Duration(seconds: 5);
+      ..idleTimeout = const Duration(seconds: 3)
+      ..connectionTimeout = const Duration(seconds: 3);
   }
 
   bool logging = true;
