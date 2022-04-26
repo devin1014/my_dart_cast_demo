@@ -4,8 +4,14 @@ import 'package:my_dart_cast_demo/src/dlna_service.dart';
 import 'package:my_dart_cast_demo/src/http/http_client.dart';
 import 'package:my_dart_cast_demo/src/parser.dart';
 import 'package:my_dart_cast_demo/src/soap/action_result.dart';
+import 'package:xml/xml.dart';
 
 abstract class AbstractServiceAction {
+  static const _objectAttribute = {
+    "s:encodingStyle": "http://schemas.xmlsoap.org/soap/encoding/",
+    "xmlns:s": "http://schemas.xmlsoap.org/soap/envelope/"
+  };
+
   AbstractServiceAction(this.service);
 
   final DLNAService service;
@@ -15,16 +21,8 @@ abstract class AbstractServiceAction {
     final response = await MyHttpClient().postUrl(
       url: url,
       header: getHeader() ?? {"SoapAction": _parseAction(service)},
-      content: getContent() ?? parseXmlData(service),
+      content: getContent() ?? parseXmlData2(service),
     );
-    //TODO
-    print(">>>>>>>>>>>>>>>>>>>>");
-    print("request:\n\t$url");
-    print("header:\n\t${{"SoapAction": _parseAction(service)}.toString()}");
-    print("content:\n\t${parseXmlData(service)}");
-    print("");
-    print("<<<<<<<<<<<<<<<<<<<<");
-    print("response:\n\t$response");
     final Map<String, dynamic> json = parseXml2Json(response);
     try {
       final fault = json["s:Envelope"]["s:Body"]["s:Fault"];
@@ -44,23 +42,38 @@ abstract class AbstractServiceAction {
 
   String getSoapAction() => runtimeType.toString();
 
-  String parseXmlData(DLNAService service) => """<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
-<s:Envelope s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
-	<s:Body>
-		<u:${getSoapAction()} xmlns:u="${service.type}">
-			${_parseArguments()}
-		</u:${getSoapAction()}>
-	</s:Body>
-</s:Envelope>""";
-
-  String _parseArguments() {
-    final List<ServiceActionArgument> arguments = getSoapActionArgument();
-    StringBuffer buffer = StringBuffer();
-    for (var arg in arguments) {
-      if (buffer.isNotEmpty) buffer.write("\n");
-      buffer.write("<${arg.name}>${arg.value}</${arg.name}>");
-    }
-    return buffer.toString();
+  String parseXmlData2(DLNAService service) {
+    final builder = XmlBuilder();
+    builder.declaration(
+      version: "1.0",
+      encoding: "utf-8",
+      attributes: {"standalone": "yes"},
+    );
+    builder.element(
+      "s:Envelope",
+      attributes: _objectAttribute,
+      nest: () {
+        builder.element(
+          "s:Body",
+          nest: () {
+            builder.element(
+              "u:${getSoapAction()}",
+              attributes: {"xmlns:u": service.type},
+              nest: () {
+                getSoapActionArgument().forEach((element) {
+                  if (!element.isXmlData) {
+                    builder.element(element.name, nest: element.value);
+                  } else {
+                    builder.xml("<${element.name}>${element.value}</${element.name}>");
+                  }
+                });
+              },
+            );
+          },
+        );
+      },
+    );
+    return builder.buildDocument().toXmlString(pretty: false);
   }
 
   static final List<ServiceActionArgument> _instanceIdArgument = [ServiceActionArgument("InstanceID", 0)];
@@ -71,8 +84,9 @@ abstract class AbstractServiceAction {
 class ServiceActionArgument {
   final String name;
   final String value;
+  final bool isXmlData;
 
-  ServiceActionArgument(this.name, dynamic value) : value = value.toString();
+  ServiceActionArgument(this.name, dynamic value, {this.isXmlData = false}) : value = value.toString();
 }
 
 enum PlayMode {

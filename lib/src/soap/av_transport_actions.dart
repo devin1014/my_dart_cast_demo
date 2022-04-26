@@ -113,7 +113,7 @@ class SetAVTransportURI extends AbstractServiceAction {
   List<ServiceActionArgument> getSoapActionArgument() => [
         ServiceActionArgument("InstanceID", 0),
         ServiceActionArgument("CurrentURI", didlObject.url),
-        ServiceActionArgument("CurrentURIMetaData", didlObject.xmlData),
+        ServiceActionArgument("CurrentURIMetaData", didlObject.xmlData, isXmlData: true),
       ];
 }
 
@@ -127,6 +127,6 @@ class SetNextAVTransportURI extends AbstractServiceAction {
   List<ServiceActionArgument> getSoapActionArgument() => [
         ServiceActionArgument("InstanceID", 0),
         ServiceActionArgument("NextURI", didlObject.url),
-        ServiceActionArgument("NextURIMetaData", didlObject.xmlData),
+        ServiceActionArgument("NextURIMetaData", didlObject.xmlData, isXmlData: true),
       ];
 }

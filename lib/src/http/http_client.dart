@@ -21,7 +21,7 @@ class MyHttpClient {
 
   Future<String> getUrl(String url) async {
     final request = await _httpClient.getUrl(Uri.parse(url));
-    printRequest(request);
+    printRequest(request, null);
     final response = await request.close();
     final body = await response.transform(utf8.decoder).join();
     printResponse(response, body);
@@ -44,26 +44,25 @@ class MyHttpClient {
       });
     }
     request.write(content);
-    printRequest(request);
+    printRequest(request, content);
     final response = await request.close();
     final body = await response.transform(utf8.decoder).join();
     printResponse(response, body);
     return body;
   }
 
-  void printRequest(HttpClientRequest request) {
+  void printRequest(HttpClientRequest request, dynamic data) {
     if (!logging) return;
     print("\nrequest:\n${request.method} ${request.uri}");
     print("headers:\n${request.headers.toString()}");
-    // final data =  utf8.decoder.bind(request).join();
-    print("cookie:\n${request.cookies.toString()}");
+    // final data = utf8.decoder.bind(request).join();
+    print("data:\n$data");
   }
 
   void printResponse(HttpClientResponse response, String body) async {
     if (!logging) return;
     print("\nresponse:\n${response.statusCode} ${response.reasonPhrase}");
     print("headers:\n${response.headers.toString()}");
-    print("cookie:\n${response.cookies.toString()}");
     print("body:\n$body");
   }
 }

@@ -29,7 +29,7 @@ extension GENAHttpService on MyHttpClient {
       headers.add("TIMEOUT", "Second-3600");
       headers.add("SID", sid!);
     }
-    printRequest(request);
+    printRequest(request, null);
     final response = await request.close();
     final body = await response.transform(utf8.decoder).join();
     printResponse(response, body);
