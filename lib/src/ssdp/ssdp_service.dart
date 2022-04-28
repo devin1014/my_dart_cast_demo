@@ -1,4 +1,4 @@
-// ignore_for_file: constant_identifier_names, avoid_print, prefer_adjacent_string_concatenation
+// ignore_for_file: constant_identifier_names, avoid_print, prefer_adjacent_string_concatenation, non_constant_identifier_names
 
 import 'dart:async';
 import 'dart:convert';
@@ -78,6 +78,33 @@ class SSDPService {
   void search({String type = TYPE_DEVICE_ALL}) {
     var message = _DLNA_MESSAGE_SEARCH;
     message = message.replaceAll("{type}", type);
+    print(message);
+    _datagramSocket?.send(const Utf8Codec().encode(message), _upnpIpV4Address, _UPNP_PORT);
+  }
+
+  // NOTIFY * HTTP/1.1
+  // HOST: 239.255.255.250:1900
+  // CACHE-CONTROL: max-age=66
+  // LOCATION: http://192.168.3.119:49152/description.xml
+  // NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+  // NTS: ssdp:alive
+  // SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+  // USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+  final _NOTIFY_MESSAGE = """NOTIFY * HTTP/1.1\r
+HOST: 239.255.255.250:1900\r
+CACHE-CONTROL: max-age=66\r
+LOCATION: {location}\r
+NT: {uuid}\r
+NTS: ssdp:{status}\r
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13\r
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f\r
+""";
+
+  void notify(String uuid, String location, bool alive) {
+    final message = _NOTIFY_MESSAGE
+      ..replaceAll("{location}", location)
+      ..replaceAll("{uuid}", uuid)
+      ..replaceAll("{status}", alive ? "alive" : "byebye");
     print(message);
     _datagramSocket?.send(const Utf8Codec().encode(message), _upnpIpV4Address, _UPNP_PORT);
   }
