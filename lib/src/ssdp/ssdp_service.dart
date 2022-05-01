@@ -78,7 +78,7 @@ class SSDPService {
   void search({String type = TYPE_DEVICE_ALL}) {
     var message = _DLNA_MESSAGE_SEARCH;
     message = message.replaceAll("{type}", type);
-    print(message);
+    print("\n$message\n");
     _datagramSocket?.send(const Utf8Codec().encode(message), _upnpIpV4Address, _UPNP_PORT);
   }
 
@@ -102,10 +102,10 @@ USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f\r
 
   void notify(String uuid, String location, bool alive) {
     final message = _NOTIFY_MESSAGE
-      ..replaceAll("{location}", location)
-      ..replaceAll("{uuid}", uuid)
-      ..replaceAll("{status}", alive ? "alive" : "byebye");
-    print(message);
+        .replaceAll("{location}", location)
+        .replaceAll("{uuid}", uuid)
+        .replaceAll("{status}", alive ? "alive" : "byebye");
+    print("\n$message\n");
     _datagramSocket?.send(const Utf8Codec().encode(message), _upnpIpV4Address, _UPNP_PORT);
   }
 

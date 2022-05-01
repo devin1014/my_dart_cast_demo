@@ -1,0 +1,38 @@
+/Users/liuwei/Library/flutter/bin/flutter --no-color test --machine --start-paused test/socket_test.dart
+Testing started at 16:20 ...
+
+NetworkInterface list:
+NetworkInterface('lo0', [InternetAddress('127.0.0.1', IPv4)])
+NetworkInterface('en0', [InternetAddress('192.168.1.12', IPv4)])
+NetworkInterface('feth4265', [InternetAddress('192.168.192.39', IPv4)])
+
+M-SEARCH * HTTP/1.1
+HOST: 239.255.255.250:1900
+MAN: "ssdp:discover"
+MX: 1
+ST: urn:dial-multiscreen-org:service:dial:1
+USER-AGENT: Google Chrome/100.0.4896.127 Mac OS X
+
+M-SEARCH * HTTP/1.1
+HOST: 239.255.255.250:1900
+MAN: "ssdp:discover"
+MX: 1
+ST: urn:dial-multiscreen-org:service:dial:1
+USER-AGENT: Google Chrome/100.0.4896.127 Mac OS X
+
+M-SEARCH * HTTP/1.1
+HOST: 239.255.255.250:1900
+MAN: "ssdp:discover"
+MX: 1
+ST: urn:dial-multiscreen-org:service:dial:1
+USER-AGENT: Google Chrome/100.0.4896.127 Mac OS X
+
+M-SEARCH * HTTP/1.1
+HOST: 239.255.255.250:1900
+MAN: "ssdp:discover"
+MX: 1
+ST: urn:dial-multiscreen-org:service:dial:1
+USER-AGENT: Google Chrome/100.0.4896.127 Mac OS X
+
+complete
+No tests were found.

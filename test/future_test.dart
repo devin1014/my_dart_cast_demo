@@ -4,7 +4,7 @@ import 'dart:math';
 
 import 'package:flutter_test/flutter_test.dart';
 
-import 'util.dart';
+import '_test_util.dart';
 
 void main() {
   test("Future sync", () async {

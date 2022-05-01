@@ -9,23 +9,31 @@ import 'dart:io';
 
 Future<void> main() async {
   print("server started");
+  final deeplinkHtml = await File("resources/deeplink.html").readAsString();
   try {
     int index = 1;
     final server = await HttpServer.bind(InternetAddress.anyIPv4, 8083);
     await server.forEach((HttpRequest request) async {
       final uri = request.uri;
       if (uri.path == "/favicon.ico") return;
-      print("--------");
+      print("\n");
       print("request: ${request.method} ${request.protocolVersion} ${request.uri}");
       print("headers:\n${request.headers.toString()}");
       final data = await utf8.decoder.bind(request).join();
-      print("data:\n$data");
+      if (data.isNotEmpty) {
+        print("data:\n$data");
+      }
       print("\n");
       if (uri.path == "/byebye") {
         request.response
           ..write("byebye")
           ..close();
         server.close();
+      } else if (uri.path == "/deeplink") {
+        request.response.headers.add("Content-Type", "text/html");
+        request.response
+          ..write(deeplinkHtml)
+          ..close();
       } else {
         request.response
           ..write('OK\n$data\n${index++}')

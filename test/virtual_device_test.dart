@@ -4,9 +4,11 @@ import 'dart:async';
 
 import 'package:my_dart_cast_demo/src/virtual_device/virtual_device.dart';
 
+/// http:192.168.1.9:56789/description.xml
+///
 void main() async {
   final builder = VirtualDeviceBuilder(
-    host: "192.168.3.137",
+    host: "192.168.1.9",
     port: 56789,
     deviceType: "urn:schemas-upnp-org:device:MediaRenderer:1",
     friendlyName: "My MediaRenderer",

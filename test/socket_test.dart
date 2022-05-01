@@ -1,49 +1,40 @@
-// ignore_for_file: constant_identifier_names, avoid_print
-
-import 'dart:convert';
 import 'dart:io';
 
-const String UPNP_IP_V4 = '239.255.255.250';
-const int UPNP_PORT = 1900;
-const String DLNA_M_SEARCH = 'M-SEARCH * HTTP/1.1\r\n' +
-    'ST: ssdp:all\r\n' +
-    'HOST: $UPNP_IP_V4:$UPNP_PORT\r\n' +
-    'MX: 3\r\n' +
-    'MAN: "ssdp:discover"\r\n\r\n';
+import '_test_util.dart';
+
+const tag = "Socket";
 
 void main() async {
-  for (var element in (await NetworkInterface.list(
-    type: InternetAddress.anyIPv4.type,
-    includeLinkLocal: true,
-    includeLoopback: true,
-  ))) {
-    print("$element");
-  }
-
-  final datagramSocket = await RawDatagramSocket.bind(
-    InternetAddress.anyIPv4.address,
-    UPNP_PORT,
-    reuseAddress: true,
-    reusePort: true,
-    ttl: 255,
-  );
-  datagramSocket
-    ..multicastLoopback = false
-    ..multicastHops = 12
-    ..joinMulticast(InternetAddress(UPNP_IP_V4))
-    ..listen((event) {
-      if (event == RawSocketEvent.read) {
-        var message = utf8.decode(datagramSocket.receive()!.data);
-        print(message);
-      }
-    });
-
-  final dataToSend = const Utf8Codec().encode(DLNA_M_SEARCH);
-  //print('Sending \'Search Message\' from ${socket.address.address}:${socket.port}');
-  datagramSocket.send(dataToSend, InternetAddress(UPNP_IP_V4), UPNP_PORT);
-
+  // _connectBaidu()
+  final client = await _startClient();
   await Future.delayed(const Duration(seconds: 15), () {
-    datagramSocket.close();
-    print("complete");
+    client.close();
   });
+}
+
+void _connectBaidu() async {
+  String getMessage = 'GET / HTTP/1.1\nConnection: close\n\n';
+  final socket = await Socket.connect("www.baidu.com", 80);
+  printLog(tag, "connect to 'www.baidu.com'");
+  printLog(tag, "${socket.address}:${socket.port}");
+  printLog(tag, "${socket.remoteAddress}:${socket.remotePort}");
+  socket.listen((event) {
+    printLog(tag, String.fromCharCodes(event).trim());
+  }, onDone: () {
+    printLog(tag, "onDone");
+    socket.close();
+  });
+  socket.write(getMessage);
+}
+
+Future<Socket> _startClient() async {
+  final socket = await Socket.connect(InternetAddress.loopbackIPv4, 5678);
+  socket.listen((event) {
+    printLog(tag, String.fromCharCodes(event).trim());
+  }, onDone: () {
+    printLog(tag, "onDone");
+    socket.close();
+  });
+  socket.write("hello");
+  return socket;
 }

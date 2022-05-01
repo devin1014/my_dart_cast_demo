@@ -1,12 +1,16 @@
 // ignore_for_file: non_constant_identifier_names, avoid_print
 
+import 'dart:async';
+
 import 'package:my_dart_cast_demo/src/http/http_server.dart';
+import 'package:my_dart_cast_demo/src/ssdp/ssdp_service.dart';
 import 'package:uuid/uuid.dart';
 import 'package:xml/xml.dart';
 
 class VirtualDevice {
   final VirtualDeviceBuilder _builder;
   final MyLocalHttpServer _localHttpServer = MyLocalHttpServer();
+  final SSDPService _ssdpService = SSDPService();
 
   VirtualDevice._(VirtualDeviceBuilder builder) : _builder = builder {
     _localHttpServer.description = _builder.description;
@@ -15,6 +19,10 @@ class VirtualDevice {
   Future<void> start() async {
     if (_localHttpServer.isRunning) return;
     try {
+      await _ssdpService.start();
+      Timer.periodic(const Duration(seconds: 10), (timer) {
+        _ssdpService.notify(_builder._udn, _builder.location, true);
+      });
       await _localHttpServer.start(_builder.port);
     } catch (e) {
       print(e.toString());
@@ -23,6 +31,8 @@ class VirtualDevice {
 
   Future<void> stop() async {
     try {
+      _ssdpService.notify(_builder._udn, _builder.location, false);
+      _ssdpService.stop();
       await _localHttpServer.stop();
     } catch (e) {
       print(e.toString());
@@ -82,8 +92,6 @@ class VirtualDeviceBuilder {
     _description = _buildDescription();
   }
 
-  String get UDN => _udn;
-
   String get URLBase => "http://$host:$port";
 
   String get description => _description;
@@ -116,6 +124,8 @@ class VirtualDeviceBuilder {
           builder.element("modelURL", nest: modelURL);
           builder.element("modelDescription", nest: modelDescription);
           builder.element("UPC", nest: UPC);
+          builder.element("UDN", nest: _udn);
+          builder.element("UID", nest: _udn.hashCode);
           builder.element("serviceList", nest: () {
             for (var type in _serviceTypes) {
               _buildService(builder, type);
