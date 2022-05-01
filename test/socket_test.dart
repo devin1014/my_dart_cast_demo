@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import '_test_util.dart';
@@ -6,10 +7,37 @@ const tag = "Socket";
 
 void main() async {
   // _connectBaidu()
-  final client = await _startClient();
-  await Future.delayed(const Duration(seconds: 15), () {
-    client.close();
+  final socket = await _startClient();
+  Timer.periodic(const Duration(seconds: 1), (timer) {
+    socket.write("msg:${timer.tick}");
+    if (timer.tick == 30) {
+      socket.write("byebye");
+      socket.close();
+      socket.destroy();
+    }
   });
+  await Future.delayed(const Duration(seconds: 30), () {
+    socket.write("byebye");
+    socket.close();
+    socket.destroy();
+  });
+}
+
+Future<Socket> _startClient() async {
+  final socket = await Socket.connect(InternetAddress.loopbackIPv4, 5678);
+  socket.listen(
+    (event) {
+      printLog(tag, String.fromCharCodes(event).trim());
+    },
+    onDone: () {
+      printLog(tag, "onDone");
+    },
+    onError: (e) {
+      printLog(tag, e.toString());
+      socket.close();
+    },
+  );
+  return socket;
 }
 
 void _connectBaidu() async {
@@ -25,16 +53,4 @@ void _connectBaidu() async {
     socket.close();
   });
   socket.write(getMessage);
-}
-
-Future<Socket> _startClient() async {
-  final socket = await Socket.connect(InternetAddress.loopbackIPv4, 5678);
-  socket.listen((event) {
-    printLog(tag, String.fromCharCodes(event).trim());
-  }, onDone: () {
-    printLog(tag, "onDone");
-    socket.close();
-  });
-  socket.write("hello");
-  return socket;
 }
