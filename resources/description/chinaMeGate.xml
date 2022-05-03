@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+    <specVersion>
+        <major>1</major>
+        <minor>0</minor>
+    </specVersion>
+    <device>
+        <deviceType>urn:schemas-upnp-org:device:MediaServer:1</deviceType>
+        <friendlyName>悦me网关</friendlyName>
+        <manufacturer>China Telecom</manufacturer>
+        <manufacturerURL>http://192.168.1.1</manufacturerURL>
+        <modelDescription>China Telecom Digital Media Server</modelDescription>
+        <modelName>ChinaNetDMS</modelName>
+        <modelNumber>1.0.0</modelNumber>
+        <modelURL>http://192.168.1.1</modelURL>
+        <serialNumber>12345678</serialNumber>
+        <UDN>uuid:75a8ea96-1dd2-11b2-b03c-9a60d80b87f0</UDN>
+        <UPC>upc code</UPC>
+        <serviceList>
+            <service>
+                <serviceType>urn:schemas-upnp-org:service:ConnectionManager:1</serviceType>
+                <serviceId>urn:upnp-org:serviceId:ConnectionManager</serviceId>
+                <SCPDURL>/cms</SCPDURL>
+                <controlURL>/cms_control</controlURL>
+                <eventSubURL>/cms_event</eventSubURL>
+            </service>
+            <service>
+                <serviceType>urn:schemas-upnp-org:service:ContentDirectory:1</serviceType>
+                <serviceId>urn:upnp-org:serviceId:ContentDirectory</serviceId>
+                <SCPDURL>/cds</SCPDURL>
+                <controlURL>/cds_control</controlURL>
+                <eventSubURL>/cds_event</eventSubURL>
+            </service>
+        </serviceList>
+        <presentationURL>http://192.168.1.1</presentationURL>
+    </device>
+</root>

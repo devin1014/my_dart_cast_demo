@@ -1,0 +1,2359 @@
+/Users/liuwei/Library/flutter/bin/flutter --no-color test --machine --start-paused test/udp_multicast_test.dart
+Testing started at 14:22 ...
+
+---- NetworkInterface list ----------------------------------------
+'en0': [InternetAddress('192.168.1.12', IPv4)]
+'feth4265': [InternetAddress('192.168.192.39', IPv4)]
+
+[includeLinkLocal, includeLoopback]
+'lo0': [InternetAddress('127.0.0.1', IPv4)]
+'en0': [InternetAddress('192.168.1.12', IPv4)]
+'feth4265': [InternetAddress('192.168.192.39', IPv4)]
+
+[anyIPv4, loopbackIPv4]
+InternetAddress('0.0.0.0', IPv4)
+InternetAddress('127.0.0.1', IPv4)
+--------------------------------------------------------------------
+2022-5-2 14:22:50 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:22:50 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:22:50 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:22:50 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:22:50 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:22:50 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:22:50 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:22:50 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:22:50 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:22:50 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:22:50 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:22:50 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:22:53 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:22:53 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:22:53 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:22:53 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:22:53 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:22:53 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:22:53 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:22:53 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:22:53 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:22:53 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:22:53 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:22:53 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:22:53 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:22:53 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:22:56 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:22:56 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:22:56 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:22:56 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:22:56 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:22:56 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:22:56 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:22:56 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:22:56 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:22:56 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:22:56 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:22:56 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:22:56 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:22:56 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:22:59 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:22:59 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:22:59 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:22:59 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:22:59 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:22:59 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:22:59 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:22:59 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:22:59 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:22:59 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:22:59 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:22:59 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:22:59 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:22:59 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:02 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:02 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:02 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:02 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:02 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:02 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:02 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:02 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:02 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:02 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:02 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:02 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:02 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:02 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:05 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:05 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:05 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:05 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:05 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:05 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:05 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:05 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:05 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:05 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:05 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:05 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:05 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:05 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:08 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:08 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:08 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:08 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:08 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:08 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:08 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:08 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:08 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:08 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:08 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:08 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:08 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:08 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:11 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:11 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:11 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:11 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:11 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:11 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:11 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:11 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:11 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:11 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:11 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:11 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:11 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:11 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:14 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:14 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:14 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:14 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:14 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:14 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:14 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:17 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:17 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:17 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:17 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:17 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:17 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:17 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:17 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:20 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:20 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:20 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:20 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:20 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:20 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:20 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:20 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:20 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:20 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:20 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:20 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:20 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:23 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:23 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:23 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:23 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:23 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:23 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:23 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:23 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:23 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:23 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:26 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:26 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:26 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:26 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:26 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:26 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:26 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:26 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:29 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:29 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:29 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:29 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:29 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:29 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:29 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:29 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:29 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:29 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:29 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:29 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:29 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:29 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:32 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:32 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:32 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:32 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:32 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:32 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:32 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:32 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:35 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:35 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:35 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:35 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:35 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:35 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:35 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:35 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:35 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:35 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:35 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:35 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:38 [multicast]: receive:
+M-SEARCH * HTTP/1.1
+HOST: 239.255.255.250:1900
+MAN: "ssdp:discover"
+MX: 1
+ST: urn:dial-multiscreen-org:service:dial:1
+USER-AGENT: Google Chrome/100.0.4896.127 Mac OS X
+
+2022-5-2 14:23:38 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:38 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:38 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:38 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:38 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:38 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:38 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:38 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:38 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:38 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:39 [multicast]: receive:
+M-SEARCH * HTTP/1.1
+HOST: 239.255.255.250:1900
+MAN: "ssdp:discover"
+MX: 1
+ST: urn:dial-multiscreen-org:service:dial:1
+USER-AGENT: Google Chrome/100.0.4896.127 Mac OS X
+
+2022-5-2 14:23:40 [multicast]: receive:
+M-SEARCH * HTTP/1.1
+HOST: 239.255.255.250:1900
+MAN: "ssdp:discover"
+MX: 1
+ST: urn:dial-multiscreen-org:service:dial:1
+USER-AGENT: Google Chrome/100.0.4896.127 Mac OS X
+
+2022-5-2 14:23:41 [multicast]: receive:
+M-SEARCH * HTTP/1.1
+HOST: 239.255.255.250:1900
+MAN: "ssdp:discover"
+MX: 1
+ST: urn:dial-multiscreen-org:service:dial:1
+USER-AGENT: Google Chrome/100.0.4896.127 Mac OS X
+
+2022-5-2 14:23:41 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:41 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:41 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:41 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:41 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:41 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:41 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:41 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:44 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:44 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:44 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:44 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:44 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:44 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:44 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:44 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:44 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:44 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:44 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:44 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:44 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:44 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:47 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:47 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:23:47 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:23:47 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:23:47 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:23:47 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:23:47 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:23:47 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:23:47 [multicast]: receive:
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.1.8:49152/description.xml
+NT: urn:mi-com:service:RController:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+No tests were found.

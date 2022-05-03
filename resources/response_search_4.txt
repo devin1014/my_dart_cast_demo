@@ -1,0 +1,293 @@
+/Users/liuwei/Library/flutter/bin/flutter --no-color test --machine --start-paused test/udp_multicast_test.dart
+Testing started at 14:24 ...
+
+---- NetworkInterface list ----------------------------------------
+'en0': [InternetAddress('192.168.1.12', IPv4)]
+'feth4265': [InternetAddress('192.168.192.39', IPv4)]
+
+[includeLinkLocal, includeLoopback]
+'lo0': [InternetAddress('127.0.0.1', IPv4)]
+'en0': [InternetAddress('192.168.1.12', IPv4)]
+'feth4265': [InternetAddress('192.168.192.39', IPv4)]
+
+[anyIPv4, loopbackIPv4]
+InternetAddress('0.0.0.0', IPv4)
+InternetAddress('127.0.0.1', IPv4)
+--------------------------------------------------------------------
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=1810
+DATE: Mon, 02 May 2022 06:24:58 GMT
+ST: uuid:4d696e69-444c-164e-9d41-dca632c02105
+USN: uuid:4d696e69-444c-164e-9d41-dca632c02105
+EXT:
+SERVER: 5.4.72-v7l+ DLNADOC/1.50 UPnP/1.0 MiniDLNA/1.2.1
+LOCATION: http://192.168.1.14:8200/rootDesc.xml
+Content-Length: 0
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=1810
+DATE: Mon, 02 May 2022 06:24:58 GMT
+ST: urn:microsoft.com:service:X_MS_MediaReceiverRegistrar:1
+USN: uuid:4d696e69-444c-164e-9d41-dca632c02105::urn:microsoft.com:service:X_MS_MediaReceiverRegistrar:1
+EXT:
+SERVER: 5.4.72-v7l+ DLNADOC/1.50 UPnP/1.0 MiniDLNA/1.2.1
+LOCATION: http://192.168.1.14:8200/rootDesc.xml
+Content-Length: 0
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=1810
+DATE: Mon, 02 May 2022 06:24:58 GMT
+ST: upnp:rootdevice
+USN: uuid:4d696e69-444c-164e-9d41-dca632c02105::upnp:rootdevice
+EXT:
+SERVER: 5.4.72-v7l+ DLNADOC/1.50 UPnP/1.0 MiniDLNA/1.2.1
+LOCATION: http://192.168.1.14:8200/rootDesc.xml
+Content-Length: 0
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=1810
+DATE: Mon, 02 May 2022 06:24:58 GMT
+ST: urn:schemas-upnp-org:device:MediaServer:1
+USN: uuid:4d696e69-444c-164e-9d41-dca632c02105::urn:schemas-upnp-org:device:MediaServer:1
+EXT:
+SERVER: 5.4.72-v7l+ DLNADOC/1.50 UPnP/1.0 MiniDLNA/1.2.1
+LOCATION: http://192.168.1.14:8200/rootDesc.xml
+Content-Length: 0
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=1810
+DATE: Mon, 02 May 2022 06:24:58 GMT
+ST: urn:schemas-upnp-org:service:ContentDirectory:1
+USN: uuid:4d696e69-444c-164e-9d41-dca632c02105::urn:schemas-upnp-org:service:ContentDirectory:1
+EXT:
+SERVER: 5.4.72-v7l+ DLNADOC/1.50 UPnP/1.0 MiniDLNA/1.2.1
+LOCATION: http://192.168.1.14:8200/rootDesc.xml
+Content-Length: 0
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=1810
+DATE: Mon, 02 May 2022 06:24:58 GMT
+ST: urn:schemas-upnp-org:service:ConnectionManager:1
+USN: uuid:4d696e69-444c-164e-9d41-dca632c02105::urn:schemas-upnp-org:service:ConnectionManager:1
+EXT:
+SERVER: 5.4.72-v7l+ DLNADOC/1.50 UPnP/1.0 MiniDLNA/1.2.1
+LOCATION: http://192.168.1.14:8200/rootDesc.xml
+Content-Length: 0
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+Server: Custom/1.0 UPnP/1.0 Proc/Ver
+EXT:
+Location: http://192.168.1.1:5431/dyndev/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000
+Cache-Control:max-age=1800
+ST:upnp:rootdevice
+USN:uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000::upnp:rootdevice
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+Server: Custom/1.0 UPnP/1.0 Proc/Ver
+EXT:
+Location: http://192.168.1.1:5431/dyndev/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000
+Cache-Control:max-age=1800
+ST:uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000
+USN:uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+Server: Custom/1.0 UPnP/1.0 Proc/Ver
+EXT:
+Location: http://192.168.1.1:5431/dyndev/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000
+Cache-Control:max-age=1800
+ST:urn:schemas-upnp-org:device:InternetGatewayDevice:1
+USN:uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000::urn:schemas-upnp-org:device:InternetGatewayDevice:1
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+Server: Custom/1.0 UPnP/1.0 Proc/Ver
+EXT:
+Location: http://192.168.1.1:5431/dyndev/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000
+Cache-Control:max-age=1800
+ST:urn:schemas-upnp-org:service:Layer3Forwarding:1
+USN:uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000::urn:schemas-upnp-org:service:Layer3Forwarding:1
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+Server: Custom/1.0 UPnP/1.0 Proc/Ver
+EXT:
+Location: http://192.168.1.1:5431/dyndev/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000
+Cache-Control:max-age=1800
+ST:uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0001
+USN:uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0001
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+Server: Custom/1.0 UPnP/1.0 Proc/Ver
+EXT:
+Location: http://192.168.1.1:5431/dyndev/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000
+Cache-Control:max-age=1800
+ST:urn:schemas-upnp-org:device:WANDevice:1
+USN:uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0001::urn:schemas-upnp-org:device:WANDevice:1
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+Server: Custom/1.0 UPnP/1.0 Proc/Ver
+EXT:
+Location: http://192.168.1.1:5431/dyndev/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000
+Cache-Control:max-age=1800
+ST:urn:schemas-upnp-org:service:WANCommonInterfaceConfig:1
+USN:uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0001::urn:schemas-upnp-org:service:WANCommonInterfaceConfig:
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+Server: Custom/1.0 UPnP/1.0 Proc/Ver
+EXT:
+Location: http://192.168.1.1:5431/dyndev/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000
+Cache-Control:max-age=1800
+ST:uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0002
+USN:uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0002
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+Server: Custom/1.0 UPnP/1.0 Proc/Ver
+EXT:
+Location: http://192.168.1.1:5431/dyndev/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000
+Cache-Control:max-age=1800
+ST:urn:schemas-upnp-org:device:WANConnectionDevice:1
+USN:uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0002::urn:schemas-upnp-org:device:WANConnectionDevice:1
+
+2022-5-2 14:24:57 [multicast]: receive:
+HTTP/1.1 200 OK
+Server: Custom/1.0 UPnP/1.0 Proc/Ver
+EXT:
+Location: http://192.168.1.1:5431/dyndev/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000
+Cache-Control:max-age=1800
+ST:urn:schemas-upnp-org:service:WANPPPConnection:1
+USN:uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0002::urn:schemas-upnp-org:service:WANPPPConnection:1
+
+2022-5-2 14:24:58 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=66
+DATE: Mon, 02 May 2022 06:24:59 GMT
+EXT:
+LOCATION: http://192.168.1.8:49152/description.xml
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+ST: urn:schemas-upnp-org:service:AVTransport:1
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+2022-5-2 14:24:58 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=66
+DATE: Mon, 02 May 2022 06:24:59 GMT
+EXT:
+LOCATION: http://192.168.1.8:49152/description.xml
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+ST: urn:schemas-upnp-org:service:RenderingControl:1
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1
+
+2022-5-2 14:24:58 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=66
+DATE: Mon, 02 May 2022 06:24:59 GMT
+EXT:
+LOCATION: http://192.168.1.8:49152/description.xml
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+ST: upnp:rootdevice
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+2022-5-2 14:24:58 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=66
+DATE: Mon, 02 May 2022 06:24:59 GMT
+EXT:
+LOCATION: http://192.168.1.8:49152/description.xml
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+ST: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+2022-5-2 14:24:58 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=66
+DATE: Mon, 02 May 2022 06:24:59 GMT
+EXT:
+LOCATION: http://192.168.1.8:49152/description.xml
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+ST: urn:schemas-upnp-org:device:MediaRenderer:1
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+2022-5-2 14:24:58 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=66
+DATE: Mon, 02 May 2022 06:24:59 GMT
+EXT:
+LOCATION: http://192.168.1.8:49152/description.xml
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+ST: urn:schemas-upnp-org:service:ConnectionManager:1
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:24:58 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=66
+DATE: Mon, 02 May 2022 06:24:59 GMT
+EXT:
+LOCATION: http://192.168.1.8:49152/description.xml
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+ST: urn:mi-com:service:RController:1
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:mi-com:service:RController:1
+
+2022-5-2 14:24:59 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=1800
+DATE: Mon, 02 May 2022 14:24:59 GMT
+EXT:
+LOCATION: http://192.168.1.1:2468/75a8ea96-1dd2-11b2-b03c-9a60d80b87f0
+SERVER: Linux/#10 SMP PREEMPT Thu Aug 3 18:58:12 CST 2017 UPnP/1.0 Broadcom UPNP/0.9
+ST: upnp:rootdevice
+USN: uuid:75a8ea96-1dd2-11b2-b03c-9a60d80b87f0::upnp:rootdevice
+
+2022-5-2 14:24:59 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=1800
+DATE: Mon, 02 May 2022 14:24:59 GMT
+EXT:
+LOCATION: http://192.168.1.1:2468/75a8ea96-1dd2-11b2-b03c-9a60d80b87f0
+SERVER: Linux/#10 SMP PREEMPT Thu Aug 3 18:58:12 CST 2017 UPnP/1.0 Broadcom UPNP/0.9
+ST: uuid:75a8ea96-1dd2-11b2-b03c-9a60d80b87f0
+USN: uuid:75a8ea96-1dd2-11b2-b03c-9a60d80b87f0
+
+2022-5-2 14:24:59 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=1800
+DATE: Mon, 02 May 2022 14:24:59 GMT
+EXT:
+LOCATION: http://192.168.1.1:2468/75a8ea96-1dd2-11b2-b03c-9a60d80b87f0
+SERVER: Linux/#10 SMP PREEMPT Thu Aug 3 18:58:12 CST 2017 UPnP/1.0 Broadcom UPNP/0.9
+ST: urn:schemas-upnp-org:device:MediaServer:1
+USN: uuid:75a8ea96-1dd2-11b2-b03c-9a60d80b87f0::urn:schemas-upnp-org:device:MediaServer:1
+
+2022-5-2 14:24:59 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=1800
+DATE: Mon, 02 May 2022 14:24:59 GMT
+EXT:
+LOCATION: http://192.168.1.1:2468/75a8ea96-1dd2-11b2-b03c-9a60d80b87f0
+SERVER: Linux/#10 SMP PREEMPT Thu Aug 3 18:58:12 CST 2017 UPnP/1.0 Broadcom UPNP/0.9
+ST: urn:schemas-upnp-org:service:ConnectionManager:1
+USN: uuid:75a8ea96-1dd2-11b2-b03c-9a60d80b87f0::urn:schemas-upnp-org:service:ConnectionManager:1
+
+2022-5-2 14:24:59 [multicast]: receive:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=1800
+DATE: Mon, 02 May 2022 14:24:59 GMT
+EXT:
+LOCATION: http://192.168.1.1:2468/75a8ea96-1dd2-11b2-b03c-9a60d80b87f0
+SERVER: Linux/#10 SMP PREEMPT Thu Aug 3 18:58:12 CST 2017 UPnP/1.0 Broadcom UPNP/0.9
+ST: urn:schemas-upnp-org:service:ContentDirectory:1
+USN: uuid:75a8ea96-1dd2-11b2-b03c-9a60d80b87f0::urn:schemas-upnp-org:service:ContentDirectory:1
+
+No tests were found.

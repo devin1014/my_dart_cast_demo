@@ -68,5 +68,8 @@ void printLog(String tag, dynamic object, {bool timeStamp = true}) {
 
 String getTimeNow() {
   final time = DateTime.now();
-  return "${time.year}-${time.month}-${time.day} ${time.hour}:${time.minute}:${time.second}";
+  return "${time.year}-${time.month}-${time.day} "
+      "${formatTime(time.hour)}:${formatTime(time.minute)}:${formatTime(time.second)}";
 }
+
+String formatTime(int num) => (num < 10) ? "0$num" : "$num";

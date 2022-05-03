@@ -1,0 +1,57 @@
+#rootdevice
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.3.119:49152/description.xml
+NT: upnp:rootdevice
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::upnp:rootdevice
+
+#subdevice
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.3.119:49152/description.xml
+NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
+
+#device
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.3.119:49152/description.xml
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:device:MediaRenderer:1
+
+#service
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.3.119:49152/description.xml
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:AVTransport:1
+
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.3.119:49152/description.xml
+NT: urn:schemas-upnp-org:service:ConnectionManager:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:ConnectionManager:1
+
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=66
+LOCATION: http://192.168.3.119:49152/description.xml
+NT: urn:schemas-upnp-org:service:RenderingControl:1
+NTS: ssdp:alive
+SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
+USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f::urn:schemas-upnp-org:service:RenderingControl:1

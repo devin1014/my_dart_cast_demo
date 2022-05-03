@@ -12,9 +12,7 @@ class VirtualDevice {
   final MyLocalHttpServer _localHttpServer = MyLocalHttpServer();
   final SSDPService _ssdpService = SSDPService();
 
-  VirtualDevice._(VirtualDeviceBuilder builder) : _builder = builder {
-    _localHttpServer.description = _builder.description;
-  }
+  VirtualDevice._(VirtualDeviceBuilder builder) : _builder = builder;
 
   Future<void> start() async {
     if (_localHttpServer.isRunning) return;
@@ -23,7 +21,8 @@ class VirtualDevice {
       Timer.periodic(const Duration(seconds: 10), (timer) {
         _ssdpService.notify(_builder._udn, _builder.location, true);
       });
-      await _localHttpServer.start(_builder.port);
+      await _localHttpServer.start();
+      _localHttpServer.bindDeviceBuilder(_builder);
     } catch (e) {
       print(e.toString());
     }
@@ -61,19 +60,23 @@ class VirtualDeviceBuilder {
 
   final String UPC;
 
-  final String host;
+  String _host = "";
 
-  final int port;
+  set host(String value) {
+    _host = value;
+  }
+
+  int _port = 0;
+
+  set port(int value) {
+    _port = value;
+  }
 
   String _udn = "";
-
-  String _description = "";
 
   final List<String> _serviceTypes = [];
 
   VirtualDeviceBuilder({
-    required this.host,
-    required this.port,
     required this.deviceType,
     List<String> services = _rendererServices,
     this.presentationURL = "https://github.com/devin1014/my_dart_cast_demo",
@@ -89,12 +92,11 @@ class VirtualDeviceBuilder {
     if (services.isNotEmpty == true) {
       _serviceTypes.addAll(services);
     }
-    _description = _buildDescription();
   }
 
-  String get URLBase => "http://$host:$port";
+  String get URLBase => _host.isNotEmpty ? "http://$_host:$_port" : "";
 
-  String get description => _description;
+  String get description => _buildDescription();
 
   String get location => "$URLBase/description.xml";
 

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+    <specVersion>
+        <major>1</major>
+        <minor>0</minor>
+    </specVersion>
+    <URLBase>http://192.168.1.1:5431/</URLBase>
+    <device>
+        <deviceType>urn:schemas-upnp-org:device:InternetGatewayDevice:1</deviceType>
+        <presentationURL>http://192.168.1.1:80/</presentationURL>
+        <friendlyName>ChinaTelecom E8C(EPON) Gateway</friendlyName>
+        <manufacturer>ZTE</manufacturer>
+        <manufacturerURL>http://www.broadcom.com/</manufacturerURL>
+        <modelDescription>ZXHN F450G</modelDescription>
+        <modelName>ZXHN F450G</modelName>
+        <modelNumber>1.0</modelNumber>
+        <modelURL>http://www.broadcom.com/</modelURL>
+        <UDN>uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000</UDN>
+        <serviceList>
+            <service>
+                <serviceType>urn:schemas-upnp-org:service:Layer3Forwarding:1</serviceType>
+                <serviceId>urn:upnp-org:serviceId:Layer3Forwarding.1</serviceId>
+                <controlURL>/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000/Layer3Forwarding:1</controlURL>
+                <eventSubURL>/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0000/Layer3Forwarding:1</eventSubURL>
+                <SCPDURL>/dynsvc/Layer3Forwarding:1.xml</SCPDURL>
+            </service>
+        </serviceList>
+        <deviceList>
+            <device>
+                <deviceType>urn:schemas-upnp-org:device:WANDevice:1</deviceType>
+                <friendlyName>WANDevice.1</friendlyName>
+                <manufacturer>ZTE</manufacturer>
+                <manufacturerURL>http://www.broadcom.com/</manufacturerURL>
+                <modelDescription>ZXHN F450G</modelDescription>
+                <modelName>ZXHN F450G</modelName>
+                <modelNumber>1.0</modelNumber>
+                <modelURL>http://www.broadcom.com/</modelURL>
+                <UDN>uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0001</UDN>
+                <serviceList>
+                    <service>
+                        <serviceType>urn:schemas-upnp-org:service:WANCommonInterfaceConfig:1</serviceType>
+                        <serviceId>urn:upnp-org:serviceId:WANCommonInterfaceConfig.1</serviceId>
+                        <controlURL>/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0001/WANCommonInterfaceConfig:1</controlURL>
+                        <eventSubURL>/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0001/WANCommonInterfaceConfig:1</eventSubURL>
+                        <SCPDURL>/dynsvc/WANCommonInterfaceConfig:1.xml</SCPDURL>
+                    </service>
+                </serviceList>
+                <deviceList>
+                    <device>
+                        <deviceType>urn:schemas-upnp-org:device:WANConnectionDevice:1</deviceType>
+                        <friendlyName>WanConnectionDevice.2</friendlyName>
+                        <manufacturer>ZTE</manufacturer>
+                        <manufacturerURL>http://www.broadcom.com/</manufacturerURL>
+                        <modelDescription>ZXHN F450G</modelDescription>
+                        <modelName>ZXHN F450G</modelName>
+                        <modelNumber>1.0</modelNumber>
+                        <modelURL>http://www.broadcom.com/</modelURL>
+                        <UDN>uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0002</UDN>
+                        <serviceList>
+                            <service>
+                                <serviceType>urn:schemas-upnp-org:service:WANPPPConnection:1</serviceType>
+                                <serviceId>urn:upnp-org:serviceId:WANPPPConnection.1</serviceId>
+                                <controlURL>/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0002/WANPPPConnection:1</controlURL>
+                                <eventSubURL>/uuid:b805abbb-3f6b-6b3f-bbab-05b805bb6b0002/WANPPPConnection:1</eventSubURL>
+                                <SCPDURL>/dynsvc/WANPPPConnection:1.xml</SCPDURL>
+                            </service>
+                        </serviceList>
+                    </device>
+                </deviceList>
+            </device>
+        </deviceList>
+    </device>
+</root>

@@ -3,16 +3,20 @@
 import 'dart:convert';
 import 'dart:io';
 
+import '_test_util.dart';
+
 // NetworkInterface('lo0', [InternetAddress('127.0.0.1', IPv4)])
 // NetworkInterface('en0', [InternetAddress('192.168.3.137', IPv4)])
 // NetworkInterface('feth4265', [InternetAddress('192.168.192.39', IPv4)])
 
 Future<void> main() async {
   print("server started");
-  final deeplinkHtml = await File("resources/deeplink.html").readAsString();
+  final deeplinkHtml = await File("resources/html/deeplink.html").readAsString();
   try {
     int index = 1;
-    final server = await HttpServer.bind(InternetAddress.anyIPv4, 8083);
+    final networkInterface = await _getLocalInternetIp();
+    final server = await HttpServer.bind(networkInterface.addresses.first, 8083);
+    printLog("HttpServer", "started: ${server.address.address}:${server.port}");
     await server.forEach((HttpRequest request) async {
       final uri = request.uri;
       if (uri.path == "/favicon.ico") return;
@@ -45,3 +49,6 @@ Future<void> main() async {
   }
   print("server stopped");
 }
+
+Future<NetworkInterface> _getLocalInternetIp() async =>
+    (await NetworkInterface.list(type: InternetAddress.anyIPv4.type)).first;

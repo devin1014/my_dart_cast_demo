@@ -24,11 +24,6 @@ class SSDPService {
       'ST: {type}\r\n' +
       'MX: 3\r\n\r\n';
 
-  // static const String _DLNA_MESSAGE_SEARCH = 'M-SEARCH * HTTP/1.1\r\n' +
-  //     'ST: ssdp:all\r\n' +
-  //     'HOST: 239.255.255.250:1900\r\n' +
-  //     'MX: 3\r\n' +
-  //     'MAN: "ssdp:discover"\r\n\r\n';
   static const String TYPE_DEVICE_ALL = "ssdp:all";
   static const String TYPE_DEVICE_ROOT = "upnp:rootdevice";
   static const String TYPE_DEVICE_MEDIA_RENDERER = "urn:schemas-upnp-org:device:MediaRenderer:1";
@@ -37,18 +32,15 @@ class SSDPService {
   static const String TYPE_SERVICE_RENDERING_CONTROL = "urn:schemas-upnp-org:service:RenderingControl:1";
 
   final InternetAddress _upnpIpV4Address = InternetAddress(_UPNP_IP_V4);
-  final RawDatagramSocketFactory _rawDatagramSocketFactory;
   RawDatagramSocket? _datagramSocket;
 
-  SSDPService({
-    RawDatagramSocketFactory factory = RawDatagramSocket.bind,
-  }) : _rawDatagramSocketFactory = factory;
+  SSDPService();
 
   bool get isRunning => _datagramSocket != null;
 
   Future<RawDatagramSocket> start() async {
     if (_datagramSocket != null) return _datagramSocket!;
-    _datagramSocket = await _rawDatagramSocketFactory(
+    _datagramSocket = await RawDatagramSocket.bind(
       InternetAddress.anyIPv4.address,
       _UPNP_PORT,
       reuseAddress: true,
@@ -82,14 +74,6 @@ class SSDPService {
     _datagramSocket?.send(const Utf8Codec().encode(message), _upnpIpV4Address, _UPNP_PORT);
   }
 
-  // NOTIFY * HTTP/1.1
-  // HOST: 239.255.255.250:1900
-  // CACHE-CONTROL: max-age=66
-  // LOCATION: http://192.168.3.119:49152/description.xml
-  // NT: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
-  // NTS: ssdp:alive
-  // SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13
-  // USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f
   final _NOTIFY_MESSAGE = """NOTIFY * HTTP/1.1\r
 HOST: 239.255.255.250:1900\r
 CACHE-CONTROL: max-age=66\r
@@ -97,13 +81,13 @@ LOCATION: {location}\r
 NT: {uuid}\r
 NTS: ssdp:{status}\r
 SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13\r
-USN: uuid:F7CA5454-3F48-4390-8009-403e48ef451f\r
+USN: {uuid}\r\n\r
 """;
 
   void notify(String uuid, String location, bool alive) {
     final message = _NOTIFY_MESSAGE
-        .replaceAll("{location}", location)
         .replaceAll("{uuid}", uuid)
+        .replaceAll("{location}", location)
         .replaceAll("{status}", alive ? "alive" : "byebye");
     print("\n$message\n");
     _datagramSocket?.send(const Utf8Codec().encode(message), _upnpIpV4Address, _UPNP_PORT);
