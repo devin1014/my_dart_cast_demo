@@ -43,18 +43,6 @@ Object? readServiceAction(Map<dynamic, dynamic> json, String key) {
   }
 }
 
-// mixin DLNAServiceManager on DLNAService {
-//   Future<dynamic> execute(AbstractServiceAction action) async {
-//     final url = baseUrl + "/" + controlUrl;
-//     final response = await MyHttpClient().postUrl(
-//       url: url,
-//       header: action.getHeader() ?? {"SoapAction": '"$type#${action.getSoapAction()}"'},
-//       content: action.getContent() ?? action.parseXmlData(this),
-//     );
-//     return action.parseResult(response);
-//   }
-// }
-
 /// ------------------------------------------------
 /// DLNA Service Action
 /// ------------------------------------------------

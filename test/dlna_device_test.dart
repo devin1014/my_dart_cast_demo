@@ -21,7 +21,7 @@ const location = "http://192.168.3.119:49152/description.xml";
 void main() async {
   final device = DLNADevice(usn: usn, location: location);
   device.detail = await DiscoveryDeviceManager().getDeviceDescription(device);
-  final service = device.detail!.getService(SERVICE_AV_TRANSPORT);
+  final service = device.detail!.getService("urn:schemas-upnp-org:service:AVTransport:1");
   final GetTransportInfoResponse result = await GetTransportInfo(service!).execute();
   print(result.toJson().toString());
 }

@@ -3,70 +3,52 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:my_dart_cast_demo/src/virtual_device/virtual_device.dart';
+import '../util.dart';
 
-class MyLocalHttpServer {
-  MyLocalHttpServer({int port = 0}) : _port = port;
+class LocalHttpServer {
+  static const tag = "LocalHttpServer";
+
+  LocalHttpServer({int port = 0}) : _port = port;
 
   HttpServer? _httpServer;
-  String _description = "";
-  int _descriptionLength = 0;
-  int _port;
+
+  final int _port;
 
   bool get isRunning => _httpServer != null;
 
-  String get address {
-    final value = _httpServer?.address.address;
-    if (value == null) return "";
-    if (value == InternetAddress.anyIPv4.address) return "localhost";
-    return value;
-  }
+  String getBaseUrl() => isRunning ? "http://${_httpServer!.address.address}:${_httpServer!.port}" : "";
 
-  int get port => _port;
-
-  void bindDeviceBuilder(VirtualDeviceBuilder builder) {
-    builder.host = address;
-    builder.port = port;
-    _description = builder.description;
-    _descriptionLength = utf8.encode(_description).length;
-  }
-
-  Future<int> start() async {
-    if (_httpServer != null) return _httpServer!.port;
-    print("server is starting");
+  Future<void> start(void Function(HttpRequest request) onRequest) async {
+    if (_httpServer != null) return;
+    printLog(tag, "server is starting");
     final networkInterface = await _getLocalInternetIp();
     _httpServer = await HttpServer.bind(networkInterface.addresses.first, _port);
-    _port = _httpServer!.port;
-    print("server is started, ${_httpServer!.address.address}:${_httpServer!.port}");
+    printLog(tag, "server is started, ${_httpServer!.address.address}:${_httpServer!.port}");
     _httpServer!.forEach((HttpRequest request) async {
       final uri = request.uri;
-      if (uri.path == "/favicon.ico") return;
-      print("\n");
-      print("request: ${request.method} ${request.protocolVersion} ${request.uri}");
-      print("headers:\n${request.headers.toString()}");
-      final data = await utf8.decoder.bind(request).join();
-      if (data.isNotEmpty) {
-        print("data:\n$data");
+      if (uri.path == "/favicon.ico") {
+        request.response.close();
+        return;
       }
-      print("\n");
+      if (request.connectionInfo != null) {
+        printLog(tag, "connected: ${request.connectionInfo!.remoteAddress}");
+      }
+      printLog(tag, "request: ${request.method} ${request.protocolVersion} ${request.uri}");
+      printLog(tag, "headers: ${request.headers.toString()}");
+      if (request.contentLength > 0) {
+        final data = await utf8.decoder.bind(request).join();
+        printLog(tag, "content: $data");
+      }
+      onRequest(request);
       final response = request.response;
-      if (uri.path == "/description.xml") {
-        if (_description.isNotEmpty) {
-          response.contentLength = _descriptionLength;
-          response.write(_description);
-        } else {
-          response.statusCode = 404;
-        }
-      }
       response.close();
     });
-    return _httpServer!.port;
   }
 
   Future<void> stop() async {
-    print("server is closing");
+    printLog(tag, "server is closing");
     await _httpServer?.close();
-    print("server is closed");
+    printLog(tag, "server is closed");
     _httpServer = null;
   }
 

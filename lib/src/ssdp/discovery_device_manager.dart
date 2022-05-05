@@ -7,6 +7,7 @@ import 'package:my_dart_cast_demo/src/http/http_client.dart';
 import 'package:my_dart_cast_demo/src/parser.dart';
 import 'package:my_dart_cast_demo/src/ssdp/ssdp_message_parser.dart';
 import 'package:my_dart_cast_demo/src/ssdp/ssdp_service.dart';
+import 'package:my_dart_cast_demo/src/ssdp/upnp_message.dart';
 
 import '../dlna_device.dart';
 
@@ -41,7 +42,7 @@ class DiscoveryDeviceManager {
       await _ssdpService.start();
       _ssdpService.listen(_onData);
     }
-    _ssdpService.search();
+    _ssdpService.sendMessage(UpnpMessage.search("ssdp:all"));
   }
 
   void _onData(data) async {

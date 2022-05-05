@@ -4,6 +4,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:my_dart_cast_demo/src/ssdp/upnp_message.dart';
+
 typedef RawDatagramSocketFactory = Future<RawDatagramSocket> Function(
   dynamic host,
   int port, {
@@ -17,12 +19,6 @@ typedef OnDataListener = Function(String data);
 class SSDPService {
   static const String _UPNP_IP_V4 = '239.255.255.250';
   static const int _UPNP_PORT = 1900;
-
-  static const String _DLNA_MESSAGE_SEARCH = 'M-SEARCH * HTTP/1.1\r\n' +
-      'HOST: 239.255.255.250:1900\r\n' +
-      'MAN: "ssdp:discover"\r\n' +
-      'ST: {type}\r\n' +
-      'MX: 3\r\n\r\n';
 
   static const String TYPE_DEVICE_ALL = "ssdp:all";
   static const String TYPE_DEVICE_ROOT = "upnp:rootdevice";
@@ -67,30 +63,10 @@ class SSDPService {
     );
   }
 
-  void search({String type = TYPE_DEVICE_ALL}) {
-    var message = _DLNA_MESSAGE_SEARCH;
-    message = message.replaceAll("{type}", type);
-    print("\n$message\n");
-    _datagramSocket?.send(const Utf8Codec().encode(message), _upnpIpV4Address, _UPNP_PORT);
-  }
+  void sendMessage(UpnpMessage message) => send(message.data);
 
-  final _NOTIFY_MESSAGE = """NOTIFY * HTTP/1.1\r
-HOST: 239.255.255.250:1900\r
-CACHE-CONTROL: max-age=66\r
-LOCATION: {location}\r
-NT: {uuid}\r
-NTS: ssdp:{status}\r
-SERVER: Linux/3.10.61+, UPnP/1.0, Portable SDK for UPnP devices/1.6.13\r
-USN: {uuid}\r\n\r
-""";
-
-  void notify(String uuid, String location, bool alive) {
-    final message = _NOTIFY_MESSAGE
-        .replaceAll("{uuid}", uuid)
-        .replaceAll("{location}", location)
-        .replaceAll("{status}", alive ? "alive" : "byebye");
-    print("\n$message\n");
-    _datagramSocket?.send(const Utf8Codec().encode(message), _upnpIpV4Address, _UPNP_PORT);
+  void send(String data) {
+    _datagramSocket?.send(const Utf8Codec().encode(data), _upnpIpV4Address, _UPNP_PORT);
   }
 
   void stop() {

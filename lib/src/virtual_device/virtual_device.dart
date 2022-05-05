@@ -1,28 +1,64 @@
 // ignore_for_file: non_constant_identifier_names, avoid_print
 
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:my_dart_cast_demo/src/http/http_server.dart';
 import 'package:my_dart_cast_demo/src/ssdp/ssdp_service.dart';
-import 'package:uuid/uuid.dart';
-import 'package:xml/xml.dart';
+import 'package:my_dart_cast_demo/src/ssdp/upnp_message.dart';
+import 'package:my_dart_cast_demo/src/util.dart';
+import 'package:my_dart_cast_demo/src/virtual_device/virtual_device_builder.dart';
 
 class VirtualDevice {
-  final VirtualDeviceBuilder _builder;
-  final MyLocalHttpServer _localHttpServer = MyLocalHttpServer();
+  final String usn;
+  final String deviceType;
+  final List<String> serviceType;
+  final String _description;
+  final LocalHttpServer _localHttpServer = LocalHttpServer();
   final SSDPService _ssdpService = SSDPService();
+  String _location = "";
 
-  VirtualDevice._(VirtualDeviceBuilder builder) : _builder = builder;
+  VirtualDevice(VirtualDeviceBuilder builder)
+      : usn = builder.udn,
+        deviceType = builder.deviceType,
+        serviceType = builder.services,
+        _description = builder.description;
+
+  Timer? _timer;
 
   Future<void> start() async {
     if (_localHttpServer.isRunning) return;
     try {
       await _ssdpService.start();
-      Timer.periodic(const Duration(seconds: 10), (timer) {
-        _ssdpService.notify(_builder._udn, _builder.location, true);
+      _ssdpService.listen((data) {
+        printlnLog("ssdpService", data);
       });
-      await _localHttpServer.start();
-      _localHttpServer.bindDeviceBuilder(_builder);
+
+      await _localHttpServer.start((request) {
+        final uri = request.uri;
+        final response = request.response;
+        if (uri.path == "/description.xml") {
+          response.contentLength = utf8.encode(_description).length;
+          response.write(_description);
+        }
+        response.close();
+      });
+
+      _location = "${_localHttpServer.getBaseUrl()}/description.xml";
+
+      final messageList = UpnpMessage.buildNotifyList(
+        usn: usn,
+        location: _location,
+        ntList: _buildDeviceServices(),
+      );
+      for (var element in messageList) {
+        _ssdpService.sendMessage(element);
+      }
+      _timer = Timer.periodic(const Duration(seconds: 30), (timer) {
+        for (var element in messageList) {
+          _ssdpService.sendMessage(element);
+        }
+      });
     } catch (e) {
       print(e.toString());
     }
@@ -30,125 +66,30 @@ class VirtualDevice {
 
   Future<void> stop() async {
     try {
-      _ssdpService.notify(_builder._udn, _builder.location, false);
+      final messageList = UpnpMessage.buildNotifyList(
+        usn: usn,
+        location: _location,
+        ntList: _buildDeviceServices(),
+      );
+      for (var element in messageList) {
+        _ssdpService.sendMessage(element);
+      }
       _ssdpService.stop();
+      _timer?.cancel();
       await _localHttpServer.stop();
     } catch (e) {
       print(e.toString());
     }
   }
-}
 
-class VirtualDeviceBuilder {
-  static const _rendererServices = ["AVTransport", "ConnectionManager", "RenderingControl"];
-
-  final String deviceType;
-
-  final String presentationURL;
-
-  final String friendlyName;
-
-  final String manufacturer;
-
-  final String manufacturerURL;
-
-  final String modelDescription;
-
-  final String modelName;
-
-  final String modelURL;
-
-  final String UPC;
-
-  String _host = "";
-
-  set host(String value) {
-    _host = value;
+  List<String> _buildDeviceServices() {
+    final List<String> list = ["upnp:rootdevice", deviceType];
+    list.addAll(serviceType);
+    return list;
   }
 
-  int _port = 0;
-
-  set port(int value) {
-    _port = value;
+  @override
+  String toString() {
+    return "usn:$usn, location:$_location, deviceType:$deviceType, serviceType:${serviceType.toList()}";
   }
-
-  String _udn = "";
-
-  final List<String> _serviceTypes = [];
-
-  VirtualDeviceBuilder({
-    required this.deviceType,
-    List<String> services = _rendererServices,
-    this.presentationURL = "https://github.com/devin1014/my_dart_cast_demo",
-    required this.friendlyName,
-    this.manufacturer = "dart",
-    this.manufacturerURL = "",
-    this.modelName = "dlna renderer",
-    this.modelURL = "https://github.com/devin1014/my_dart_cast_demo",
-    this.modelDescription = "",
-    this.UPC = "",
-  }) {
-    _udn = _buildUUID();
-    if (services.isNotEmpty == true) {
-      _serviceTypes.addAll(services);
-    }
-  }
-
-  String get URLBase => _host.isNotEmpty ? "http://$_host:$_port" : "";
-
-  String get description => _buildDescription();
-
-  String get location => "$URLBase/description.xml";
-
-  String _buildUUID() {
-    final name = "$deviceType$presentationURL$friendlyName";
-    return "uuid:${const Uuid().v5(Uuid.NAMESPACE_DNS, "uuid:by:lw:$name")}";
-  }
-
-  String _buildDescription() {
-    final builder = XmlBuilder();
-    builder.declaration(version: "1.0");
-    builder.element(
-      "root",
-      attributes: {"xmlns": "urn:schemas-upnp-org:device-1-0"},
-      nest: () {
-        builder.element("specVersion", nest: () {
-          builder.element("major", nest: 1);
-          builder.element("minor", nest: 0);
-        });
-        builder.element("device", nest: () {
-          builder.element("deviceType", nest: deviceType);
-          builder.element("presentationURL", nest: presentationURL);
-          builder.element("friendlyName", nest: friendlyName);
-          builder.element("manufacturer", nest: manufacturer);
-          builder.element("manufacturerURL", nest: manufacturerURL);
-          builder.element("modelName", nest: modelName);
-          builder.element("modelURL", nest: modelURL);
-          builder.element("modelDescription", nest: modelDescription);
-          builder.element("UPC", nest: UPC);
-          builder.element("UDN", nest: _udn);
-          builder.element("UID", nest: _udn.hashCode);
-          builder.element("serviceList", nest: () {
-            for (var type in _serviceTypes) {
-              _buildService(builder, type);
-            }
-          });
-        });
-        builder.element("URLBase", nest: URLBase);
-      },
-    );
-    return builder.buildDocument().toXmlString(pretty: true);
-  }
-
-  void _buildService(XmlBuilder builder, String serviceType) {
-    builder.element("service", nest: () {
-      builder.element("serviceType", nest: "urn:schemas-upnp-org:service:$serviceType:1");
-      builder.element("serviceId", nest: "urn:schemas-upnp-org:serviceId:$serviceType");
-      builder.element("SCPDURL", nest: "/dlna/Render/${serviceType}_scpd.xml");
-      builder.element("controlURL", nest: "_urn:schemas-upnp-org:service:${serviceType}_control");
-      builder.element("eventSubURL", nest: "_urn:schemas-upnp-org:service:${serviceType}_event");
-    });
-  }
-
-  VirtualDevice build() => VirtualDevice._(this);
 }
